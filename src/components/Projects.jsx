@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Projects() {
   const projects = [
     {
@@ -6,7 +8,7 @@ export default function Projects() {
         "Full-stack authentication platform with JWT authentication, protected routes, PostgreSQL integration, and Dockerized backend services.",
       tech: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
       github: "https://github.com/Iris408/jwt-authentication-dashboard",
-      demo: "https://jwt-authentication-dashboard.vercel.app/"
+      demo: "https://jwt-authentication-dashboard-sepia.vercel.app/"
     },
     {
       title: "System Health Monitor",
@@ -30,18 +32,31 @@ export default function Projects() {
     <section id="projects" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
 
-        <div className="mb-14 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-14 text-center"
+        >
           <p className="text-cyan-400 mb-3">Portfolio</p>
 
           <h2 className="text-5xl font-bold">
             Featured Projects
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
               key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15
+              }}
+              viewport={{ once: true }}
               className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-cyan-400/40 transition duration-300 overflow-hidden flex flex-col text-center"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
@@ -88,7 +103,7 @@ export default function Projects() {
                   </a>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

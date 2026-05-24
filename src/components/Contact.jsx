@@ -23,12 +23,8 @@ export default function Contact() {
         </h2>
  
         <p className="text-slate-300 text-lg mb-10">
-          I'm a Junior Software Engineer with a full-stack background, looking for my
-          first professional role. I'm comfortable across the stack — from building
-          REST APIs and working with databases, to shipping frontend UI and managing
-          deployments. 
-          I'm based in London and Edinburgh, open to remote and hybrid roles.
-          Open to international opportunities.
+         Open to junior backend, full-stack, and software engineering opportunities across 
+         remote, hybrid, and international teams.
         </p>
  
         <div className="flex flex-col sm:flex-row justify-center gap-6">

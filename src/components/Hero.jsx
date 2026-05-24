@@ -19,9 +19,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-cyan-400 font-medium mb-4"
+          className="text-cyan-400 font-medium md:text-2xl mb-4"
         >
-          Junior Full-Stack / DevOps Engineer
+          Junior Backend & Full-Stack Engineer
         </motion.p>
 
         <motion.h1
@@ -39,8 +39,8 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-8"
         >
-          I build practical projects using React, TypeScript,
-          FastAPI, PostgreSQL, Docker, Python, and Linux automation.
+          Building practical full-stack applications using React, TypeScript, 
+          FastAPI, PostgreSQL, Docker, Python, and Linux.
         </motion.p>
 
         <motion.div

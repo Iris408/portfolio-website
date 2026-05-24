@@ -17,12 +17,12 @@ export default function Stack() {
 
   return (
 
-    <div className="flex flex-wrap gap-3 mt-8">
+    <div className="flex flex-wrap justify-center gap-3 mt-8">
 
       {skills.map((skill) => (
 
         <div
-          className="px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-400/10 transition"
+          className="px-4 py-2 justify-center rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-400/10 transition"
         >
           {skill}
         </div>

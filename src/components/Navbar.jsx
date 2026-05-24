@@ -33,19 +33,19 @@ export default function Navbar() {
           </a>
  
           <a
-            href="#projects"
-            className="hover:text-cyan-400 transition"
-          >
-            Projects
-          </a>
- 
-          <a
             href="#about"
             className="hover:text-cyan-400 transition"
           >
             About
           </a>
  
+           <a
+            href="#projects"
+            className="hover:text-cyan-400 transition"
+          >
+            Projects
+          </a>
+          
           <a
             href="#contact"
             className="hover:text-cyan-400 transition"
@@ -95,19 +95,19 @@ export default function Navbar() {
             </a>
  
             <a
-              href="#projects"
-              onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition"
-            >
-              Projects
-            </a>
- 
-            <a
               href="#about"
               onClick={() => setIsOpen(false)}
               className="hover:text-cyan-400 transition"
             >
               About
+            </a>
+
+            <a
+              href="#projects"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-cyan-400 transition"
+            >
+              Projects
             </a>
  
             <a

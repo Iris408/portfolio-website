@@ -48,7 +48,7 @@ export default function Contact() {
           </a>
  
           <a
-            href="/DevOps_Resume.pdf"
+            href="/AshleighM_FullStack_Resume.pdf"
             download
             className="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-400/10 transition"
           >

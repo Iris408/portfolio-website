@@ -48,8 +48,8 @@ export default function Contact() {
           </a>
  
           <a
-            href="/AshleighM_FullStack_Resume.pdf"
-            download
+            href="/Ashleigh_Magloire_FullStack_Resume.pdf"
+            download="Ashleigh_Magloire_FullStack_Resume.pdf"
             className="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-cyan-400/10 transition"
           >
             Download CV

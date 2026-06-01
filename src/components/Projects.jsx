@@ -1,45 +1,17 @@
 import { motion } from "framer-motion";
- 
+
+// EN: Import projects from the shared data file
+// JP: 共有データファイルからプロジェクト情報を読み込みます
+import { projects } from "../data/projects.js";
+
 export default function Projects() {
-  const projects = [
-  {
-    number: "01",
-    category: "Full-Stack · Backend",
-    title: "Inventory Management System",
-    description:
-      "Interactive inventory management dashboard with analytics, CRUD operations, filtering systems, and backend API integration.",
-    tech: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
-    github: "https://github.com/Iris408/inventory-management-system",
-    demo: ""
-  },
+  // EN: Show only the first 3 featured projects on the homepage
+  // JP: ホームページでは featured が true の最初の3件だけを表示します
+  const featured = projects.filter((p) => p.featured).slice(0, 3);
 
-  {
-    number: "02",
-    category: "Full-Stack · Auth",
-    title: "JWT Authentication Dashboard",
-    description:
-      "Full-stack authentication platform with JWT authentication, protected routes, PostgreSQL integration, and Dockerized backend services.",
-    tech: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
-    github: "https://github.com/Iris408/jwt-authentication-dashboard",
-    demo: "https://jwt-authentication-dashboard-sepia.vercel.app/"
-  },
-
-  {
-    number: "03",
-    category: "DevOps · Monitoring",
-    title: "System Health Monitor",
-    description:
-      "Linux monitoring tool for tracking CPU, memory, and disk utilisation with Slack alert integrations and Docker support.",
-    tech: ["Python", "Linux", "Docker", "Slack API"],
-    github: "https://github.com/Iris408/system-health-monitor",
-    demo: ""
-  }
-];
- 
   return (
     <section id="projects" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
- 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +22,9 @@ export default function Projects() {
           <p className="text-cyan-400 mb-3">Portfolio</p>
           <h2 className="text-5xl font-bold">Featured Projects</h2>
         </motion.div>
- 
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {featured.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
@@ -61,32 +33,26 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-cyan-400/40 transition duration-300 overflow-hidden flex flex-col"
             >
-              {/* Hover glow */}
+              {/* EN: Glow effect on hover */}
+              {/* JP: ホバー時のグロー効果 */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
                 <div className="absolute inset-0 bg-cyan-400/5 blur-3xl" />
               </div>
- 
-              {/* Top anchor: number + category */}
-              <div className="flex items-center justify-between mb-6 relative z-10">
-                <span className="text-4xl font-bold text-white/10 select-none">
-                  {project.number}
-                </span>
-                <span className="text-xs font-mono text-cyan-400/70 tracking-widest uppercase">
-                  {project.category}
-                </span>
-              </div>
- 
-              {/* Title */}
+
+              <span className="text-xs font-mono text-cyan-400/70 tracking-widest uppercase mb-6 relative z-10">
+                {project.category}
+              </span>
+
               <h3 className="text-xl font-bold mb-3 relative z-10 leading-snug">
                 {project.title}
               </h3>
- 
-              {/* Description */}
+
               <p className="text-slate-400 mb-6 leading-relaxed relative z-10 text-sm">
                 {project.description}
               </p>
- 
-              {/* Tech tags — pinned above buttons */}
+
+              {/* EN: Technology tags */}
+              {/* JP: 技術タグ */}
               <div className="flex flex-wrap justify-center gap-2 mb-6 relative z-10">
                 {project.tech.map((item) => (
                   <span
@@ -97,8 +63,9 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
- 
-              {/* Buttons — always at the bottom */}
+
+              {/* EN: Project action buttons */}
+              {/* JP: プロジェクト用ボタン */}
               <div className="flex justify-center gap-4 mt-auto relative z-10">
                 <a
                   href={project.github}
@@ -108,7 +75,7 @@ export default function Projects() {
                 >
                   GitHub
                 </a>
- 
+
                 {project.demo && (
                   <a
                     href={project.demo}
@@ -120,11 +87,26 @@ export default function Projects() {
                   </a>
                 )}
               </div>
- 
             </motion.div>
           ))}
         </div>
- 
+
+        {/* EN: Link to the full projects page */}
+        {/* JP: 全プロジェクトページへのリンク */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-14 text-center"
+        >
+          <a
+            href="/projects"
+            className="px-8 py-3 rounded-full border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400 hover:text-slate-950 transition font-semibold"
+          >
+            View All Projects →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

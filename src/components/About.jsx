@@ -15,15 +15,15 @@ export default function About() {
         className="max-w-5xl mx-auto text-center"
       >
 
-        <p className="text-cyan-400 mb-3">
+        <p className="font-avantgarde-book text-cyan-400 text-3xl mb-3">
           About Me
         </p>
 
-        <h2 className="text-5xl font-bold mb-8">
+        <h2 className="font-avantgarde-book text-5xl font-bold mb-8">
           Backend, Full-Stack & DevOps Focused
         </h2>
 
-        <p className="text-slate-300 text-lg leading-relaxed max-w-4xl mx-auto">
+        <p className="font-avantgarde-book text-slate-300 text-lg leading-relaxed max-w-4xl mx-auto">
 
           I am currently building practical full-stack,
           backend, and DevOps-focused projects while studying for a Master’s degree in
@@ -39,7 +39,6 @@ export default function About() {
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Stack />
         </motion.div>
 
       </motion.div>

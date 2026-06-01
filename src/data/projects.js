@@ -23,11 +23,22 @@ export const projects = [
     title: "JWT Authentication Dashboard",
     category: "Full-Stack · Auth",
     description:
-      "Full-stack authentication platform with JWT authentication, protected routes, PostgreSQL integration, and Dockerized backend services.",
-    tech: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Docker"],
+      "Deployed React and TypesScrit authentication dashboard connected to a FastAPI backend, with JWT login, protected dashboard access, admin-only user listing, role-based access control, Vercel deployment, and GitHub Actions CI.",
+    tech: ["React", "TypeScript", "Vite", "FastAPI", "JWT", "Vercel", "Render", "GitHub Actions"],
     github: "https://github.com/Iris408/jwt-authentication-dashboard",
     demo: "https://jwt-authentication-dashboard-sepia.vercel.app/",
-    image: "/images/jwt.png",
+    image: "portfolio-website/public/images/jwt-auth-dashboard.png",
+  },
+  {
+  featured: true,
+  title: "Mini User API",
+  category: "Backend · API",
+  description:
+    "Deployed FastAPI backend API with PostgreSQL, SQLAlchemy, JWT authentication, role-based access control, Docker support, Swagger API documentation, Render deployment, and GitHub Actions CI.",
+  tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT", "Render", "GitHub Actions"],
+  github: "https://github.com/Iris408/mini-user-api",
+  demo: "https://mini-user-api.onrender.com/docs",
+  image: "portfolio-website/public/images/mini-user-api.png",
   },
   {
     featured: true,

@@ -12,7 +12,7 @@ import { projects } from "../data/projects.js";
     <section class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
 
-        <p class="font-avantgarde-book text-purple-300/70 text-4xl font-semibold mb-3">Portfolio</p>
+        <p class="font-avantgarde-book text-white text-4xl font-semibold mb-3">Portfolio</p>
 
         <h1 class="font-avantgarde-book text-5xl text-white font-bold">All Projects</h1>
 
@@ -23,7 +23,7 @@ import { projects } from "../data/projects.js";
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <article class="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-purple-400/80 transition duration-300 overflow-hidden flex flex-col">
+          <article class="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-purple-400/90 transition duration-300 overflow-hidden flex flex-col">
             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
               <div class="absolute inset-0 bg-pink-400/5 blur-3xl"></div>
             </div>
@@ -32,11 +32,11 @@ import { projects } from "../data/projects.js";
               {project.category}
             </span>
 
-            <h2 class="text-xl font-avantgarde-book font-bold mb-3 relative z-10 leading-snug">
+            <h2 class="text-xl font-avantgarde-book text-slate-200 font-bold mb-3 relative z-10 leading-snug">
               {project.title}
             </h2>
 
-            <p class="text-white/80 mb-6 leading-relaxed font-avantgarde-book relative z-10 text-sm">
+            <p class="text-white/80 mb-6 leading-relaxed text-slate-200 font-avantgarde-book relative z-10 text-sm">
               {project.description}
             </p>
 

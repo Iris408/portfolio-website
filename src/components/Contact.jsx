@@ -33,7 +33,7 @@ export default function Contact() {
             href="https://github.com/Iris408"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition hover:font-avantgarde-book"
+            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition"
           >
             GitHub
           </a>
@@ -42,7 +42,7 @@ export default function Contact() {
             href="https://linkedin.com/in/ashleigh-magloire"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition hover:font-avantgarde-book"
+            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition"
           >
             LinkedIn
           </a>
@@ -50,14 +50,14 @@ export default function Contact() {
           <a
             href="/Ashleigh_Magloire_FullStack_Resume.pdf"
             download="Ashleigh_Magloire_FullStack_Resume.pdf"
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition hover:font-avantgarde-book"
+            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition"
           >
             Download CV
           </a>
  
           <a
             href="mailto:ashmagloire45@icloud.com"
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition hover:font-avantgarde-book"
+            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-avantgarde-book hover:border-purple-400/40 hover:bg-purple-400/10 transition"
           >
             Email Me
           </a>

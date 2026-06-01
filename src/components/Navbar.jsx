@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full backdrop-blur-md bg-black/30 border-b border-white/10 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold tracking-wide">
+        <h1 className="text-xl font-bold tracking-wide cursor-pointer">
           Ashleigh M
         </h1>
 
@@ -16,14 +16,14 @@ export default function Navbar() {
           <a
             href="/"
             aria-label="Home"
-            className="flex items-center hover:text-cyan-400 transition"
+            className="flex items-center hover:text-purple-400/60 transition"
           >
-            <House size={20} strokeWidth={1.5} />
+            <House size={25} strokeWidth={1.5} />
           </a>
 
           <a
             href="/#about"
-            className="hover:text-cyan-400 transition"
+            className="hover:text-purple-400/60 transition"
           >
             About
           </a>
@@ -32,14 +32,14 @@ export default function Navbar() {
           {/* JP: 別ページのProjectsページへ移動します */}
           <a
             href="/projects"
-            className="hover:text-cyan-400 transition"
+            className="hover:text-purple-400/60 transition"
           >
             Projects
           </a>
 
           <a
             href="/#contact"
-            className="hover:text-cyan-400 transition"
+            className="hover:text-purple-400/60 transition"
           >
             Contact
           </a>
@@ -64,12 +64,12 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-[#07111f]/95 backdrop-blur-xl"
+            className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-[#0a1a0f]/95 backdrop-blur-xl"
           >
             <a
               href="/"
               onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-purple-400/60 transition"
             >
               Home
             </a>
@@ -77,7 +77,7 @@ export default function Navbar() {
             <a
               href="/#about"
               onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-purple-400/60 transition"
             >
               About
             </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
             <a
               href="/projects"
               onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-purple-400/60 transition"
             >
               Projects
             </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
             <a
               href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-purple-400/60 transition"
             >
               Contact
             </a>

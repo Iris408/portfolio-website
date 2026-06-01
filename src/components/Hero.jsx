@@ -52,14 +52,14 @@ export default function Hero() {
 
           <a
             href="#projects"
-            className="px-6 py-3 rounded-full border border-white/40 bg-purple-900/40 text-gray-200 font-semibold hover:bg-white/200 transition"
+            className="px-6 py-3 rounded-full border border-white/40 bg-purple-900/40 text-gray-200 font-semibold hover:bg-white/20 transition"
           >
             View Projects
           </a>
 
           <a
             href="#contact"
-            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition"
+            className="px-6 py-3 rounded-full border border-white/40 hover:bg-white/20 transition"
           >
             Contact Me
           </a>

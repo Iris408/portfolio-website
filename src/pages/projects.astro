@@ -1,8 +1,10 @@
 ---
+// EN: /projects page — mounts ProjectsPageClient for the full React-controlled grid and modal
+// JP: /projects ページ — React 制御のグリッドとモーダルを持つ ProjectsPageClient をマウントする
 import MainLayout from "../layouts/MainLayout.astro";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import { projects } from "../data/projects.js";
+import ProjectsPageClient from "../components/ProjectsPageClient.jsx";
 ---
 
 <MainLayout>
@@ -10,68 +12,19 @@ import { projects } from "../data/projects.js";
 
   <main class="min-h-screen px-6 py-32">
     <section class="max-w-6xl mx-auto">
+
       <div class="text-center mb-14">
-
         <p class="font-avantgarde-book text-white text-4xl font-semibold mb-3">Portfolio</p>
-
         <h1 class="font-avantgarde-book text-5xl text-white font-bold">All Projects</h1>
-
         <p class="font-avantgarde-book text-white text-2xl mt-4 max-w-2xl mx-auto">
           A collection of backend, DevOps, full-stack, automation, and learning projects.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <article class="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-purple-400/90 transition duration-300 overflow-hidden flex flex-col">
-            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-              <div class="absolute inset-0 bg-pink-400/5 blur-3xl"></div>
-            </div>
+      {/* EN: ProjectsPageClient owns the grid and modal — client:load hydrates it as React */}
+      {/* JP: ProjectsPageClient がグリッドとモーダルを管理 — client:load で React としてハイドレートされる */}
+      <ProjectsPageClient client:load />
 
-            <span class="text-xs font-avantgarde-book text-purple-300/70 tracking-widest uppercase mb-6 relative z-10">
-              {project.category}
-            </span>
-
-            <h2 class="text-xl font-avantgarde-book text-slate-200 font-bold mb-3 relative z-10 leading-snug">
-              {project.title}
-            </h2>
-
-            <p class="text-white/80 mb-6 leading-relaxed text-slate-200 font-avantgarde-book relative z-10 text-sm">
-              {project.description}
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-2 mb-6 relative z-10">
-              {project.tech.map((item) => (
-                <span class="px-3 py-1 rounded-full bg-pink-500/10 border border-purple-400/20 font-avantgarde-book text-purple-300 text-xs">
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div class="flex justify-center gap-4 mt-auto relative z-10">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="px-5 py-2 rounded-full border bg-purple-400/20 border-pink-300/20 font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950 transition text-sm"
-              >
-                GitHub
-              </a>
-
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="px-5 py-2 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-purple-300/90 hover:bg-pink-950 hover:text-pink-100/70 transition text-sm"
-                >
-                  Live Demo
-                </a>
-              )}
-            </div>
-          </article>
-        ))}
-      </div>
     </section>
   </main>
 

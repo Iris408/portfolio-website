@@ -60,7 +60,7 @@ Astro、React、Tailwind CSS、およびFramer Motionを使用して作成した
 * Git/GitHub
 
 ## Project Structure / プロジェクトの構成
-
+```text
 portfolio-website/
 ├── public/
 │   ├── images/
@@ -100,6 +100,7 @@ portfolio-website/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 ### Homepage
 
@@ -135,7 +136,7 @@ The `/projects` page uses a React client componenet for the project grid and pre
 ```bash
 src/components/ProjectsPageClient.jsx
 ```
-- /projects ページでは、src/data/projects.js に登録されている全プロジェクトを一覧表示します。
+/projects ページでは、src/data/projects.js に登録されている全プロジェクトを一覧表示します。
 プロジェクトのグリッド表示と画像プレビューモーダルは、Reactクライアントコンポーネントである ProjectsPageClient.jsx が管理しています。
 
 ## Featured Projects / 注目プロジェクト
@@ -148,7 +149,7 @@ Current homepage featured projects:
 
 Additional projects including System Health Monitor and Bloom, are available on the full `/projects` page.
 
-- 現在ホームページに表示している注目プロジェクトは以下の3件です。
+現在ホームページに表示している注目プロジェクトは以下の3件です。
 - System Health MonitorやBloomなどの追加プロジェクトは、専用の /projects ページで確認できます。
 
 ### Project Preview Modal / プロジェクトイメージプレビューモーダル
@@ -166,8 +167,7 @@ Each project image is defined in:
 ```bash
 src/data/Projects.js
 ```
-- プロジェクトのスクリーンショットをページ内で確認できる画像プレビューモーダルがあります。
-- モーダル表示は PreviewModal.jsx、プロジェクトカードのUIは ProjectCard.jsx で管理しています。
+プロジェクトのスクリーンショットをページ内で確認できる画像プレビューモーダルがあります。モーダル表示は PreviewModal.jsx、プロジェクトカードのUIは ProjectCard.jsx で管理しています。
 - 各プロジェクトの画像パスは src/data/projects.js に定義し、画像ファイルは public/images/ に配置します。
 
 ## Local Installation / ローカルインストール
@@ -203,7 +203,8 @@ This project is deployed using Vercel.
 npm run build
 ```
 Vercel automatically redeploys the project after changes are pushed to GitHub.
-- リポジトリをクローンし、依存関係をインストールした後、開発サーバーを起動できます。
+
+リポジトリをクローンし、依存関係をインストールした後、開発サーバーを起動できます。
 - 本番環境用のビルド確認には npm run build を使用し、ビルド後の動作確認には npm run preview を使用します。
 
 
@@ -223,5 +224,5 @@ Vercel automatically redeploys the project after changes are pushed to GitHub.
 
 ## Notes
 
-This portfolio is a work in progress and will continue to improve as I complete more full-stack, backend, and DevOps-focused projects.
+- This portfolio is a work in progress and will continue to improve as I complete more full-stack, backend, and DevOps-focused projects.
 - 現在作成途中のものであり、フルスタック、バックエンド、DevOpsに特化したプロジェクトをさらに完了していくにつれて、さらに改善されていく予定です。

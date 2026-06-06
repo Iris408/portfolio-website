@@ -2,32 +2,53 @@
 
 A personal developer portfolio built with Astro, React, Tailwind CSS, and Framer Motion.
 
-This portfolio showcases my full-stack, backend, and DevOps-focused projects while I continue building practical software engineering experience alongside my Master’s degree in Computer Science.
+This portfolio showcases my backend, full-stack, DevOps-focused and accessibilty-focused projects while I continue building practical software engineering experience alongside my Master’s degree in Computer Science.
 
-## Current Status
+# 開発者ポートフォリオ
+Astro、React、Tailwind CSS、およびFramer Motionを使用して作成した個人開発者ポートフォリオです。
 
-✅ Homepage with hero, about, stack, featured projects, and contact sections
-✅ Dedicated /projects page for all projects
-✅ Shared project data file for easier project updates
-✅ Responsive layout
-✅ Purple/pink visual theme update
-✅ Astro updated
-✅ Build tested locally
+コンピュータサイエンスの修士課程で学びながら実践的なソフトウェアエンジニアリングの経験を積み重ねていく中で、私が手掛けたバックエンド、フルスタック、DevOps、およびアクセシビリティに重点を置いたプロジェクトを紹介しています。
 
-## Features
+## Live Site / ライブサイト
+[Developer Portfolio Website](https://portfolio-website-blond-nine-77.vercel.app/)
 
-* Responsive portfolio homepage
-* Featured projects section on the homepage
-* Separate Projects page for all portfolio projects
-* Shared project data file for easier maintenance
-* Reusable React components
-* Smooth animations with Framer Motion
-* Tailwind CSS styling
-* External GitHub and live demo links
-* Contact section
-* CV download link
+## Current Status / 現在のステータス
 
-## Tech Stack
+- ✅ Astro portfolio structure
+- ✅ React component-based sections
+- ✅ Homepage with hero, about, stack, featured projects, and contact sections
+- ✅ Dedicated `/projects` page
+- ✅ Shared project data file
+- ✅ Reusable project card component
+- ✅ Project image preview model
+- ✅ Navbar section links
+- ✅ CV download link
+- ✅ Contact buttons
+- ✅ Responsive layout
+- ✅ Purple/lavender visual theme
+- ✅ Vercel Deployment
+- ✅ Local production build test
+
+このポートフォリオは、ホームページ、プロジェクト一覧ページ、再利用可能なReactコンポーネント、画像プレビューモーダル、技術スタックセクション、Vercelデプロイまで実装済みです。
+
+## Features / 機能
+| EN | 日本語 |
+| --- | --- |
+| Responsive portfolio homepage | レスポンシブ対応のポートフォリオホームページ |
+| Featured projects section on the homepage | ホームページ上の注目プロジェクトセクション |
+| Dedicated `/projects` page for all portfolio projects | 全プロジェクトを一覧表示する専用の /projects ページ |
+| Shared project data file for easier maintenance | 保守しやすい共有プロジェクトデータファイル |
+| Reusable project card component | 再利用可能なプロジェクトカードコンポーネント |
+| Reusable project preview model | 再利用可能なプロジェクト画像プレビューモーダル |
+| Image preview pop up for project screenshots | プロジェクトスクリーンショット用の画像プレビュー機能 |
+| Smooth animations with Framer Motion | Framer Motionによるスムーズなアニメーション |
+| Tailwind CSS styling | Tailwind CSSスタイリング | 
+| GitHub and live demo links | GitHubとライブデモリンク |
+| CV download link | 履歴書、職務経歴書のダウンロードリンク
+| Contact section with GitHub, Linkedin, CV and email actions | GitHub、Linkedin、履歴書、職務経歴書、メール連絡用のコンタクトセクション |
+| Vercel deployment | Vercelへのデプロイ |
+
+## Tech Stack / 技術スタック
 
 * Astro
 * React
@@ -36,13 +57,19 @@ This portfolio showcases my full-stack, backend, and DevOps-focused projects whi
 * Lucide React
 * JavaScript
 * Vercel
+* Git/GitHub
 
-## Project Structure
+## Project Structure / プロジェクトの構成
 
 portfolio-website/
 ├── public/
 │   ├── images/
-│   └── Iris_CV.pdf
+│   │   ├── bloom-app.png
+│   │   ├── inventory_dashboard.png
+│   │   ├── jwt-auth-dashboard.png
+│   │   ├── mini-user-api.png
+│   │   └── system-health-monitor.png
+│   └── screenshots/
 │
 ├── src/
 │   ├── components/
@@ -51,8 +78,10 @@ portfolio-website/
 │   │   ├── Footer.jsx
 │   │   ├── Hero.jsx
 │   │   ├── Navbar.jsx
+│   │   ├── PreviewModal.jsx
 │   │   ├── ProjectCard.jsx
 │   │   ├── Projects.jsx
+│   │   ├── ProjectsPageClient.jsx
 │   │   └── Stack.jsx
 │   │
 │   ├── data/
@@ -72,17 +101,15 @@ portfolio-website/
 ├── package-lock.json
 └── README.md
 
-### Pages
+### Homepage
 
-Homepage
+The homepage includes: | ホームページには以下のセクションがあります。
 
-The homepage includes:
-
-* Hero section
-* About section
-* Tech stack section
-* Featured projects section
-* Contact section
+* Hero section / ヒーローセクション
+* About section / Aboutセクション
+* Tech stack section / 技術スタックセクション
+* Featured projects section / 注目プロジェクトセクション
+* Contact section / コンタクトセクション
 
 The homepage displays only the first three projects marked as:
 ```bash
@@ -92,7 +119,9 @@ inside:
 ```bash
 src/data/projects.js
 ```
-### Projects Page
+- ホームページには、src/data/projects.js 内で featured: true に設定されたプロジェクトのうち、最初の3件が表示されます。
+
+### Projects Page / プロジェクト一覧ページ
 
 The full Projects page is available at:
 ```bash
@@ -102,46 +131,46 @@ This page displays all projects stored in:
 ```bash
 src/data/projects.js
 ```
-### Featured Projects
+The `/projects` page uses a React client componenet for the project grid and preview modal:
+```bash
+src/components/ProjectsPageClient.jsx
+```
+- /projects ページでは、src/data/projects.js に登録されている全プロジェクトを一覧表示します。
+プロジェクトのグリッド表示と画像プレビューモーダルは、Reactクライアントコンポーネントである ProjectsPageClient.jsx が管理しています。
+
+## Featured Projects / 注目プロジェクト
 
 Current homepage featured projects:
 
-1. JWT Authentication Dashboard
-2. System Health Monitor
-3. Inventory Management System
+1. Inventory Management System
+2. Mini User API
+3. JWT Authentication Dashboard
 
-### Adding New Projects
+Additional projects including System Health Monitor and Bloom, are available on the full `/projects` page.
 
-To add a new project, update:
-```bash
-src/data/projects.js
-```
-Example:
-```bash
-{
-  featured: false,
-  title: "Project Name",
-  category: "Backend · API",
-  description: "Short project description.",
-  tech: ["Python", "FastAPI", "PostgreSQL"],
-  github: "https://github.com/username/repo-name",
-  demo: "",
-  image: "/images/project-image.png"
-}
-```
-Use:
-```bash
-featured: true
-```
-if the project should appear on the homepage.
+- 現在ホームページに表示している注目プロジェクトは以下の3件です。
+- System Health MonitorやBloomなどの追加プロジェクトは、専用の /projects ページで確認できます。
 
-Use:
-```bash
-featured: false
-```
-if the project should only appear on the /projects page.
+### Project Preview Modal / プロジェクトイメージプレビューモーダル
+The portfolio now includes an image preview modal for project screenshots.
 
-### Installation
+The modal is handled in:
+```bash
+src/components/PreviewModal.jsx
+```
+The resuable project card is handled in:
+```bash
+src/components/ProjectCard.jsx
+```
+Each project image is defined in:
+```bash
+src/data/Projects.js
+```
+- プロジェクトのスクリーンショットをページ内で確認できる画像プレビューモーダルがあります。
+- モーダル表示は PreviewModal.jsx、プロジェクトカードのUIは ProjectCard.jsx で管理しています。
+- 各プロジェクトの画像パスは src/data/projects.js に定義し、画像ファイルは public/images/ に配置します。
+
+## Local Installation / ローカルインストール
 
 Clone the repository:
 ```bash
@@ -167,58 +196,32 @@ Preview the production build:
 ```bash
 npm run preview
 ```
-### Deployment
+### Deployment / デプロイ
 
 This project is deployed using Vercel.
-
-Typical deployment flow:
 ```bash
 npm run build
-git status
-git add .
-git commit -m "Update portfolio"
-git push origin main
 ```
 Vercel automatically redeploys the project after changes are pushed to GitHub.
+- リポジトリをクローンし、依存関係をインストールした後、開発サーバーを起動できます。
+- 本番環境用のビルド確認には npm run build を使用し、ビルド後の動作確認には npm run preview を使用します。
 
-## Recent Updates
-
-* Added a dedicated /projects page
-* Added shared project data in src/data/projects.js
-* Updated homepage Featured Projects section to use shared project data
-* Updated Navbar Projects link to route to /projects
-* Updated portfolio colours from cyan/blue to purple/pink styling
-* Updated About section text
-* Cleaned duplicate stack display
-* Updated Astro version
-* Confirmed local development and build workflow
 
 ## Future Improvements
 
-* Add more project screenshots
-* Add project detail pages
-* Add filtering by project type
-* Add deployment status badges
-* Add blog or learning notes section
-* Add dark/light theme toggle
-* Improve mobile project card layout
-* Add accessibility improvements
-* Add more backend and DevOps project summaries
-
-## What I Learned
-
-Through this portfolio update, I practiced:
-
-* Building with Astro and React components
-* Creating a reusable shared project data file
-* Splitting homepage featured projects from a full projects page
-* Updating route-based navigation
-* Debugging missing imports and file path issues
-* Testing local development and production builds
-* Cleaning Tailwind CSS classes
-* Maintaining a clearer project structure
-* Preparing a portfolio for GitHub and deployment
+| EN | 日本語 |
+| --- | --- |
+| Add more project screenshots | スクリーンショットを追加する |
+| Add project detail pages | プロジェクト詳細ページを追加する |
+| Add filtering by project type | プロジェクトタイプによるフィルタリングを追加する |
+| Add deployment status badges | デプロイステータスバッジを追加する |
+| Add blog or learning notes section | ブログや学習ノートセクションを追加する |
+| Improve mobile project card layout | モバイルのレイアウトを改善する |
+| Add accessibility improvements | アクセシビリティ機能を強化する |
+| Add more backend and DevOps project summaries | バックエンド、DevOpsプロジェクトの概要情報を追加する |
+| Add Bloom once the public preview is ready | 準備が整い次第、Bloomを追加する |
 
 ## Notes
 
 This portfolio is a work in progress and will continue to improve as I complete more full-stack, backend, and DevOps-focused projects.
+- 現在作成途中のものであり、フルスタック、バックエンド、DevOpsに特化したプロジェクトをさらに完了していくにつれて、さらに改善されていく予定です。

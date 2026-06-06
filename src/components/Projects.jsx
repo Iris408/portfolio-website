@@ -58,7 +58,7 @@ export default function Projects() {
         >
           <a
             href="/projects"
-            className="px-8 py-3 rounded-full border bg-purple-400/20 border-pink-300/20 font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950 transition text-lg"
+            className="px-8 py-3 rounded-full border bg-purple-400/20 border-pink-300/20 text-xl font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950"
           >
             View All Projects →
           </a>

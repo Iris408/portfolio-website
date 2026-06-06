@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
 
       <div className="absolute inset-0 -z-10 flex justify-center">
-        <div className="w-[500px] h-[500px] bg-purple-500/20 blur-[120px] rounded-full" />
+        <div className="w-[500px] h-[500px] bg-white/20 blur-[120px] rounded-full" />
       </div>
 
       <motion.div
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-slate-200 text-5xl md:text-7xl font-bold leading-tight mb-6"
+          className="text-slate-200 text-5xl md:text-7xl font-bold leading-tight mb-10"
         >
           Building reliable, modern web applications.
         </motion.h1>
@@ -37,7 +37,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-slate-200 text-lg md:text-xl max-w-3xl mx-auto mb-8"
+          className="text-slate-200 text-lg md:text-xl max-w-3xl mx-auto mb-6"
         >
           Building practical full-stack applications using React, TypeScript, 
           FastAPI, PostgreSQL, Docker, Python, and Linux.
@@ -52,7 +52,7 @@ export default function Hero() {
 
           <a
             href="#projects"
-            className="px-6 py-3 rounded-full border border-white/40 bg-purple-900/40 text-gray-200 font-semibold hover:bg-white/20 transition"
+            className="px-6 py-3 rounded-full border border-white/40 bg-purple-900/40 text-gray-200 font-semibold hover:bg-purple-400/20 transition"
           >
             View Projects
           </a>

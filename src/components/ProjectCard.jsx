@@ -39,34 +39,36 @@ export default function ProjectCard({ title, category, description, tech, github
 
       {/* EN: Action buttons — GitHub, Live Demo, Preview */}
       {/* JP: アクションボタン — GitHub、ライブデモ、プレビュー */}
-      <div className="flex justify-center gap-4 mt-auto relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-auto relative z-10">
+        {github && (
         <a
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 rounded-full border bg-purple-400/20 border-pink-300/20 font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950 transition text-sm"
+          className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/20 font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
         >
           GitHub
         </a>
+        )}
 
         {demo && (
           <a
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-purple-300/90 hover:bg-pink-950 hover:text-pink-100/70 transition text-sm"
+            className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-purple-300/90 hover:bg-pink-950 hover:text-pink-100/70 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
           >
             Live Demo
           </a>
         )}
 
-        {/* EN: Preview button calls onPreview prop — no data attributes needed */}
-        {/* JP: プレビューボタンは onPreview プロップを呼び出す — data 属性は不要 */}
+        {/* EN: Preview button calls onPreview prop */}
+        {/* JP: プレビューボタンは onPreview プロップを呼び出す */}
         {image && onPreview && (
           <button
             type="button"
             onClick={() => onPreview(image, title)}
-            className="px-5 py-2 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-purple-300/90 hover:bg-pink-300/70 hover:text-pink-950 transition text-sm"
+            className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-pink-100/90 hover:bg-pink-400/50 hover:text-pink-950 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
           >
             Preview
           </button>

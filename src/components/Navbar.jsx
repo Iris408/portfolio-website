@@ -28,6 +28,13 @@ export default function Navbar() {
             About
           </a>
 
+          <a
+            href="/#stack"
+            className="hove:text-purple-400/60 transition"
+          >
+            Stack 
+          </a>  
+
           {/* EN: Link to the separate projects page */}
           {/* JP: 別ページのProjectsページへ移動します */}
           <a
@@ -51,6 +58,7 @@ export default function Navbar() {
           aria-label="Open navigation menu"
         >
           <div className="space-y-1">
+            <div className="w-6 h-0.5 bg-white" />
             <div className="w-6 h-0.5 bg-white" />
             <div className="w-6 h-0.5 bg-white" />
             <div className="w-6 h-0.5 bg-white" />
@@ -80,6 +88,14 @@ export default function Navbar() {
               className="hover:text-purple-400/60 transition"
             >
               About
+            </a>
+
+            <a
+              href="/#about"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-purple-400/60 transition"
+            >
+              Stack
             </a>
 
             {/* EN: Mobile link to the separate projects page */}

@@ -1,56 +1,36 @@
 import { motion } from "framer-motion";
-import Stack from "./Stack";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="py-32 px-6"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="max-w-5xl mx-auto text-center"
+      className="py-32 px-6 max-w-5xl mx-auto text-center"
       >
-
-        <p className="font-avantgarde-book text-white text-3xl mb-3">
+      <section id="about" className="py-8 px-6">
+        <p className="font-avantgarde-book text-white text-3xl mb-12">
           About Me
         </p>
 
-        <h2 className="font-avantgarde-book text-purple-900/40 text-5xl font-bold mb-8">
+        <h2 className="font-avantgarde-book text-white text-5xl font-bold mb-16">
           Backend, Full-Stack & DevOps Focused
         </h2>
 
-        <p className="space-y-5 font-avantgarde-book text-slate-100 text-lg leading-relaxed max-w-4xl mx-auto">
-
-          <p>
-            I am a Computer Science Master’s student building practical full-stack,
-            backend, and DevOps-focused projects.
+        <div className="max-w-3xl mx-auto space-y-6">
+          <p className="font-avantgarde-book text-[#2b183d] text-xl leading-relaxed">
+            I'm an Advanced Driver Assistance Systems (ADAS) engineer and CS Master's student transitioning into backend and full-stack development. 
+            My day job demands precision in high-stakes systems and that same rigour carries into the projects I build: REST APIs, full-stack apps 
+            and CI/CD pipelines using Python, FastAPI, React, TypeScript, PostgreSQL, Docker, and GitHub Actions.
           </p>
 
-          <p>
-            My recent work includes JWT authentication systems, REST APIs, Linux
-            monitoring tools, Dockerized applications, PostgreSQL-backed backends,
-            and React/TypeScript dashboards.
+         <p className="font-avantgarde-book text-[#2b183d] text-xl leading-relaxed">
+            Balancing a high-stakes tech career alongside graduate-level research has sharpened my ability to understand complex architectures, 
+            manage tight timelines, and build reliable backend systems. I focus on bridging the gap between user-friendly dashboards and robust system-level logic. 
           </p>
 
-          <p>
-            I enjoy building clean, maintainable applications that connect
-            user-friendly frontend interfaces with reliable backend services.
-          </p>
-        </p>
+        </div>  
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-        </motion.div>
+      </section>
 
-      </motion.div>
     </section>
   );
 }

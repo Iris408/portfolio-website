@@ -111,7 +111,8 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/bloom-app",
     demo: "",
-    image: [
+    image: "/images/bloom-home.png",
+    images: [
       "/images/bloom-home.png",
       "/images/bloom-routines.png",
       "/images/bloom-focus.png",

@@ -25,7 +25,7 @@ export default function ProjectsPageClient() {
           >
             <ProjectCard
               {...project}
-              onPreview={(image, title) => setPreview({ image, title })}
+              onPreview={(image, title) => setPreview(project)}
             />
           </motion.div>
         ))}

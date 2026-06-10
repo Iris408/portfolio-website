@@ -1,27 +1,52 @@
 // EN: Shared image preview modal — used by Projects.jsx (homepage) and ProjectsPageClient.jsx (/projects page)
 // JP: 共有画像プレビューモーダル — Projects.jsx（ホーム）と ProjectsPageClient.jsx（/projects ページ）で使用
 
-import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
-// EN: preview = { image, title } when open, null when closed
-// JP: preview は開いているとき { image, title }、閉じているとき null
+// EN: preview = project object when open, null when closed
+// JP: preview は開いているとき project オブジェクト、閉じているとき null
 export default function PreviewModal({ preview, onClose }) {
+  const images = preview?.images || [preview?.image]
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  const currentImage = images[currentImageIndex]
+
+  // EN: Reset preview image when a new project opens
+  // JP: 新しいプロジェクトを開いた時、最初の画像に戻します
+  useEffect(() => {
+    setCurrentImageIndex(0)
+  }, [preview])
+
   // EN: Close on Escape key and lock body scroll while open
   // JP: Escape キーで閉じる。開いている間はボディのスクロールをロック
   useEffect(() => {
     function handleKeyDown(e) {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") onClose()
     }
+
     if (preview) {
-      document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = "hidden"
     }
+
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [preview, onClose]);
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [preview, onClose])
+
+  function showPreviousImage() {
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    )
+  }
+
+  function showNextImage() {
+    setCurrentImageIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    )
+  }
 
   return (
     <AnimatePresence>
@@ -56,14 +81,42 @@ export default function PreviewModal({ preview, onClose }) {
               {preview.title}
             </p>
 
-            <img
-              src={preview.image}
-              alt={`${preview.title} screenshot preview`}
-              className="w-full max-h-[80vh] object-contain rounded-2xl border border-white/10"
-            />
+            <div className="relative">
+              <img
+                src={currentImage}
+                alt={`${preview.title} screenshot preview ${currentImageIndex + 1}`}
+                className="w-full max-h-[80vh] object-contain rounded-2xl border border-white/10"
+              />
+
+              {images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={showPreviousImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 px-3 py-2 text-white hover:bg-black/80 transition"
+                    aria-label="Previous preview image"
+                  >
+                    ←
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={showNextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 px-3 py-2 text-white hover:bg-black/80 transition"
+                    aria-label="Next preview image"
+                  >
+                    →
+                  </button>
+
+                  <p className="mt-3 text-center text-sm text-gray-300">
+                    {currentImageIndex + 1} / {images.length}
+                  </p>
+                </>
+              )}
+            </div>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  )
 }

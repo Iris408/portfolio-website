@@ -111,7 +111,12 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/bloom-app",
     demo: "",
-    image: "/images/bloom-app.png",
+    image: [
+      "/images/bloom-home.png",
+      "/images/bloom-routines.png",
+      "/images/bloom-focus.png",
+      "/images/bloom-progress.png",
+    ]  
   },
 
   // 新しいプロジェクトはここに追加 / Add new projects here

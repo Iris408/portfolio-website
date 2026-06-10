@@ -110,7 +110,7 @@ export const projects = [
       "UI Design",
     ],
     github: "https://github.com/Iris408/bloom-app",
-    demo: "",
+    demo: "https://bloom-app-three-xi.vercel.app/",
     image: "/images/bloom-home.png",
     images: [
       "/images/bloom-home.png",

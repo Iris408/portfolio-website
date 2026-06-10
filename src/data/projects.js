@@ -96,18 +96,18 @@ export const projects = [
   },
 
   {
-    featured: false,
+    featured: true,
     title: "Bloom",
     category: "Capstone · Accessibility",
     description:
-      "Active frontend capstone project focused on a calm, neurodivergent-friendly visual routine builder. Current features include task actions, an emoji picker, reusable UI components, font size controls, OpenDyslexic support, a reduce motion toggle, and accessible layout design.",
+      "Bloom is an accessibility-focused React routine builder designed for calm task sequencing, neurodivergent-friendly workflows, focus tasks, routine progress tracking and localStorage persistence.",
     tech: [
       "React",
       "JavaScript",
       "Vite",
       "Tailwind CSS",
       "Accessibility",
-      "UI Design",
+      "localStorage",
     ],
     github: "https://github.com/Iris408/bloom-app",
     demo: "",
@@ -119,8 +119,9 @@ export const projects = [
       "/images/bloom-progress.png",
     ]  
   },
-
-  // 新しいプロジェクトはここに追加 / Add new projects here
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage
+
+  // 新しいプロジェクトはここに追加 / Add new projects here
+
 ]

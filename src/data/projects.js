@@ -97,10 +97,10 @@ export const projects = [
 
   {
     featured: true,
-    title: "Bloom",
+    title: "Bloom - Calm Routine, Focus & Progress App",
     category: "Capstone · Accessibility",
     description:
-      "Bloom is an accessibility-focused React routine builder designed for calm task sequencing, neurodivergent-friendly workflows, focus tasks, routine progress tracking and localStorage persistence.",
+      "A calm, accessibility-focused routine builder and progress app built with React, Vite. Tailwind CSS and localStorage. Designed with low-demand UX, mobile-first layouts, dark mode, OpenDyslexic support, reusable empty states, progress tracking and beta feedback preparation.",
     tech: [
       "React",
       "JavaScript",

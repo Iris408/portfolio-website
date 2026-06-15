@@ -113,10 +113,15 @@ export const projects = [
     demo: "https://bloom-app-three-xi.vercel.app/",
     image: "/images/bloom-home.png",
     images: [
-      "/images/bloom-home.png",
-      "/images/bloom-routines.png",
-      "/images/bloom-focus.png",
-      "/images/bloom-progress.png",
+      "/screenshots/home-desktop.png",
+      "/screenshots/routines-desktop.png",
+      "/screenshots/focus-desktop.png",
+      "/screenshots/progress-dekstop.png",
+      "/screenshots/profile-desktop.png",
+      "/screenshots/home-mobile-safari.png",
+      "/screenshots/routines-mobile-safari.png",
+      "/screenshots/progress-mobile-safari.png",
+      "/screenshots/profile-mobile-safari.png",
     ]  
   },
   // featured: false にするとホームには出ず /projects のみに表示される

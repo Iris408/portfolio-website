@@ -73,7 +73,6 @@ portfolio-website/
 │
 ├── src/
 │   ├── components/
-│   │   ├── About.jsx
 │   │   ├── Contact.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Hero.jsx
@@ -82,7 +81,7 @@ portfolio-website/
 │   │   ├── ProjectCard.jsx
 │   │   ├── Projects.jsx
 │   │   ├── ProjectsPageClient.jsx
-│   │   └── Stack.jsx
+│   │   └── TechnicalLog.jsx
 │   │
 │   ├── data/
 │   │   └── projects.js
@@ -91,6 +90,7 @@ portfolio-website/
 │   │   └── MainLayout.astro
 │   │
 │   ├── pages/
+│   │   ├── about.astro
 │   │   ├── index.astro
 │   │   └── projects.astro
 │   │

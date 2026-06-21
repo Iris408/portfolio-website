@@ -1,0 +1,102 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+---
+
+<MainLayout>
+  <Navbar client:load />
+
+  <main class="min-h-screen px-6 pb-28 pt-36">
+    <section class="mx-auto max-w-6xl">
+      <p class="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § About / Background
+      </p>
+
+      <h1 class="mb-12 max-w-4xl text-4xl font-light leading-tight text-slate-100 md:text-5xl">
+        Building practical systems while growing into backend-focused full-stack engineering.
+      </h1>
+
+      <div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+        <aside class="border border-white/15 bg-white/5 p-6">
+          <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
+            Current Focus
+          </p>
+
+          <ul class="space-y-4 text-sm font-light leading-relaxed text-[#D8E0DD]">
+            <li>Backend-focused full-stack applications</li>
+            <li>Authentication and protected routes</li>
+            <li>PostgreSQL database persistence</li>
+            <li>Accessible and calm user interfaces</li>
+            <li>Testing, deployment, and documentation</li>
+            <li>Technical Japanese and engineering communication</li>
+          </ul>
+        </aside>
+
+        <div class="flex max-w-3xl flex-col gap-10 text-base font-light leading-8 text-[#D8E0DD]">
+          <p>
+            I am a junior full-stack / backend developer building practical web applications with
+            React, TypeScript, FastAPI, PostgreSQL, Docker, and GitHub Actions.
+          </p>
+
+          <p>
+            My work is focused on turning beginner projects into more realistic engineering systems:
+            authentication, persistent databases, API structure, protected routes, deployment workflows,
+            readable documentation, and maintainable code.
+          </p>
+
+          <p>
+            I am especially interested in backend systems, accessibility, automation, and products that
+            solve real problems in a calm and usable way. My current portfolio includes full-stack
+            dashboards, authentication systems, backend APIs, monitoring tools, and Bloom — an accessible
+            routine and focus app designed around low-pressure user experience.
+          </p>
+
+          <p>
+            I use my projects as an engineering lab: each one is a place to practise debugging, architecture,
+            Git workflow, deployment, testing, documentation, and explaining technical decisions clearly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-40 max-w-6xl">
+      <div class="mb-24 border-t border-white/20"></div>
+
+      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § Direction
+      </p>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Backend Engineering
+          </h2>
+
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            FastAPI, PostgreSQL, SQLAlchemy, authentication, API structure, testing, and deployment.
+          </p>
+        </article>
+
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Full&#8209;Stack Systems
+          </h2>
+
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            React, TypeScript, clean UI structure, protected pages, API integration, and user flows.
+          </p>
+        </article>
+
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Technical Communication
+          </h2>
+
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            Clear README files, project recaps, debugging notes, and future technical Japanese writing.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</MainLayout>

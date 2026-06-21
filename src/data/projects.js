@@ -10,7 +10,6 @@ export const projects = [
     category: "Full-Stack · Deployed",
     description:
       "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment, and GitHub Actions CI checks.",
-    // 使用技術のリスト / List of technologies used
     tech: [
       "React",
       "TypeScript",
@@ -24,10 +23,34 @@ export const projects = [
       "GitHub Actions",
     ],
     github: "https://github.com/Iris408/inventory-management-system",
-    // デモがない場合は空文字列 / Empty string means no demo link shown
     demo: "https://inventory-management-system-iris408.vercel.app",
-    // 画像は public/images/ フォルダに置く / Put images in the public/images/ folder
-    image: "/images/inventory_dashboard.png",
+    image: "/screenshots/inventory-dashboard.png",
+  },
+
+  {
+    featured: true,
+    title: "Bloom - Calm Routine, Focus & Progress App",
+    category: "Capstone · Accessibility",
+    description:
+      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, accessibility page controls, visual identity polish, and future full-stack persistence.",
+    tech: [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Tailwind CSS",
+      "Accessibility",
+      "localStorage",
+    ],
+    github: "https://github.com/Iris408/bloom-app",
+    demo: "https://bloom-app-three-xi.vercel.app/",
+    image: "/screenshots/bloom-overview.png",
+    images: [
+      "/screenshots/bloom-overview.png",
+      "/screenshots/bloom-login-modal.png",
+      "/screenshots/bloom-page-controls.png",
+      "/screenshots/bloom-routines.png",
+      "/screenshots/bloom-focus.png",
+    ],
   },
 
   {
@@ -49,11 +72,11 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/mini-user-api",
     demo: "https://mini-user-api.onrender.com/docs",
-    image: "/images/mini-user-api.png",
+    image: "/screenshots/mini-user-api.png",
   },
 
   {
-    featured: true,
+    featured: false,
     title: "JWT Authentication Dashboard",
     category: "Full-Stack · Auth",
     description:
@@ -70,11 +93,11 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/jwt-authentication-dashboard",
     demo: "https://jwt-authentication-dashboard-sepia.vercel.app",
-    image: "/images/jwt-auth-dashboard.png",
+    image: "/screenshots/jwt-auth-dashboard.png",
   },
 
   {
-    featured: true,
+    featured: false,
     title: "System Health Monitor",
     category: "DevOps · Monitoring",
     description:
@@ -92,35 +115,11 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/system-health-monitor",
     demo: "",
-    image: "/images/system-health-monitor.png",
+    image: "/screenshots/system-health-monitor.png",
   },
 
-  {
-    featured: true,
-    title: "Bloom - Calm Routine, Focus & Progress App",
-    category: "Capstone · Accessibility",
-    description:
-      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, and future full-stack persistence.",
-    tech: [
-      "React",
-      "JavaScript",
-      "Vite",
-      "Tailwind CSS",
-      "Accessibility",
-      "localStorage",
-    ],
-    github: "https://github.com/Iris408/bloom-app",
-    demo: "https://bloom-app-three-xi.vercel.app/",
-    image: "/screenshots/bloom-overview.png",
-    images: [
-      "/screenshots/bloom-page-controls.png",
-      "/screenshots/bloom-routines.png",
-      "/screenshots/bloom-focus.png",
-    ]  
-  },
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage
 
   // 新しいプロジェクトはここに追加 / Add new projects here
-
-]
+];

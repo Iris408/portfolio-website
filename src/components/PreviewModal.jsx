@@ -4,13 +4,14 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// EN: preview = project object when open, null when closed
-// JP: preview は開いているとき project オブジェクト、閉じているとき null
+// EN: preview = project/image object when open, null when closed
+// JP: preview は開いているとき project/image オブジェクト、閉じているとき null
 export default function PreviewModal({ preview, onClose }) {
   const images = preview?.images || [preview?.image]
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const validImages = images.filter(Boolean)
 
-  const currentImage = images[currentImageIndex]
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const currentImage = validImages[currentImageIndex]
 
   // EN: Reset preview image when a new project opens
   // JP: 新しいプロジェクトを開いた時、最初の画像に戻します
@@ -38,21 +39,21 @@ export default function PreviewModal({ preview, onClose }) {
 
   function showPreviousImage() {
     setCurrentImageIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
+      prev === 0 ? validImages.length - 1 : prev - 1
     )
   }
 
   function showNextImage() {
     setCurrentImageIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
+      prev === validImages.length - 1 ? 0 : prev + 1
     )
   }
 
   return (
     <AnimatePresence>
-      {preview && (
+      {preview && currentImage && (
         <motion.div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -61,7 +62,7 @@ export default function PreviewModal({ preview, onClose }) {
           role="dialog"
         >
           <motion.div
-            className="relative w-full max-w-5xl rounded-3xl border border-white/10 bg-slate-950 p-4 shadow-2xl"
+            className="relative w-full max-w-5xl rounded-3xl border border-[#D5D8E1]/30 bg-slate-950 p-4 shadow-2xl shadow-black/40"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -71,29 +72,31 @@ export default function PreviewModal({ preview, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-pink-300 text-pink-950 font-bold shadow-lg hover:bg-pink-200 transition"
+              className="absolute -right-4 -top-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#687394] font-bold text-slate-950 shadow-lg transition hover:bg-[#D5D8E1]"
               aria-label="Close image preview"
             >
-              ×
+              x
             </button>
 
-            <p className="text-sm font-avantgarde-book text-purple-300 mb-3 font-semibold">
+            <p className="mb-3 font-avantgarde-book text-sm font-semibold text-[#8CA0CF]">
               {preview.title}
             </p>
 
             <div className="relative">
               <img
                 src={currentImage}
-                alt={`${preview.title} screenshot preview ${currentImageIndex + 1}`}
-                className="w-full max-h-[80vh] object-contain rounded-2xl border border-white/10"
+                alt={`${preview.title} screenshot preview ${
+                  currentImageIndex + 1
+                }`}
+                className="max-h-[80vh] w-full rounded-2xl border border-[#D5D8E1]/30 object-contain"
               />
 
-              {images.length > 1 && (
+              {validImages.length > 1 && (
                 <>
                   <button
                     type="button"
                     onClick={showPreviousImage}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 px-3 py-2 text-white hover:bg-black/80 transition"
+                    className="absolute left-3 top-1/2 rounded-full bg-[#687394]/80 px-3 py-2 text-slate-950 transition hover:bg-[#D5D8E1]"
                     aria-label="Previous preview image"
                   >
                     ←
@@ -102,14 +105,14 @@ export default function PreviewModal({ preview, onClose }) {
                   <button
                     type="button"
                     onClick={showNextImage}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/60 px-3 py-2 text-white hover:bg-black/80 transition"
+                    className="absolute right-3 top-1/2 rounded-full bg-[#687394]/80 px-3 py-2 text-slate-950 transition hover:bg-[#D5D8E1]"
                     aria-label="Next preview image"
                   >
                     →
                   </button>
 
-                  <p className="mt-3 text-center text-sm text-gray-300">
-                    {currentImageIndex + 1} / {images.length}
+                  <p className="mt-3 text-center text-sm text-[#8CA0CF]">
+                    {currentImageIndex + 1} / {validImages.length}
                   </p>
                 </>
               )}

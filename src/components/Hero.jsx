@@ -1,73 +1,95 @@
-import { motion } from "framer-motion";
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section className="relative flex min-h-screen items-center px-6 pb-28 pt-36">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        {/* EN: Main profile introduction */}
+        {/* JP: メインのプロフィール紹介 */}
+        <div>
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+            § 01 / Profile
+          </p>
 
-      <div className="absolute inset-0 -z-10 flex justify-center">
-        <div className="w-[500px] h-[500px] bg-white/20 blur-[120px] rounded-full" />
+          <h1 className="mb-7 max-w-4xl text-4xl font-light leading-tight text-slate-100 md:text-6xl">
+            Ashleigh M
+            <span className="block text-3xl font-light text-[#A5B5A3] md:text-5xl">
+              Engineering Lab
+            </span>
+          </h1>
+
+          <p className="mb-5 max-w-2xl text-base font-light leading-relaxed text-slate-200 md:text-lg">
+            Backend-focused full-stack developer building practical,
+            production-style web applications.
+          </p>
+
+          <p className="max-w-2xl text-sm font-light leading-relaxed text-[#D8E0DD] md:text-base">
+            My current focus is the practical work behind production-ready applications: authentication, database persistence, 
+            accessible interfaces, testing, deployment and documentation.
+          </p>
+
+          {/* EN: Hero actions */}
+          {/* JP: ヒーローセクションのアクションボタン */}
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#projects"
+              className="inline-flex border border-[#A5B5A3]/40 bg-[#A5B5A3] px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-[#243034] transition hover:border-white hover:bg-white"
+            >
+              View featured projects
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex border border-[#97A4AD]/40 px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-slate-100 transition hover:border-[#A5B5A3]/70 hover:bg-white/10"            >
+              Contact
+            </a>
+          </div>
+        </div>
+
+        {/* EN: Engineering focus summary */}
+        {/* JP: エンジニアリングフォーカスの概要 */}
+        <div className="border border-[#97A4AD]/20 bg-white/5 p-6">
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-[#A5B5A3]">
+            Current Stack
+          </p>
+
+          <div className="grid gap-4">
+            <div className="border-b border-[#97A4AD]/20 pb-4">
+              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
+                Backend
+              </p>
+              <p className="mt-1 text-base font-normal text-slate-100">
+                Python · FastAPI · PostgreSQL · SQLAlchemy
+              </p>
+            </div>
+
+            <div className="border-b border-[#97A4AD]/20 pb-4">
+              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
+                Frontend
+              </p>
+              <p className="mt-1 text-base font-normal text-slate-100">
+                React · TypeScript · JavaScript · Tailwind CSS
+              </p>
+            </div>
+
+            <div className="border-b border-[#97A4AD]/20 pb-4">
+              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
+                DevOps / Workflow
+              </p>
+              <p className="mt-1 text-base font-normal text-slate-100">
+                Docker · GitHub Actions · Vercel · Render
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
+                Project Direction
+              </p>
+              <p className="mt-1 text-base font-normal text-slate-100">
+                Backend-focused full-stack systems and accessible product design
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto text-center"
-      >
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-purple-900/40 font-medium md:text-4xl mb-4"
-        >
-          Junior Backend & Full-Stack Engineer
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-slate-200 text-5xl md:text-7xl font-bold leading-tight mb-10"
-        >
-          Building reliable, modern web applications.
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-slate-200 text-lg md:text-xl max-w-3xl mx-auto mb-6"
-        >
-          Building practical full-stack applications using React, TypeScript, 
-          FastAPI, PostgreSQL, Docker, Python, and Linux.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-full border border-white/40 bg-purple-900/40 text-gray-200 font-semibold hover:bg-purple-400/20 transition"
-          >
-            View Projects
-          </a>
-
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-full border border-white/40 hover:bg-white/20 transition"
-          >
-            Contact Me
-          </a>
-
-        </motion.div>
-
-      </motion.div>
-
     </section>
   );
 }

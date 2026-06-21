@@ -1,54 +1,61 @@
-// EN: Reusable project card component — used by Projects.jsx (homepage) and ProjectsPageClient.jsx (/projects page)
-// JP: 再利用可能なプロジェクトカードコンポーネント — Projects.jsx（ホーム）と ProjectsPageClient.jsx（/projects ページ）で使用
+// EN: Reusable project card component — used by Projects.jsx and ProjectsPageClient.jsx
+// JP: 再利用可能なプロジェクトカードコンポーネント — Projects.jsx と ProjectsPageClient.jsx で使用
 
-export default function ProjectCard({ title, category, description, tech, github, demo, image, onPreview }) {
+export default function ProjectCard({
+  title,
+  category,
+  description,
+  tech,
+  github,
+  demo,
+  image,
+  onPreview,
+}) {
   return (
-    <div className="group relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:-translate-y-2 hover:border-purple-400/40 transition duration-300 overflow-hidden flex flex-col">
-      {/* EN: Glow effect on hover */}
-      {/* JP: ホバー時のグロー効果 */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-        <div className="absolute inset-0 bg-purple-400/5 blur-3xl" />
-      </div>
-
+    <div className="group relative flex h-full flex-col overflow-hidden border border-white/15 bg-white/5 p-6 transition duration-300 hover:border-[#A5B5A3]/60">
       {/* EN: Category label */}
       {/* JP: カテゴリラベル */}
-      <span className="text-xs font-mono text-purple-400/70 tracking-widest uppercase mb-6 relative z-10">
+      <span className="relative z-10 mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
         {category}
       </span>
 
-      <h3 className="text-xl font-avantgarde-book text-slate-200 font-bold mb-3 relative z-10 leading-snug">
+      {/* EN: Project title */}
+      {/* JP: プロジェクトタイトル */}
+      <h3 className="relative z-10 mb-4 min-h-[3.5rem] text-xl font-normal leading-snug text-slate-100">
         {title}
       </h3>
 
-      <p className="text-slate-200 font-avantgarde-book mb-6 leading-relaxed relative z-10 text-sm">
+      {/* EN: Project description */}
+      {/* JP: プロジェクト説明 */}
+      <p className="relative z-10 mb-6 min-h-[8rem] text-sm font-light leading-relaxed text-[#D8E0DD]">
         {description}
       </p>
 
       {/* EN: Technology tags */}
       {/* JP: 技術タグ */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6 relative z-10">
+      <div className="relative z-10 mb-6 flex flex-wrap gap-2">
         {tech.map((item) => (
           <span
             key={item}
-            className="px-3 py-1 rounded-full bg-pink-500/10 border border-purple-400/20 font-avantgarde-book text-purple-300 text-xs"
+            className="border border-[#97A4AD]/20 bg-transparent px-3 py-1 text-xs font-light text-[#D8E0DD]"
           >
             {item}
           </span>
         ))}
       </div>
 
-      {/* EN: Action buttons — GitHub, Live Demo, Preview */}
-      {/* JP: アクションボタン — GitHub、ライブデモ、プレビュー */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-auto relative z-10">
+      {/* EN: Action buttons */}
+      {/* JP: アクションボタン */}
+      <div className="relative z-10 mt-auto grid grid-cols-1 gap-3 pt-6 sm:grid-cols-3">
         {github && (
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/20 font-avantgarde-book font-semibold text-pink-300/70 hover:bg-pink-300/70 hover:text-pink-950 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
-        >
-          GitHub
-        </a>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
+          >
+            GitHub
+          </a>
         )}
 
         {demo && (
@@ -56,19 +63,17 @@ export default function ProjectCard({ title, category, description, tech, github
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-purple-300/90 hover:bg-pink-950 hover:text-pink-100/70 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
+            className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
             Live Demo
           </a>
         )}
 
-        {/* EN: Preview button calls onPreview prop */}
-        {/* JP: プレビューボタンは onPreview プロップを呼び出す */}
         {image && onPreview && (
           <button
             type="button"
             onClick={() => onPreview(image, title)}
-            className="h-12 px-4 rounded-full border bg-purple-400/20 border-pink-300/30 font-avantgarde-book font-semibold text-pink-100/90 hover:bg-pink-400/50 hover:text-pink-950 transition text-sm inline-flex items-center justify-center text-center whitespace-nowrap"
+            className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
             Preview
           </button>

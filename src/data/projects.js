@@ -100,7 +100,7 @@ export const projects = [
     title: "Bloom - Calm Routine, Focus & Progress App",
     category: "Capstone · Accessibility",
     description:
-      "A calm, accessibility-focused routine builder and progress app built with React, Vite. Tailwind CSS and localStorage. Designed with low-demand UX, mobile-first layouts, dark mode, OpenDyslexic support, reusable empty states, progress tracking and beta feedback preparation.",
+      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, and future full-stack persistence.",
     tech: [
       "React",
       "JavaScript",
@@ -111,17 +111,11 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/bloom-app",
     demo: "https://bloom-app-three-xi.vercel.app/",
-    image: "/images/bloom-home.png",
+    image: "/screenshots/bloom-overview.png",
     images: [
-      "/screenshots/home-desktop.png",
-      "/screenshots/routines-desktop.png",
-      "/screenshots/focus-desktop.png",
-      "/screenshots/progress-dekstop.png",
-      "/screenshots/profile-desktop.png",
-      "/screenshots/home-mobile-safari.png",
-      "/screenshots/routines-mobile-safari.png",
-      "/screenshots/progress-mobile-safari.png",
-      "/screenshots/profile-mobile-safari.png",
+      "/screenshots/bloom-page-controls.png",
+      "/screenshots/bloom-routines.png",
+      "/screenshots/bloom-focus.png",
     ]  
   },
   // featured: false にするとホームには出ず /projects のみに表示される

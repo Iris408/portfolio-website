@@ -78,7 +78,7 @@ export default function PreviewModal({ preview, onClose }) {
               x
             </button>
 
-            <p className="mb-3 font-avantgarde-book text-sm font-semibold text-[#8CA0CF]">
+            <p className="mb-3 text-sm font-semibold text-[#8CA0CF]">
               {preview.title}
             </p>
 

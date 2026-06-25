@@ -13,11 +13,14 @@ import ProjectsPageClient from "../components/ProjectsPageClient.jsx";
 
   <main class="min-h-screen px-6 py-32">
     <section class="max-w-6xl mx-auto">
-
       <div class="text-center mb-14">
         <p class="text-white text-4xl font-semibold mb-3">Portfolio</p>
-        <h1 class="font-avantgarde-book text-5xl text-white font-bold">All Projects</h1>
-        <p class="font-avantgarde-book text-white text-2xl mt-4 max-w-2xl mx-auto">
+
+        <h1 class="text-5xl text-white font-bold">
+          All Projects
+        </h1>
+
+        <p class="text-white text-2xl mt-4 max-w-2xl mx-auto leading-relaxed">
           A collection of backend, DevOps, full-stack, automation, and learning projects.
         </p>
       </div>
@@ -25,7 +28,6 @@ import ProjectsPageClient from "../components/ProjectsPageClient.jsx";
       {/* EN: ProjectsPageClient owns the grid and modal — client:load hydrates it as React */}
       {/* JP: ProjectsPageClient がグリッドとモーダルを管理 — client:load で React としてハイドレートされる */}
       <ProjectsPageClient client:load />
-
     </section>
   </main>
 

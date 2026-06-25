@@ -10,6 +10,7 @@ export const projects = [
     title: "Inventory Management System",
     category: "Full-Stack · Deployed",
     status: "Deployed full-stack MVP",
+    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "Deployed"],
     description:
       "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment, and GitHub Actions CI checks.",
     tech: [
@@ -34,6 +35,7 @@ export const projects = [
     title: "Bloom - Calm Routine, Focus & Progress App",
     category: "Capstone · Accessibility",
     status: "Public beta / frontend MVP",
+    tags: ["Frontend", "React", "Accessibility", "Deployed"],
     description:
       "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, accessibility page controls, visual identity polish, and future full-stack persistence.",
     tech: [
@@ -64,6 +66,7 @@ export const projects = [
     title: "Mini User API",
     category: "Backend · API",
     status: "Deployed backend MVP",
+    tags: ["Backend", "Python", "PostgreSQL", "Docker", "Deployed"],
     description:
       "Deployed FastAPI backend API with PostgreSQL, SQLAlchemy, JWT authentication, role-based access control, Docker support, Swagger API documentation, Render deployment, and GitHub Actions CI checks. This API powers the JWT Authentication Dashboard frontend.",
     tech: [
@@ -130,6 +133,7 @@ export const projects = [
     title: "System Health Monitor",
     category: "DevOps · Monitoring",
     status: "Completed beginner DevOps project",
+    tags: ["DevOps", "Python", "Docker"],
     description:
       "Python-based system monitoring tool that tracks CPU, memory, disk usage, and uptime with threshold alerts, structured logging, Slack/email notifications, Docker support, a FastAPI dashboard, a /health JSON endpoint, and GitHub Actions CI checks.",
     tech: [
@@ -149,28 +153,20 @@ export const projects = [
   },
 
   {
-    featured: false,
-    title: "Technical Blog / Engineer Notebook",
-    category: "Frontend · Technical Writing",
-    status: "One-page MVP",
+    title: "Log Intelligence Analyzer",
+    category: "Backend · Log Analysis",
     description:
-      "A minimalist one-page technical blog built to document engineering notes, debugging lessons, project progress, and technical Japanese practice. The page uses a Japanese-first structure with English support, helping me practise clear technical explanations while maintaining a simple developer portfolio-style layout.",
-    tech: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive Design",
-      "Technical Writing",
-      "Technical Japanese",
-    ],
-    github: "https://github.com/Iris408/technical-blog",
-    demo: "https://iris408.github.io/technical-blog/",
-    image: "/screenshots/technical-blog-jp.png",
+      "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data.",
+    tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
+    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker"],
+    github: "https://github.com/Iris408/log-intelligence-analyzer",
+    demo: "",
+    image: "/.screenshots/log_intelligence_output.png",
     images: [
-      "/screenshots/technical-blog-jp.png",
-      "/screenshots/technical-blog-en.png",
-      "/screenshots/technical-blog-field-notes.png",
+      "/.screenshots/log_intelligence_output.png",
+      "/.screenshots/log_intelligence_docker.png",
     ],
+    featured: false,
   },
 
   {
@@ -190,7 +186,46 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/vehicle-diagnostic-ui-demo",
     demo: "",
-    image: "/screenshots/vehicle-diagnostic-ui-demo.png",
+    image: "/screenshots/vehicle-diagnostic-dashboard.png",
+  },
+
+  {
+    title: "Java Expense Tracker API",
+    category: "Java · Backend",
+    description:
+      "A Java learning project progressing from a console-based expense tracker toward a Spring Boot API with PostgreSQL, Docker, CRUD endpoints, validation, and backend architecture practice.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Docker", "Maven"],
+    tags: ["Java", "Backend", "PostgreSQL", "Docker"],
+    github: "https://github.com/Iris408/java-expense-tracker-api",
+    demo: "",
+    image: "",
+    images: [],
+    featured: false,
+  },
+
+  {
+    featured: false,
+    title: "Technical Blog · Engineer Notebook",
+    category: "Frontend · Documentation",
+    status: "One-page MVP",
+    description:
+      "A minimalist one-page technical blog built to document engineering notes, debugging lessons, project progress, and technical Japanese practice. The page uses a Japanese-first structure with English support, helping me practise clear technical explanations while maintaining a simple developer portfolio-style layout.",
+    tech: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design",
+      "Technical Writing",
+      "Technical Japanese",
+    ],
+    github: "https://github.com/Iris408/technical-blog",
+    demo: "https://iris408.github.io/technical-blog/",
+    image: "/screenshots/technical-blog-jp.png",
+    images: [
+      "/screenshots/technical-blog-jp.png",
+      "/screenshots/technical-blog-en.png",
+      "/screenshots/technical-blog-field-notes.png",
+    ],
   },
 
   // featured: false にするとホームには出ず /projects のみに表示される

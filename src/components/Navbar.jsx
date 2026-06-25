@@ -53,7 +53,7 @@ export default function Navbar() {
             Projects
           </a>
 
-          <a href="/#log" className="transition hover:text-[#A5B5A3]">
+          <a href="/technical-log" className="transition hover:text-[#A5B5A3]">
             Log
           </a>
 
@@ -120,7 +120,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="/#log"
+            href="/technical-log"
             onClick={() => setIsOpen(false)}
             className="transition hover:text-[#A5B5A3]"
           >

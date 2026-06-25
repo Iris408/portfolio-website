@@ -100,7 +100,7 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-            § 02 / Selected Work
+            § 03 / Selected Work
           </p>
 
           <h2 className="max-w-3xl text-3xl font-light leading-tight text-slate-100 md:text-5xl">

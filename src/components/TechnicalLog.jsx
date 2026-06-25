@@ -1,5 +1,5 @@
-// EN: Technical log section — shows current engineering learning/debugging focus
-// JP: テクニカルログセクション — 現在の学習・デバッグ・開発フォーカスを表示します
+// EN: Technical notes preview section — links to the full Technical Log page
+// JP: テクニカルノートのプレビューセクション — 完全な Technical Log ページへリンクします
 
 const logEntries = [
   {
@@ -26,20 +26,22 @@ export default function TechnicalLog() {
   return (
     <section id="log" className="border-t border-white/20 px-6 py-28">
       <div className="mx-auto max-w-6xl">
-        {/* EN: Section heading */}
-        {/* JP: セクション見出し */}
         <div className="mb-14">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-            § 03 / Technical Log
+            § 02 / Technical Notes
           </p>
 
           <h2 className="max-w-3xl text-3xl font-light leading-tight text-slate-100 md:text-5xl">
-            Field notes from building production-style apps.
+            Debugging notes and engineering lessons from my project work
           </h2>
+
+          <p className="mt-6 max-w-3xl text-sm font-light leading-relaxed text-[#D8E0DD]">
+            I use my Technical Log to document project issues, debugging steps,
+            fixes, and lessons learned while building backend, full-stack,
+            DevOps, Java, and accessible frontend projects.
+          </p>
         </div>
 
-        {/* EN: Log cards */}
-        {/* JP: ログカード */}
         <div className="grid gap-6 md:grid-cols-3">
           {logEntries.map((entry) => (
             <article
@@ -59,6 +61,15 @@ export default function TechnicalLog() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <a
+            href="/technical-log"
+            className="inline-flex border border-[#A5B5A3]/40 bg-[#A5B5A3] px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-[#243034] transition hover:border-white hover:bg-white"
+          >
+            View Technical Log →
+          </a>
         </div>
       </div>
     </section>

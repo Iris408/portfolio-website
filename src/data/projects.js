@@ -167,6 +167,7 @@ export const projects = [
     demo: "https://iris408.github.io/technical-blog/",
     image: "/screenshots/technical-blog-jp.png",
     images: [
+      "/screenshots/technical-blog-jp.png",
       "/screenshots/technical-blog-en.png",
       "/screenshots/technical-blog-field-notes.png",
     ],

@@ -1,12 +1,21 @@
 @import "tailwindcss";
+
 @theme {
   --font-avantgarde-book: "Avant Garde", "Century Gothic", "Avenir Next", Arial, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+
 body {
-    font-family: "Montserrat", "Zen Maru Gothic", system-ui, sans-serif;
-    font-weight: 300;
+  font-family: "Montserrat", "Zen Maru Gothic", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+/* EN: Force the projects page to use the same portfolio font */
+/* JP: Projectsページでポートフォリオ全体と同じフォントを使います */
+.projects-page,
+.projects-page * {
+  font-family: "Montserrat", "Zen Maru Gothic", system-ui, sans-serif !important;
 }

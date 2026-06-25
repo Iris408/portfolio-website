@@ -7,58 +7,71 @@ import Navbar from "../components/Navbar.jsx";
   <Navbar client:load />
 
   <main class="min-h-screen px-6 pb-28 pt-36">
+
+    <!-- ── § About / Background ─────────────────────────────────────── -->
     <section class="mx-auto max-w-6xl">
       <p class="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
         § About / Background
       </p>
 
-      <h1 class="mb-12 max-w-4xl text-4xl font-light leading-tight text-slate-100 md:text-5xl">
-        Building practical systems while growing into backend-focused full-stack engineering.
+      <h1 class="mb-12 max-w-4xl font-light leading-tight text-slate-100">
+        <span class="block text-4xl md:text-5xl">Building practical systems.</span>
+        <span class="block text-4xl md:text-5xl text-[#A5B5A3]">
+          Growing into backend-focused full-stack engineering.
+        </span>
       </h1>
 
       <div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+
+        <!-- Current Focus card -->
         <aside class="border border-white/15 bg-white/5 p-6">
           <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
-            Current Focus
+            § Current Focus
           </p>
 
           <ul class="space-y-4 text-sm font-light leading-relaxed text-[#D8E0DD]">
-            <li>Backend-focused full-stack applications</li>
-            <li>Authentication and protected routes</li>
-            <li>PostgreSQL database persistence</li>
-            <li>Accessible and calm user interfaces</li>
-            <li>Testing, deployment, and documentation</li>
-            <li>Technical Japanese and engineering communication</li>
+            <li>→ Building backend systems that go beyond the tutorial</li>
+            <li>→ Authentication, protected routes, and real database persistence</li>
+            <li>→ Full-stack apps with accessible, low-pressure interfaces</li>
+            <li>→ Testing, deployment, and documentation as first-class concerns</li>
+            <li>→ Learning to explain engineering concepts in Japanese</li>
           </ul>
         </aside>
 
+        <!-- About prose -->
         <div class="flex max-w-3xl flex-col gap-10 text-base font-light leading-8 text-[#D8E0DD]">
           <p>
-            I am a junior full-stack / backend developer building practical web applications with
-            React, TypeScript, FastAPI, PostgreSQL, Docker, and GitHub Actions.
+            I build full-stack and backend systems with React, TypeScript,
+            FastAPI, PostgreSQL, Docker, and GitHub Actions.
           </p>
 
           <p>
-            My work is focused on turning beginner projects into more realistic engineering systems:
-            authentication, persistent databases, API structure, protected routes, deployment workflows,
-            readable documentation, and maintainable code.
+            My focus is turning beginner projects into realistic engineering
+            systems — the kind with real authentication, persistent databases,
+            protected routes, clean documentation, and deployment workflows
+            that actually hold up.
           </p>
 
           <p>
-            I am especially interested in backend systems, accessibility, automation, and products that
-            solve real problems in a calm and usable way. My current portfolio includes full-stack
-            dashboards, authentication systems, backend APIs, monitoring tools, and Bloom — an accessible
-            routine and focus app designed around low-pressure user experience.
+            I'm drawn to backend architecture, accessibility, and products
+            that solve real problems without overwhelming the people using
+            them. That interest led to Bloom — an accessible routine and
+            focus app built around low-pressure user experience and calm,
+            inclusive design.
           </p>
 
           <p>
-            I use my projects as an engineering lab: each one is a place to practise debugging, architecture,
-            Git workflow, deployment, testing, documentation, and explaining technical decisions clearly.
+            I use every project as an engineering lab: a place to practise
+            debugging, architecture decisions, Git workflow, testing, and
+            explaining technical choices clearly — not just to make things
+            work, but to understand why they work.
           </p>
         </div>
+
       </div>
     </section>
 
+    <!-- ── § Direction ───────────────────────────────────────────────── -->
     <section class="mx-auto mt-40 max-w-6xl">
       <div class="mb-24 border-t border-white/20"></div>
 
@@ -67,13 +80,15 @@ import Navbar from "../components/Navbar.jsx";
       </p>
 
       <div class="grid gap-6 lg:grid-cols-3">
+
         <article class="border border-white/15 bg-white/5 p-6">
           <h2 class="mb-4 text-xl font-normal text-slate-100">
             Backend Engineering
           </h2>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            FastAPI, PostgreSQL, SQLAlchemy, authentication, API structure, testing, and deployment.
+            Building APIs that hold up — authentication, database
+            persistence, structured routes, validation, testing,
+            and deployment with FastAPI and PostgreSQL.
           </p>
         </article>
 
@@ -81,9 +96,10 @@ import Navbar from "../components/Navbar.jsx";
           <h2 class="mb-4 text-xl font-normal text-slate-100">
             Full&#8209;Stack Systems
           </h2>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            React, TypeScript, clean UI structure, protected pages, API integration, and user flows.
+            Connecting frontend to backend with React and TypeScript —
+            protected routes, API integration, accessible interfaces,
+            and user flows that work end to end.
           </p>
         </article>
 
@@ -91,12 +107,152 @@ import Navbar from "../components/Navbar.jsx";
           <h2 class="mb-4 text-xl font-normal text-slate-100">
             Technical Communication
           </h2>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Clear README files, project recaps, debugging notes, and future technical Japanese writing.
+            Writing clearly about technical decisions — README files,
+            architecture notes, debugging recaps, and documentation
+            that makes projects readable beyond the code itself.
           </p>
         </article>
+
       </div>
     </section>
+
+    <!-- ── § Background ──────────────────────────────────────────────── -->
+    <section class="mx-auto mt-40 max-w-6xl">
+      <div class="mb-24 border-t border-white/20"></div>
+
+      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § Background
+      </p>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Education
+          </h2>
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            MSc Computer Science — currently in progress.
+            Building engineering fundamentals alongside
+            practical project work.
+          </p>
+        </article>
+
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Experience
+          </h2>
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            ADAS Operations at Tesla, EMEA. Operational
+            systems experience that shaped how I think about
+            reliability, process, and attention to detail.
+          </p>
+        </article>
+
+        <article class="border border-white/15 bg-white/5 p-6">
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Location
+          </h2>
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            London and Edinburgh. Open to remote, hybrid,
+            and international roles. Working toward
+            technical communication in Japanese.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── § Building ────────────────────────────────────────────────── -->
+    <section class="mx-auto mt-40 max-w-6xl">
+      <div class="mb-24 border-t border-white/20"></div>
+
+      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § Building
+      </p>
+
+      <ul class="space-y-6 text-sm font-light leading-relaxed text-[#D8E0DD]">
+
+        <li class="flex flex-col gap-2 border-b border-white/10 pb-6">
+          <span class="text-base font-normal text-slate-100">Bloom</span>
+          <span>
+            An accessible routine and focus app for neurodivergent users.
+            React · FastAPI · PostgreSQL · JWT auth · v2.0.0 in progress.
+          </span>
+        </li>
+
+        <li class="flex flex-col gap-2 border-b border-white/10 pb-6">
+          <span class="text-base font-normal text-slate-100">
+            AI HR Support Assistant
+          </span>
+          <span>
+            Full-stack LLM-integrated support tool.
+            React · TypeScript · FastAPI · PostgreSQL · Docker.
+          </span>
+        </li>
+
+        <li class="flex flex-col gap-2 border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
+          <span class="text-base font-normal text-slate-100">
+            JWT Authentication Dashboard
+          </span>
+          <span>
+            Role-based access control with OAuth2 and JWT.
+            FastAPI · React · TypeScript · Vercel · Render.
+          </span>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ── § Approach ────────────────────────────────────────────────── -->
+    <section class="mx-auto mt-40 max-w-6xl">
+      <div class="mb-24 border-t border-white/20"></div>
+
+      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § Approach
+      </p>
+
+      <ul class="space-y-4 text-sm font-light leading-relaxed text-[#D8E0DD]">
+        <li>→ Build things that work before making them clever</li>
+        <li>→ Understand the error before reaching for the fix</li>
+        <li>→ Write code as if someone else has to read it tomorrow</li>
+        <li>→ Documentation is part of the work, not an afterthought</li>
+        <li>→ Ship something small and real over something large and theoretical</li>
+        <li>→ Build for real people, not ideal users</li>
+      </ul>
+    </section>
+
+    <!-- ── § Writing ─────────────────────────────────────────────────── -->
+    <section class="mx-auto mt-40 max-w-6xl">
+      <div class="mb-24 border-t border-white/20"></div>
+
+      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
+        § Writing
+      </p>
+
+      <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+
+        <div>
+          <h2 class="mb-4 text-xl font-normal text-slate-100">
+            Technical Log
+          </h2>
+          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
+            Field notes from building production-style apps —
+            bugs, decisions, fixes, and the reasoning behind them.
+          </p>
+        </div>
+
+        <div class="flex items-start">
+          <a
+            href="/technical-log"
+            class="inline-block border border-white/15 bg-white/5 px-5 py-3 text-sm font-light text-[#D8E0DD] transition hover:bg-white/10 hover:text-slate-100"
+          >
+            Read the log →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 </MainLayout>

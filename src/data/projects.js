@@ -173,6 +173,26 @@ export const projects = [
     ],
   },
 
+  {
+    featured: true,
+    title: "Vehicle Diagnostic UI Demo",
+    category: "Frontend · Vehicle Diagnostics",
+    status: "Portfolio-ready frontend MVP",
+    description:
+      "A React and TypeScript vehicle diagnostic dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, technician-focused suggested actions, and vehicle module health tracking using mock diagnostic data.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "CSS",
+      "Responsive Design",
+      "Mock Diagnostic Data",
+    ],
+    github: "https://github.com/Iris408/vehicle-diagnostic-ui-demo",
+    demo: "",
+    image: "/screenshots/vehicle-diagnostic-ui-demo.png",
+  },
+
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage
 

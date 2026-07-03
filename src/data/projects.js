@@ -12,7 +12,7 @@ export const projects = [
     status: "Deployed full-stack MVP",
     tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
     description:
-      "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment, and GitHub Actions CI checks. Includes GitHub Actions pipelines for backend checks, frontend build validation, and Docker Compose validation.",  
+      "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment. Includes GitHub Actions pipelines for backend checks, frontend build validation, and Docker Compose validation.",  
     tech: [
       "React",
       "TypeScript",
@@ -133,9 +133,9 @@ export const projects = [
     title: "System Health Monitor",
     category: "DevOps · Monitoring",
     status: "Completed beginner DevOps project",
-    tags: ["DevOps", "Python", "Docker"],
+    tags: ["DevOps", "Python", "Docker", "CI/CD"],
     description:
-      "Python-based system monitoring tool that tracks CPU, memory, disk usage, and uptime with threshold alerts, structured logging, Slack/email notifications, Docker support, a FastAPI dashboard, a /health JSON endpoint, and GitHub Actions CI checks.",
+      "Python-based system monitoring tool that tracks CPU, memory, disk usage, and uptime with threshold alerts, structured logging, Slack/email notifications, Docker support, a FastAPI dashboard, a /health JSON endpoint. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
     tech: [
       "Python",
       "FastAPI",
@@ -156,10 +156,10 @@ export const projects = [
     title: "Log Intelligence Analyzer",
     category: "Backend · Log Analysis",
     description:
-      "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data.",
+      "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
     ci: "Includes GitHub Actions backend CI with Python validation and Docker image checks.",
-    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker"],
+    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker", "CI/CD"],
     github: "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
     image: "/.screenshots/log_intelligence_output.png",

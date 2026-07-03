@@ -66,9 +66,9 @@ export const projects = [
     title: "Mini User API",
     category: "Backend · API",
     status: "Deployed backend MVP",
-    tags: ["Backend", "Python", "PostgreSQL", "Docker", "Deployed"],
+    tags: ["Backend", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
     description:
-      "Deployed FastAPI backend API with PostgreSQL, SQLAlchemy, JWT authentication, role-based access control, Docker support, Swagger API documentation, Render deployment, and GitHub Actions CI checks. This API powers the JWT Authentication Dashboard frontend.",
+      "A minimal user API built with FastAPI and PostgreSQL, featuring JWT authentication, protected routes, and Docker deployment. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, and Docker image validation.",
     tech: [
       "Python",
       "FastAPI",
@@ -90,8 +90,9 @@ export const projects = [
     title: "JWT Authentication Dashboard",
     category: "Full-Stack · Auth",
     status: "Deployed frontend integration",
+    tags: ["Full-Stack", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
     description:
-      "Deployed React and TypeScript authentication dashboard connected to a FastAPI backend. Includes JWT login, token storage, protected dashboard access, admin-only user listing, role-based UI rendering, Vercel deployment, Render backend integration, and GitHub Actions CI checks.",
+      "A React and TypeScript authentication dashboard connected to a FastAPI backend, with login, protected dashboard routes, admin-only access, and deployed frontend/backend integration. Includes GitHub Actions frontend CI and Docker image validation.",
     tech: [
       "React",
       "TypeScript",
@@ -112,6 +113,7 @@ export const projects = [
     title: "AI HR Support Assistant",
     category: "Full-Stack · AI Workflow",
     status: "Portfolio-ready MVP",
+    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker"],
     description:
       "Built a full-stack AI-assisted HR support dashboard using React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, Alembic, and Docker Compose. The app allows employees to submit HR tickets, uses mock AI logic to classify category and priority, provides suggested response drafts for HR review, and includes HR/Admin dashboards with filtering, sorting, responsive ticket queues, and status update workflows.",
     tech: [
@@ -158,14 +160,13 @@ export const projects = [
     description:
       "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
-    ci: "Includes GitHub Actions backend CI with Python validation and Docker image checks.",
     tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker", "CI/CD"],
     github: "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
-    image: "/.screenshots/log_intelligence_output.png",
+    image: "/screenshots/log_intelligence_output.png",
     images: [
-      "/.screenshots/log_intelligence_output.png",
-      "/.screenshots/log_intelligence_docker.png",
+      "/screenshots/log_intelligence_output.png",
+      "/screenshots/log_intelligence_docker.png",
     ],
     featured: false,
   },
@@ -175,6 +176,7 @@ export const projects = [
     title: "Vehicle Diagnostic UI Demo",
     category: "Frontend · Vehicle Diagnostics",
     status: "Portfolio-ready frontend MVP",
+    tags: ["Frontend", "React", "TypeScript"],
     description:
       "A React and TypeScript vehicle diagnostic dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, technician-focused suggested actions, and vehicle module health tracking using mock diagnostic data.",
     tech: [
@@ -209,6 +211,7 @@ export const projects = [
     title: "Technical Blog · Engineer Notebook",
     category: "Frontend · Documentation",
     status: "One-page MVP",
+    tags: ["Frontend", "Documentation"],
     description:
       "A minimalist one-page technical blog built to document engineering notes, debugging lessons, project progress, and technical Japanese practice. The page uses a Japanese-first structure with English support, helping me practise clear technical explanations while maintaining a simple developer portfolio-style layout.",
     tech: [
@@ -231,7 +234,8 @@ export const projects = [
 
   {
     title: "Live Weather Report",
-    category: "Python / Automation",
+    category: "Python · Automation",
+    status: "Completed Python automation project",
     description:
       "A Python automation project that generates live weather reports with API request handling, retry and timeout logic, fallback error handling, and readable project documentation. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
     tech: ["Python", "API Requests", "ReportLab", "GitHub Actions"],
@@ -245,7 +249,8 @@ export const projects = [
 
   {
     title: "Payment Receipt Generator",
-    category: "Python / PDF Automation",
+    category: "Python · PDF Automation",
+    status: "Completed PDF automation project",
     description:
       "A Python PDF automation project that generates payment receipts with VAT calculation, approved and declined payment examples, reusable receipt formatting, and EN/JP code comments. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
     tech: ["Python", "ReportLab", "PDF Generation", "GitHub Actions"],

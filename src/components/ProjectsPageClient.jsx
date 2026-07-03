@@ -8,17 +8,19 @@ import PreviewModal from "./PreviewModal.jsx";
 
 const filters = [
   "All",
-  "Full-Stack",
+  "Accessibility",
+  "Automation",
   "Backend",
-  "Frontend",
+  "CI/CD",
+  "Deployed",
   "DevOps",
+  "Docker",
+  "Frontend",
+  "Full-Stack",
+  "Java",
+  "PostgreSQL",
   "Python",
   "React",
-  "Java",
-  "Docker",
-  "PostgreSQL",
-  "Accessibility",
-  "Deployed",
 ];
 
 export default function ProjectsPageClient() {

@@ -10,9 +10,9 @@ export const projects = [
     title: "Inventory Management System",
     category: "Full-Stack · Deployed",
     status: "Deployed full-stack MVP",
-    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "Deployed"],
+    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
     description:
-      "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment, and GitHub Actions CI checks.",
+      "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment, and GitHub Actions CI checks. Includes GitHub Actions pipelines for backend checks, frontend build validation, and Docker Compose validation.",  
     tech: [
       "React",
       "TypeScript",
@@ -158,6 +158,7 @@ export const projects = [
     description:
       "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
+    ci: "Includes GitHub Actions backend CI with Python validation and Docker image checks.",
     tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker"],
     github: "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
@@ -226,6 +227,34 @@ export const projects = [
       "/screenshots/technical-blog-en.png",
       "/screenshots/technical-blog-field-notes.png",
     ],
+  },
+
+  {
+    title: "Live Weather Report",
+    category: "Python / Automation",
+    description:
+      "A Python automation project that generates live weather reports with API request handling, retry and timeout logic, fallback error handling, and readable project documentation. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
+    tech: ["Python", "API Requests", "ReportLab", "GitHub Actions"],
+    tags: ["Python", "Automation", "CI/CD"],
+    github: "https://github.com/Iris408/live_weather_report",
+    demo: "",
+    image: "",
+    images: [],
+    featured: false,
+  },
+
+  {
+    title: "Payment Receipt Generator",
+    category: "Python / PDF Automation",
+    description:
+      "A Python PDF automation project that generates payment receipts with VAT calculation, approved and declined payment examples, reusable receipt formatting, and EN/JP code comments. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
+    tech: ["Python", "ReportLab", "PDF Generation", "GitHub Actions"],
+    tags: ["Python", "Automation", "CI/CD"],
+    github: "https://github.com/Iris408/payment_receipt_generator",
+    demo: "",
+    image: "",
+    images: [],
+    featured: false,
   },
 
   // featured: false にするとホームには出ず /projects のみに表示される

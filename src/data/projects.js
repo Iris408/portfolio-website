@@ -113,9 +113,9 @@ export const projects = [
     title: "AI HR Support Assistant",
     category: "Full-Stack · AI Workflow",
     status: "Portfolio-ready MVP",
-    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker"],
+    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "CI/CD"],
     description:
-      "Built a full-stack AI-assisted HR support dashboard using React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, Alembic, and Docker Compose. The app allows employees to submit HR tickets, uses mock AI logic to classify category and priority, provides suggested response drafts for HR review, and includes HR/Admin dashboards with filtering, sorting, responsive ticket queues, and status update workflows.",
+      "Built a full-stack AI-assisted HR support dashboard using React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, Alembic, and Docker Compose. The app allows employees to submit HR tickets, uses mock AI logic to classify category and priority, provides suggested response drafts for HR review, and includes HR/Admin dashboards with filtering, sorting, responsive ticket queues, and status update workflows. Includes GitHub Actions backend, frontend, and Docker CI pipelines.",
     tech: [
       "React",
       "TypeScript",

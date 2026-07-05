@@ -37,7 +37,7 @@ export const projects = [
     status: "Public beta / frontend MVP",
     tags: ["Frontend", "React", "Accessibility", "Deployed"],
     description:
-      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, accessibility page controls, visual identity polish, and future full-stack persistence.",
+      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, accessibility page controls, visual identity polish, and future full-stack persistence. Used Claude Code and ChatGPT as supervised AI pair-programming tools for code review, debugging support, backend security/configuration checks, and documentation, while manually reviewing diffs, testing changes, and managing Git commits.",
     tech: [
       "React",
       "JavaScript",

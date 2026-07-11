@@ -1,54 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Navbar from "../components/Navbar.jsx";
-
-const technicalLogs = [
-  {
-    title: "Fixing a Spring Boot PostgreSQL Connection Error",
-    project: "Java Expense Tracker API",
-    category: "Java / Spring Boot / PostgreSQL / Docker",
-    date: "2026-06-22",
-    status: "Fixed / Learned",
-    problem:
-      "The Spring Boot application started but failed during Hibernate/JPA startup because PostgreSQL was not running on the expected local port.",
-    cause:
-      "The application was configured to connect to PostgreSQL on localhost:5433, but there was no Docker Compose PostgreSQL service running for the project.",
-    fix:
-      "Added Docker Compose support for a local PostgreSQL container and mapped the database port correctly.",
-    lesson:
-      "Spring Boot and Hibernate errors can sometimes be caused by a failed database connection. Always check the earlier connection-refused message before focusing only on the Hibernate error.",
-  },
-  {
-    title: "Fixing pytest Import Path Issues",
-    project: "Mini User API",
-    category: "Python / FastAPI / Pytest / Debugging",
-    date: "2026-06-13",
-    status: "Fixed / Learned",
-    problem:
-      "pytest could not find the app package even though app/__init__.py existed.",
-    cause:
-      "__init__.py made the app folder an importable Python package, but pytest still needed to know where the project root was.",
-    fix:
-      "Added pytest.ini with pythonpath = . and testpaths = tests.",
-    lesson:
-      "__init__.py labels a folder as a package, but pytest.ini tells pytest where to start looking from.",
-  },
-  {
-    title: "Refreshing Broken npm Dependencies",
-    project: "Portfolio Website",
-    category: "Astro / Vite / npm / Debugging",
-    date: "2026-06-25",
-    status: "Fixed / Learned",
-    problem:
-      "Astro failed because a package file inside node_modules could not be found after dependency updates.",
-    cause:
-      "node_modules and package-lock.json were out of sync after npm audit fix changed several packages.",
-    fix:
-      "Removed node_modules and package-lock.json, then ran npm install again to rebuild dependencies cleanly.",
-    lesson:
-      "When JavaScript dependencies become mismatched, a clean reinstall can fix missing module errors without changing application code.",
-  },
-];
+import TechnicalLogClient from "../components/TechnicalLogClient.jsx";
 ---
 
 <MainLayout>
@@ -61,22 +14,20 @@ const technicalLogs = [
       </p>
 
       <h1 class="mb-8 max-w-4xl text-4xl font-light leading-tight text-slate-100 md:text-5xl">
-        Debugging notes and engineering lessons from my project work.
+        Debugging notes, CI/CD fixes, backend lessons, and project decisions.
       </h1>
 
-      <p class="mb-12 max-w-3xl text-base font-light leading-8 text-[#D8E0DD]">
-        This page collects short technical notes from my portfolio projects.
-        Each entry records what went wrong, what caused the issue, how I fixed
-        it, and what I learned. I use this as a lightweight engineering notebook
-        for backend, full-stack, DevOps, Java, and frontend practice.
+      <p class="mb-14 max-w-3xl text-base font-light leading-8 text-[#D8E0DD]">
+        This log documents what broke, why it happened, how I fixed it, and
+        what I learned while building practical backend, full-stack, DevOps,
+        and frontend projects.
       </p>
 
-      <div class="grid gap-6 lg:grid-cols-3">
+      <div class="mb-20 grid gap-6 lg:grid-cols-3">
         <article class="border border-white/15 bg-white/5 p-6">
           <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
             Format
           </p>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
             Problem → Cause → Fix → Lesson
           </p>
@@ -86,9 +37,8 @@ const technicalLogs = [
           <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
             Focus
           </p>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Backend, Docker, databases, APIs, Java, frontend, and debugging.
+            Backend · CI/CD · Docker · TypeScript · PostgreSQL
           </p>
         </article>
 
@@ -96,94 +46,13 @@ const technicalLogs = [
           <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
             Purpose
           </p>
-
           <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            To show how I debug, document, and turn errors into reusable lessons.
+            To show how I debug, document, and improve real projects.
           </p>
         </article>
       </div>
-    </section>
 
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
-
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Notes
-      </p>
-
-      <div class="grid gap-8">
-        {
-          technicalLogs.map((entry, index) => (
-            <article class="border border-white/15 bg-white/5 p-6">
-              <div class="mb-6 flex flex-col gap-4 border-b border-white/10 pb-6 lg:flex-row lg:items-start lg:justify-between">
-                <div>
-                  <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
-                    Note 0{index + 1}
-                  </p>
-
-                  <h2 class="max-w-3xl text-2xl font-light leading-tight text-slate-100">
-                    {entry.title}
-                  </h2>
-
-                  <p class="mt-3 text-sm font-light text-[#D8E0DD]">
-                    {entry.project} · {entry.date}
-                  </p>
-                </div>
-
-                <span class="w-fit border border-[#A5B5A3]/40 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-[#A5B5A3]">
-                  {entry.status}
-                </span>
-              </div>
-
-              <p class="mb-8 text-sm font-light text-[#D8E0DD]">
-                <span class="text-slate-100">Category:</span> {entry.category}
-              </p>
-
-              <div class="grid gap-8 lg:grid-cols-2">
-                <section>
-                  <h3 class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
-                    Problem
-                  </h3>
-
-                  <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-                    {entry.problem}
-                  </p>
-                </section>
-
-                <section>
-                  <h3 class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
-                    Cause
-                  </h3>
-
-                  <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-                    {entry.cause}
-                  </p>
-                </section>
-
-                <section>
-                  <h3 class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
-                    Fix
-                  </h3>
-
-                  <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-                    {entry.fix}
-                  </p>
-                </section>
-
-                <section>
-                  <h3 class="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
-                    Lesson
-                  </h3>
-
-                  <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-                    {entry.lesson}
-                  </p>
-                </section>
-              </div>
-            </article>
-          ))
-        }
-      </div>
+      <TechnicalLogClient client:load />
     </section>
   </main>
 </MainLayout>

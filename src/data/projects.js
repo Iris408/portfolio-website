@@ -185,7 +185,7 @@ export const projects = [
     status: "Portfolio-ready frontend MVP",
     tags: ["Frontend", "React", "TypeScript"],
     description:
-      "A React and TypeScript vehicle diagnostic dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, technician-focused suggested actions, and vehicle module health tracking using mock diagnostic data.",
+      "A React and TypeScript frontend dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, module status tracking, and recent diagnostic event history using mock vehicle data.",
     tech: [
       "React",
       "TypeScript",
@@ -259,7 +259,7 @@ export const projects = [
     category: "Python · PDF Automation",
     status: "Completed PDF automation project",
     description:
-      "A Python PDF automation project that generates payment receipts with VAT calculation, approved and declined payment examples, reusable receipt formatting, and EN/JP code comments. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
+      "A Python PDF automation project that generates payment receipts using either terminal input or JSON sample data, with VAT calculation, receipt IDs, approved/declined payment examples, organized output folders, and GitHub Actions CI.",
     tech: ["Python", "ReportLab", "PDF Generation", "GitHub Actions"],
     tags: ["Python", "Automation", "CI/CD"],
     github: "https://github.com/Iris408/payment_receipt_generator",

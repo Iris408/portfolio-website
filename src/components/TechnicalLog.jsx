@@ -3,22 +3,25 @@
 
 const logEntries = [
   {
-    title: "Authentication & JWT",
+    date: "2026-07-11",
+    title: "Fixing JWT Dashboard Admin Access",
     description:
-      "Building protected routes, login flows, role-based access, and real app authentication patterns.",
-    focus: "FastAPI · JWT · Protected routes",
+      "Debugging CORS, deployed FastAPI errors, admin role checks, and authenticated API requests between the JWT Dashboard and Mini User API.",
+    focus: "FastAPI · JWT · CORS · Admin access",
   },
   {
-    title: "Database Persistence",
+    date: "2026-07-11",
+    title: "Updating Portfolio Featured Projects",
     description:
-      "Working with PostgreSQL, SQLAlchemy models, database connections, Docker issues, and backend debugging.",
-    focus: "PostgreSQL · SQLAlchemy · Docker",
+      "Refreshing the portfolio homepage to better represent current full-stack, backend, authentication, and accessibility-focused project work.",
+    focus: "Portfolio · React · Project presentation",
   },
   {
-    title: "Accessible Product UI",
+    date: "2026-06-13",
+    title: "Fixing pytest Import Paths",
     description:
-      "Designing calm, readable interfaces with accessibility controls, clear navigation, and low-pressure user flows.",
-    focus: "React · Tailwind · Accessibility",
+      "Solving a backend testing issue by adding pytest configuration and clarifying how Python package paths are discovered during test runs.",
+    focus: "Pytest · Python · Backend testing",
   },
 ];
 
@@ -48,7 +51,11 @@ export default function TechnicalLog() {
               key={entry.title}
               className="border border-white/15 bg-white/5 p-6"
             >
-              <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
+                {entry.date}
+              </p>
+
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]/80">
                 {entry.focus}
               </p>
 
@@ -63,12 +70,21 @@ export default function TechnicalLog() {
           ))}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="/technical-log"
             className="inline-flex border border-[#A5B5A3]/40 bg-[#A5B5A3] px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-[#243034] transition hover:border-white hover:bg-white"
           >
-            View Technical Log →
+            View Engineering Log →
+          </a>
+
+          <a
+            href="https://iris408.github.io/technical-blog/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex border border-white/20 bg-white/5 px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-slate-100 transition hover:border-[#A5B5A3] hover:text-[#A5B5A3]"
+          >
+            Open Technical Blog →
           </a>
         </div>
       </div>

@@ -1,84 +1,136 @@
-// EN: Client wrapper for the /projects Astro page — holds filters, grid, and modal state
-// JP: /projects Astro ページ用クライアントラッパー — フィルター、グリッド、モーダルの state を管理する
-
 import { useState } from "react";
 import { projects } from "../data/projects.js";
 import ProjectCard from "./ProjectCard.jsx";
 import PreviewModal from "./PreviewModal.jsx";
 
-const filters = [
-  "All",
-  "Accessibility",
-  "Admin Dashboard",
-  "API",
-  "Auth",
-  "Automation",
+const primaryFilters = [
   "Backend",
-  "Beta",
-  "CI/CD",
-  "Deployed",
-  "DevOps",
-  "Docker",
-  "FastAPI",
   "Frontend",
   "Full-Stack",
-  "Java",
-  "JavaScript",
-  "JWT",
-  "Neurodivergent Support",
-  "OAuth2",
-  "PostgreSQL",
-  "Product Design",
-  "Protected Routes",
-  "Python",
-  "React",
-  "Render",
-  "SQLAlchemy",
-  "TypeScript",
-  "UX Design",
-  "Vercel",
-  "Vite",
+  "DevOps",
+  "Deployed",
 ];
 
-export default function ProjectsPageClient() {
-  // EN: Active project filter
-  // JP: 現在選択されているプロジェクトフィルター
-  const [activeFilter, setActiveFilter] = useState("All");
+const moreFilterGroups = [
+  {
+    label: "Domain / Focus",
+    tags: ["Accessibility", "Auth", "Admin Dashboard", "Automation", "CI/CD", "Beta"],
+  },
+  {
+    label: "Stack",
+    tags: [
+      "Python",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "SQLAlchemy",
+      "Vite",
+    ],
+  },
+];
 
-  // EN: Modal state — null when closed, { image, title } when open
-  // JP: モーダルの状態 — 閉じているときは null、開いているときは { image, title }
+const getTagCount = (tag) => {
+  return projects.filter((project) => project.tags?.includes(tag)).length;
+};
+
+export default function ProjectsPageClient() {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [preview, setPreview] = useState(null);
 
-  // EN: Filter projects using tags. "All" shows everything.
-  // JP: tags を使ってプロジェクトをフィルターします。"All" はすべて表示します。
   const filteredProjects =
     activeFilter === "All"
       ? projects
       : projects.filter((project) => project.tags?.includes(activeFilter));
 
+  const filterButtonClass = (filter) =>
+    `border px-4 py-2 text-xs uppercase tracking-[0.16em] transition ${
+      activeFilter === filter
+        ? "border-[#A5B5A3] bg-[#A5B5A3] text-[#243034]"
+        : "border-white/15 bg-white/5 text-[#D8E0DD] hover:border-[#A5B5A3]/60 hover:text-white"
+    }`;
+
   return (
     <>
-      {/* EN: Project filter buttons */}
-      {/* JP: プロジェクトフィルターボタン */}
-      <div className="mb-10 flex flex-wrap justify-center gap-3">
-        {filters.map((filter) => {
-          const isActive = activeFilter === filter;
+      {/* EN: Minimal primary filters */}
+      {/* JP: ミニマルな主要フィルター */}
+      <div className="mb-10">
+        <div className="flex flex-wrap justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => setActiveFilter("All")}
+            className={filterButtonClass("All")}
+          >
+            All
+            <span className="ml-2 opacity-70">({projects.length})</span>
+          </button>
 
-          return (
-            <button
-              key={filter}
-              type="button"
-              onClick={() => setActiveFilter(filter)}
-              className={`border px-4 py-2 text-xs uppercase tracking-[0.16em] transition ${
-                isActive
-                  ? "border-[#A5B5A3] bg-[#A5B5A3] text-[#243034]"
-                  : "border-white/15 bg-white/5 text-[#D8E0DD] hover:border-[#A5B5A3]/60 hover:text-white"
-              }`}
-            >
-              {filter}
-            </button>
-          );
-        })}
+          {primaryFilters
+            .filter((filter) => getTagCount(filter) > 0)
+            .map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                onClick={() => setActiveFilter(filter)}
+                className={filterButtonClass(filter)}
+              >
+                {filter}
+                <span className="ml-2 opacity-70">
+                  ({getTagCount(filter)})
+                </span>
+              </button>
+            ))}
+
+          <button
+            type="button"
+            onClick={() => setShowMoreFilters(!showMoreFilters)}
+            className="border border-white/15 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#D8E0DD] transition hover:border-[#A5B5A3]/60 hover:text-white"
+          >
+            {showMoreFilters ? "Hide filters" : "More filters"}
+          </button>
+        </div>
+
+        {showMoreFilters && (
+          <div className="mt-6 space-y-5 border-t border-white/10 pt-6">
+            {moreFilterGroups.map((group) => (
+              <div key={group.label}>
+                <p className="mb-3 text-center font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
+                  {group.label}
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-2">
+                  {group.tags
+                    .filter((tag) => getTagCount(tag) > 0)
+                    .map((tag) => (
+                      <button
+                        key={tag}
+                        type="button"
+                        onClick={() => setActiveFilter(tag)}
+                        className={filterButtonClass(tag)}
+                      >
+                        {tag}
+                        <span className="ml-2 opacity-70">
+                          ({getTagCount(tag)})
+                        </span>
+                      </button>
+                    ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <p className="mt-5 text-center text-sm font-light text-[#D8E0DD]">
+          Showing{" "}
+          <span className="font-normal text-[#A5B5A3]">
+            {filteredProjects.length}
+          </span>{" "}
+          project{filteredProjects.length === 1 ? "" : "s"}
+        </p>
       </div>
 
       {/* EN: Filtered project grid */}
@@ -100,8 +152,6 @@ export default function ProjectsPageClient() {
         ))}
       </div>
 
-      {/* EN: Empty state when no projects match the selected filter */}
-      {/* JP: 選択したフィルターに一致するプロジェクトがない場合の表示 */}
       {filteredProjects.length === 0 && (
         <div className="mt-8 border border-white/15 bg-white/5 p-6 text-center text-sm text-[#D8E0DD]">
           No projects found for this filter.

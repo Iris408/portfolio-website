@@ -89,7 +89,7 @@ function SelectedProjectRow({ project, index, onPreview }) {
 export default function Projects() {
   // EN: Show only the first 3 featured projects on the homepage
   // JP: ホームページでは featured が true の最初の3件だけを表示します
-  const featured = projects.filter((p) => p.featured).slice(0, 3);
+  const featured = projects.filter((p) => p.featured).slice(0, 4);
 
   // EN: Modal state
   // JP: モーダルの状態

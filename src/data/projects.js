@@ -9,10 +9,10 @@ export const projects = [
     featured: true,
     title: "Inventory Management System",
     category: "Full-Stack · Deployed",
-    status: "Deployed full-stack MVP",
-    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
+    status: "Portfolio-ready deployed full-stack app",
+    tags: ["Full-Stack", "Backend", "React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "JWT", "Docker", "Vercel", "Render", "Deployed", "CI/CD"],
     description:
-      "Deployed full-stack inventory dashboard with React, TypeScript, FastAPI, PostgreSQL, JWT login, protected routes, CRUD operations, Docker support, Vercel frontend deployment, Render backend deployment. Includes GitHub Actions pipelines for backend checks, frontend build validation, and Docker Compose validation.",  
+      "A deployed full-stack inventory management dashboard built with React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, JWT authentication, Docker, Vercel, Render, and GitHub Actions. Includes protected routes, CRUD inventory management, search/filter/sort controls, analytics cards, stock status tracking, category summaries, responsive dashboard UI, and CI checks for backend, frontend, and Docker workflows.",
     tech: [
       "React",
       "TypeScript",
@@ -34,10 +34,10 @@ export const projects = [
     featured: true,
     title: "Bloom - Calm Routine, Focus & Progress App",
     category: "Capstone · Accessibility",
-    status: "Public beta / frontend MVP",
-    tags: ["Frontend", "React", "Accessibility", "Deployed"],
+    status: "Public beta / polished frontend MVP",
+    tags: ["Frontend", "React", "JavaScript", "Accessibility", "UX Design", "Deployed", "Beta", "Vite", "Product Design", "Vercel"],
     description:
-      "A calm, accessible routine and task sequencing app focused on neurodivergent-friendly routines, focus support, public beta feedback, accessibility page controls, visual identity polish, and future full-stack persistence. Used Claude Code and ChatGPT as supervised AI pair-programming tools for code review, debugging support, backend security/configuration checks, and documentation, while manually reviewing diffs, testing changes, and managing Git commits.",
+      "A calm, accessible routine, focus and progress app designed around neurodivergent-friendly support, low-pressure task sequencing, demo routines, page controls, visual polish, and public beta feedback. Bloom includes guided demo flows, focus support, routines, moments, progress views, accessibility controls, and a roadmap toward full-stack persistence, authentication, and real user accounts. Used Claude Code and ChatGPT as supervised AI pair-programming tools while manually reviewing diffs, testing changes, and managing commits.",
     tech: [
       "React",
       "JavaScript",
@@ -45,6 +45,7 @@ export const projects = [
       "Tailwind CSS",
       "Accessibility",
       "localStorage",
+      "Vercel",
     ],
     github: "https://github.com/Iris408/bloom-app",
     demo: "https://bloom-app-three-xi.vercel.app/",
@@ -65,10 +66,10 @@ export const projects = [
     featured: true,
     title: "Mini User API",
     category: "Backend · API",
-    status: "Deployed backend MVP",
-    tags: ["Backend", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
+    status: "Portfolio-ready deployed backend",
+    tags: ["Backend", "API", "Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT", "OAuth2", "Render", "Deployed", "CI/CD"],
     description:
-      "A minimal user API built with FastAPI and PostgreSQL, featuring JWT authentication, protected routes, and Docker deployment. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, and Docker image validation.",
+      "A deployed FastAPI backend API with PostgreSQL, SQLAlchemy, JWT authentication, OAuth2 Swagger login, protected profile access, admin-only user listing, role-based access control, Docker support, Render deployment, and GitHub Actions CI. Recently improved with health/readiness endpoints, endpoint tests, CORS fixes for deployed frontend integrations, and safer admin role checking.",
     tech: [
       "Python",
       "FastAPI",
@@ -86,17 +87,18 @@ export const projects = [
   },
 
   {
-    featured: false,
+    featured: true,
     title: "JWT Authentication Dashboard",
-    category: "Full-Stack · Auth",
-    status: "Deployed frontend integration",
-    tags: ["Full-Stack", "Python", "PostgreSQL", "Docker", "Deployed", "CI/CD"],
+    category: "Frontend · Auth Integration",
+    status: "Portfolio-ready deployed auth dashboard",
+    tags: ["Frontend", "React", "TypeScript", "JWT", "Auth", "Vite", "Protected Routes", "Admin Dashboard", "FastAPI", "Vercel", "Render", "Deployed", "CI/CD"],
     description:
-      "A React and TypeScript authentication dashboard connected to a FastAPI backend, with login, protected dashboard routes, admin-only access, and deployed frontend/backend integration. Includes GitHub Actions frontend CI and Docker image validation.",
+      "A polished React and TypeScript authentication dashboard connected to the deployed Mini User API backend. Includes JWT login, token storage, protected dashboard access, authenticated profile loading, admin-only user listing, role-based UI behaviour, loading and error states, Vercel deployment, Render backend integration, and GitHub Actions CI. This project demonstrates frontend authentication flow, protected routing, API integration, and admin access control.",
     tech: [
       "React",
       "TypeScript",
       "Vite",
+      "React Router",
       "FastAPI",
       "JWT",
       "Vercel",
@@ -105,7 +107,12 @@ export const projects = [
     ],
     github: "https://github.com/Iris408/jwt-authentication-dashboard",
     demo: "https://jwt-authentication-dashboard-sepia.vercel.app",
-    image: "/screenshots/jwt-auth-dashboard.png",
+    image: "/screenshots/jwt-dashboard-page.png",
+    images: [
+      "/public/screenshots/jwt-login-page.png",
+      "/screenshots/jwt-dashboard-page.png",
+      "/screenshots/jwt-admin-panel.png",
+    ],
   },
 
   {

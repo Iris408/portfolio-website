@@ -138,27 +138,31 @@ export const projects = [
   },
 
   {
-    featured: false,
+    featured: true,
     title: "System Health Monitor",
     category: "DevOps · Monitoring",
-    status: "Completed beginner DevOps project",
-    tags: ["DevOps", "Python", "Docker", "CI/CD"],
+    status: "Production-style v2 checkpoint complete",
+    tags: ["DevOps", "Python", "Docker", "CI/CD", "Docker Compose", "GitHub Actions", "Monitoring", "Structured logging", "Healthchecks"],
     description:
-      "Python-based system monitoring tool that tracks CPU, memory, disk usage, and uptime with threshold alerts, structured logging, Slack/email notifications, Docker support, a FastAPI dashboard, a /health JSON endpoint. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
+      "Python system monitoring project that tracks CPU, memory, disk usage, and uptime with structured logging, Slack/email alerts, alert cooldowns, recovery alerts, a FastAPI `/health` endpoint, Docker healthchecks, and GitHub Actions CI/CD validation.",
     tech: [
       "Python",
       "FastAPI",
       "Docker",
       "Docker Compose",
-      "Linux",
+      "CI/CD",
       "psutil",
       "Slack API",
       "SMTP Email",
-      "GitHub Actions",
+      "Structured Logging",
     ],
     github: "https://github.com/Iris408/system-health-monitor",
     demo: "",
-    image: "/screenshots/system-health-monitor.png",
+    image: "/screenshots/grafana-dashboard.png",
+    images: [
+      "/screenshots/grafana-dashboard.png",
+      "/screenshots/system-health-monitor.png",
+    ]
   },
 
   {

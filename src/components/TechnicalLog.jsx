@@ -2,19 +2,19 @@
 // JP: テクニカルノートのプレビューセクション — 完全な Technical Log ページへリンクします
 
 const logEntries = [
+    {
+    date: "2026-07-13",
+    title: "Fixing Bloom Routine Synchronisation",
+    description:
+      "Focused on diagnosing and resolving a routine persistence and synchronisation issue affecting authenticated users.",
+    focus: "Backend persistence · React · Full-Stack MVP",
+  },
   {
     date: "2026-07-11",
     title: "Fixing JWT Dashboard Admin Access",
     description:
       "Debugging CORS, deployed FastAPI errors, admin role checks, and authenticated API requests between the JWT Dashboard and Mini User API.",
     focus: "FastAPI · JWT · CORS · Admin access",
-  },
-  {
-    date: "2026-07-11",
-    title: "Updating Portfolio Featured Projects",
-    description:
-      "Refreshing the portfolio homepage to better represent current full-stack, backend, authentication, and accessibility-focused project work.",
-    focus: "Portfolio · React · Project presentation",
   },
   {
     date: "2026-06-13",

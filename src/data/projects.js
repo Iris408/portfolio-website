@@ -32,21 +32,27 @@ export const projects = [
 
   {
     featured: true,
-    title: "Bloom - Calm Routine, Focus & Progress App",
-    category: "Capstone · Accessibility",
-    status: "Public beta / polished frontend MVP",
-    tags: ["Frontend", "React", "JavaScript", "Accessibility", "UX Design", "Deployed", "Beta", "Vite", "Product Design", "Vercel"],
+    title: "Bloom — Calm Routine, Focus & Progress App",
+    category: "Capstone · Full-Stack · Accessibility",
+    status: "Public beta · Deployed full-stack application",
+    tags: ["Full-Stack", "React", "JavaScript", "FastAPI", "PostgreSQL", "Authentication", "Accessibility", "Responsive Design", "Docker", "Deployed", "Beta", "Capstone"],
     description:
-      "A calm, accessible routine, focus and progress app designed around neurodivergent-friendly support, low-pressure task sequencing, demo routines, page controls, visual polish, and public beta feedback. Bloom includes guided demo flows, focus support, routines, moments, progress views, accessibility controls, and a roadmap toward full-stack persistence, authentication, and real user accounts. Used Claude Code and ChatGPT as supervised AI pair-programming tools while manually reviewing diffs, testing changes, and managing commits.",
+      "Bloom is a calm, accessibility-first routine, focus, and progress application designed around neurodivergent-friendly support and low-pressure productivity. " +
+      "It includes authenticated user accounts, JWT-protected routes, persistent routines and profile data, focus sessions, progress tracking, moments and reflections, guided demo experiences, and configurable accessibility controls. " +
+      "The application uses a dual-mode architecture that keeps demo data separate from authenticated user data. Built with React, FastAPI, PostgreSQL, JWT authentication, and Docker, with development managed through structured testing, debugging, release documentation, GitHub, and Jira.",
     tech: [
       "React",
       "JavaScript",
       "Vite",
       "Tailwind CSS",
-      "Accessibility",
-      "localStorage",
+      "FastAPI",
+      "PostgreSQL",
+      "JWT Authentication",
+      "Docker",
       "Vercel",
+      "Accessibility",
     ],
+    detailsPath: "/case-studies/bloom",
     github: "https://github.com/Iris408/bloom-app",
     demo: "https://bloom-app-three-xi.vercel.app/",
     image: "/screenshots/bloom-overview.png",

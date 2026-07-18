@@ -1,0 +1,344 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro"
+import Navbar from "../../components/Navbar.jsx"
+import Footer from "../../components/Footer.jsx"
+import CaseStudyHero from "../../components/case-study/CaseStudyHero.jsx"
+import CaseStudySection from "../../components/case-study/CaseStudySection.jsx"
+import FeatureGrid from "../../components/case-study/FeatureGrid.jsx"
+import TechStack from "../../components/case-study/TechStack.jsx"
+import ChallengeCard from "../../components/case-study/ChallengeCard.jsx"
+import LearningList from "../../components/case-study/LearningList.jsx"
+import Timeline from "../../components/case-study/Timeline.jsx"
+
+const bloomTags = [
+  "Public Beta",
+  "React",
+  "FastAPI",
+  "PostgreSQL",
+  "Docker",
+  "Accessibility",
+]
+
+const bloomFeatures = [
+  {
+    title: "Authenticated Accounts",
+    description:
+      "Secure registration, login, JWT authentication and protected routes.",
+  },
+  {
+    title: "Routine Management",
+    description:
+      "Create routines, complete steps and track progress across sessions.",
+  },
+  {
+    title: "Guided Demo",
+    description:
+      "Visitors can explore Bloom instantly without creating an account.",
+  },
+  {
+    title: "Accessibility First",
+    description:
+      "Designed with calm visuals, accessibility settings and neurodivergent-friendly UX.",
+  },
+]
+
+const bloomTechStack = [
+  {
+    title: "Frontend",
+    items: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Responsive component-based interface",
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      "FastAPI",
+      "Python",
+      "JWT authentication",
+      "Protected API routes",
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      "PostgreSQL",
+      "Persistent account data",
+      "Routine and progress storage",
+      "User data isolation",
+    ],
+  },
+  {
+    title: "Engineering Workflow",
+    items: [
+      "Git and GitHub",
+      "Feature branches",
+      "Jira issue tracking",
+      "Docker",
+      "Release documentation",
+    ],
+  },
+]
+
+const bloomChallenges = [
+  {
+    title: "Separating demo and account data",
+    challenge:
+      "Bloom needed a guided demo that visitors could explore without creating an account, while ensuring demo activity never affected authenticated user data.",
+    decision:
+      "I treated demo mode as a separate application path with sample data and isolated state rather than storing demo actions in PostgreSQL.",
+    outcome:
+      "Visitors can explore and experience Bloom immediately, while registered users retain private and persistent account data.",
+  },
+  {
+    title: "Adding persistence without losing the original experience",
+    challenge:
+      "The project began as a frontend prototype, so introducing authentication and persistence risked making the application feel more complex.",
+    decision:
+      "I kept the existing React frontend and added a FastAPI and PostgreSQL backend behind clear login, protected-route and persistence boundaries.",
+    outcome:
+      "Bloom evolved into a real full-stack application without removing the guided-demo experience.",
+  },
+  {
+    title: "Designing progress without punishment",
+    challenge:
+      "Traditional streak-based productivity systems can make missed days feel like failure.",
+    decision:
+      "I designed the product around routines, gentle completion feedback and returning without penalties rather than preserving a perfect streak.",
+    outcome:
+      "The interface better reflects Bloom's accessibility-first goal and gives the project a clearer product identity.",
+  },
+]
+
+const bloomLearnings = [
+  "How to evolve a frontend prototype into a full-stack application without rebuilding the entire user experience.",
+  "How to connect React to a FastAPI backend and persist authenticated user data in PostgreSQL.",
+  "How to separate public demo behaviour from private account data.",
+  "How to use protected routes and JWT authentication across the frontend and backend.",
+  "How accessibility decisions affect navigation, content density, feedback and product identity.",
+  "How to manage releases through GitHub, feature branches, Jira issues and structured documentation.",
+]
+
+const bloomTimeline = [
+  {
+    version: "v1.0.0",
+    title: "Initial Bloom prototype",
+    description:
+      "Created the first version of the routine and task experience.",
+  },
+  {
+    version: "v1.1.0",
+    title: "Task completion",
+    description:
+      "Added task completion behaviour and clearer progress feedback.",
+  },
+  {
+    version: "v1.2.0",
+    title: "Daily reset",
+    description:
+      "Introduced daily routine reset behaviour and improved return flows.",
+  },
+  {
+    version: "v1.3.2",
+    title: "Interface polish",
+    description:
+      "Refined spacing, layout consistency and responsive behaviour.",
+  },
+  {
+    version: "v1.4.0",
+    title: "Empty states",
+    description:
+      "Added clearer empty states and guidance for users with no saved content.",
+  },
+  {
+    version: "v1.5.0",
+    title: "Portfolio readiness",
+    description:
+      "Improved presentation, project documentation and public-facing polish.",
+  },
+  {
+    version: "v1.6.0",
+    title: "Frontend refinement",
+    description:
+      "Completed a major frontend polish pass and expanded accessibility controls.",
+  },
+  {
+    version: "v2.1.0",
+    title: "Full-stack authentication and persistence",
+    description:
+      "Added FastAPI, PostgreSQL, authenticated accounts, protected routes and persistent user data.",
+  },
+  {
+    version: "v2.1.1",
+    title: "Stabilisation and testing",
+    description:
+      "Verified account persistence, user isolation, protected routes and demo separation.",
+  },
+]
+
+const bloomFutureImprovements = [
+  {
+    title: "Mobile UX refinement",
+    description:
+      "Reduce visual density, simplify key controls and improve bottom-sheet interactions across smaller screens.",
+  },
+  {
+    title: "Clearer core loop",
+    description:
+      "Make the relationship between routines, focus, progress and returning after missed days easier to understand at a glance.",
+  },
+  {
+    title: "Expanded accessibility controls",
+    description:
+      "Add high-contrast support, reduced-motion preferences, stronger keyboard navigation and further screen-reader improvements.",
+  },
+  {
+    title: "Improved monitoring and testing",
+    description:
+      "Expand automated frontend and backend tests, add stronger error tracking and improve deployment observability.",
+  },
+]
+---
+
+<MainLayout>
+  <Navbar />
+
+  <main class="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-10">
+    <CaseStudyHero
+      eyebrow="Case Study · Full-Stack · Accessibility"
+      title="Bloom"
+      summary="A calm, accessibility-first full-stack productivity application designed to support routines, focus, and progress without pressure."
+      tags={bloomTags}
+      liveUrl="https://bloom-app-three-xi.vercel.app/"
+      githubUrl="https://github.com/Iris408/bloom-app"
+    />
+
+    <CaseStudySection
+      eyebrow="Overview"
+      title="A calmer approach to productivity"
+    >
+      <p>
+        Bloom began as a frontend prototype exploring calmer productivity for
+        neurodivergent users. It has since evolved into a full-stack application
+        with authenticated accounts, persistent routines, protected routes,
+        guided demos, and accessibility-first design.
+      </p>
+
+      <p>
+        Rather than rewarding long streaks or encouraging pressure, Bloom focuses
+        on helping users return after missed days with supportive routines and
+        gentle progress tracking.
+      </p>
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Problem"
+      title="Why traditional productivity tools can feel overwhelming"
+    >
+      <p>
+        Many productivity applications rely on streaks, constant notifications,
+        dense dashboards, and visible signs of missed progress. For neurodivergent
+        users, this can turn planning into another source of pressure.
+      </p>
+
+      <p>
+        Bloom was designed around a different question: how can a productivity
+        tool help someone return to a routine without making them feel that they
+        have failed?
+      </p>
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Solution"
+      title="A low-pressure workflow built around return and flexibility"
+    >
+      <p>
+        Bloom combines routines, focus sessions, progress tracking, reflections,
+        guided demos, and accessibility controls within a calm interface.
+      </p>
+
+      <p>
+        Visitors can explore the application without creating an account, while
+        authenticated users can save their routines, profile preferences, and
+        progress through a FastAPI and PostgreSQL backend.
+      </p>
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Features"
+      title="Key functionality"
+    >
+      <FeatureGrid features={bloomFeatures} />
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Architecture"
+      title="How Bloom is structured"
+    >
+      <p>
+        Bloom uses a separate frontend, backend, and database architecture. The
+        React client communicates with a FastAPI API, while PostgreSQL stores
+        authenticated user data, routines, preferences, and progress.
+      </p>
+
+      <TechStack groups={bloomTechStack} />
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Engineering Decisions"
+      title="Challenges I worked through"
+    >
+      <div class="grid gap-6">
+        {bloomChallenges.map((item) => (
+          <ChallengeCard
+            title={item.title}
+            challenge={item.challenge}
+            decision={item.decision}
+            outcome={item.outcome}
+          />
+        ))}
+      </div>
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Learning"
+      title="What this project taught me"
+    >
+      <p>
+        Bloom has been my main capstone project. It combines frontend,
+        backend, database, accessibility and engineering workflow skills.
+      </p>
+
+      <LearningList items={bloomLearnings} />
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Project Timeline"
+      title="How Bloom evolved"
+    >
+      <p>
+        Bloom has developed through several focused releases, moving from a
+        frontend prototype into a deployed full-stack application.
+      </p>
+
+      <Timeline items={bloomTimeline} />
+    </CaseStudySection>
+
+    <CaseStudySection
+      eyebrow="Next Steps"
+      title="Future improvements"
+    >
+      <p>
+        Bloom remains in active development. The next phase focuses on mobile
+        usability, clearer product guidance, broader accessibility support and
+        stronger production readiness.
+      </p>
+
+      <FeatureGrid features={bloomFutureImprovements} />
+    </CaseStudySection>
+  </main>
+
+  <Footer />
+</MainLayout>

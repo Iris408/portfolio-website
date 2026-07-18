@@ -9,6 +9,7 @@ export default function ProjectCard({
   github,
   demo,
   image,
+  detailsPath,
   onPreview,
 }) {
   return (
@@ -43,6 +44,15 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
+
+      {detailsPath && (
+        <a
+          href={detailsPath}
+          className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-transparent px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#D8E0DD] transition hover:border-[#A5B5A3] hover:text-white"
+        >
+          Case Study
+        </a>
+      )}
 
       {/* EN: Action buttons */}
       {/* JP: アクションボタン */}

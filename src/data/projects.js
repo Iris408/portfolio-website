@@ -93,7 +93,7 @@ export const projects = [
   },
 
   {
-    featured: true,
+    featured: false,
     title: "JWT Authentication Dashboard",
     category: "Frontend · Auth Integration",
     status: "Portfolio-ready deployed auth dashboard",
@@ -115,7 +115,7 @@ export const projects = [
     demo: "https://jwt-authentication-dashboard-sepia.vercel.app",
     image: "/screenshots/jwt-dashboard-page.png",
     images: [
-      "/public/screenshots/jwt-login-page.png",
+      "/screenshots/jwt-login-page.png",
       "/screenshots/jwt-dashboard-page.png",
       "/screenshots/jwt-admin-panel.png",
     ],
@@ -146,17 +146,19 @@ export const projects = [
   {
     featured: true,
     title: "System Health Monitor",
-    category: "DevOps · Monitoring",
-    status: "Production-style v2 checkpoint complete",
-    tags: ["DevOps", "Python", "Docker", "CI/CD", "Docker Compose", "GitHub Actions", "Monitoring", "Structured logging", "Healthchecks"],
+    category: "DevOps · Monitoring · Observability",
+    status: "Production-style monitoring stack · In progress",
+    tags: ["DevOps", "Python", "FastAPI", "Docker", "Docker Compose", "GitHub Actions", "Monitoring",  "Observability",  "Prometheus", "Grafana", "Structured logging", "Healthchecks"],
     description:
-      "Python system monitoring project that tracks CPU, memory, disk usage, and uptime with structured logging, Slack/email alerts, alert cooldowns, recovery alerts, a FastAPI `/health` endpoint, Docker healthchecks, and GitHub Actions CI/CD validation.",
+      "A Python and FastAPI system-monitoring project that tracks CPU, memory, disk usage, and uptime. It includes structured logging, Slack and email alerts, alert cooldowns, recovery notifications, a health endpoint, Docker healthchecks, and Prometheus metrics, and Grafana dashboards.",
     tech: [
       "Python",
       "FastAPI",
       "Docker",
       "Docker Compose",
-      "CI/CD",
+      "Prometheus", 
+      "Grafana",
+      "GitHub Actions",
       "psutil",
       "Slack API",
       "SMTP Email",
@@ -174,10 +176,11 @@ export const projects = [
   {
     title: "Log Intelligence Analyzer",
     category: "Backend · Log Analysis",
+    status: "Backend API checkpoint complete",
+    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker", "CI/CD"],
     description:
       "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
-    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker", "CI/CD"],
     github: "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
     image: "/screenshots/log_intelligence_output.png",
@@ -212,10 +215,11 @@ export const projects = [
   {
     title: "Java Expense Tracker API",
     category: "Java · Backend",
+    status: "Learning project · In progress",
+    tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "Docker"],
     description:
-      "A Java learning project progressing from a console-based expense tracker toward a Spring Boot API with PostgreSQL, Docker, CRUD endpoints, validation, and backend architecture practice.",
+      "A Java backend learning project progressing from a console-based expense tracker toward a Spring Boot REST API. The roadmap includes PostgreSQL persistence, CRUD endpoints, request validation, Docker support, testing, and layered backend architecture practice.",
     tech: ["Java", "Spring Boot", "PostgreSQL", "Docker", "Maven"],
-    tags: ["Java", "Backend", "PostgreSQL", "Docker"],
     github: "https://github.com/Iris408/java-expense-tracker-api",
     demo: "",
     image: "",
@@ -250,34 +254,55 @@ export const projects = [
   },
 
   {
-    title: "Live Weather Report",
-    category: "Python · Automation",
-    status: "Completed Python automation project",
-    description:
-      "A Python automation project that generates live weather reports with API request handling, retry and timeout logic, fallback error handling, and readable project documentation. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
-    tech: ["Python", "API Requests", "ReportLab", "GitHub Actions"],
-    tags: ["Python", "Automation", "CI/CD"],
-    github: "https://github.com/Iris408/live_weather_report",
-    demo: "",
-    image: "",
-    images: [],
-    featured: false,
-  },
-
-  {
-    title: "Payment Receipt Generator",
-    category: "Python · PDF Automation",
-    status: "Completed PDF automation project",
-    description:
-      "A Python PDF automation project that generates payment receipts using either terminal input or JSON sample data, with VAT calculation, receipt IDs, approved/declined payment examples, organized output folders, and GitHub Actions CI.",
-    tech: ["Python", "ReportLab", "PDF Generation", "GitHub Actions"],
-    tags: ["Python", "Automation", "CI/CD"],
-    github: "https://github.com/Iris408/payment_receipt_generator",
-    demo: "",
-    image: "",
-    images: [],
-    featured: false,
-  },
+  featured: false,
+  title: "社員管理システム · Employee Management System",
+  category: "Java · Backend · Technical Japanese",
+  status: "Backend foundation · In progress",
+  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "JPA", "Hibernate", "Docker", "Technical Japanese", "Internationalisation"],
+  description:
+    "A Japanese-first employee management system built with Java, Spring Boot, PostgreSQL, Spring Data JPA, and Docker. The project is designed to practise production-style backend development alongside technical Japanese, using Japanese domain terminology for employee records, departments, employment status, and administrative workflows. The planned system includes employee CRUD operations, validation, filtering, pagination, database migrations, API documentation, automated tests, and role-based administrative access.",
+  tech: [
+    "Java",
+    "Spring Boot",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "Hibernate",
+    "Docker",
+    "Maven",
+    "JUnit",
+    "Technical Japanese",
+  ],
+  github:
+    "https://github.com/Iris408/employee-management-system",
+  demo: "",
+  image: "",
+  images: [],
+},
+{
+  featured: false,
+  title: "Java Mini User API",
+  category: "Java · Backend · Authentication",
+  status: "Foundation planned",
+  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "Spring Security", "JWT", "JPA", "Docker", "Testing"],
+  description:
+    "A Java and Spring Boot REST API designed to rebuild the core concepts of my FastAPI Mini User API using the Java backend ecosystem. The project will include user registration, password hashing, PostgreSQL persistence, request validation, JWT authentication, protected profile endpoints, role-based access control, exception handling, automated tests, Docker support, and API documentation.",
+  tech: [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "JWT",
+    "Docker",
+    "Maven",
+    "JUnit",
+    "Mockito",
+  ],
+  github: "",
+  demo: "",
+  image: "",
+  images: [],
+},
 
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage

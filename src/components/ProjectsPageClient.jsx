@@ -14,7 +14,7 @@ const primaryFilters = [
 const moreFilterGroups = [
   {
     label: "Domain / Focus",
-    tags: ["Accessibility", "Auth", "Admin Dashboard", "Automation", "CI/CD", "Beta"],
+    tags: ["Accessibility", "Auth", "Admin Dashboard", "Automation", "CI/CD", "Beta", "日本語"],
   },
   {
     label: "Stack",

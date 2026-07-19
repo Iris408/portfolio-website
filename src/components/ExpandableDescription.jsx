@@ -51,7 +51,6 @@ export default function ExpandableDescription({
                   isExpanded ? "rotate-180" : ""
                 }`}
               >
-                ↓
               </span>
             </button>
           </>

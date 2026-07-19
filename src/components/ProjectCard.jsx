@@ -67,7 +67,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            GitHub →
+            GitHub
           </a>
         )}
 
@@ -78,7 +78,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            Live Demo →
+            Live Demo
           </a>
         )}
 
@@ -88,7 +88,7 @@ export default function ProjectCard({
             onClick={() => onPreview(image, title)}
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            Preview →
+            Preview
           </button>
         )}
       </div>

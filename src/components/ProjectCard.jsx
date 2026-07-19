@@ -1,3 +1,5 @@
+import ExpandableDescription from "./ExpandableDescription";
+
 // EN: Reusable project card component — used by Projects.jsx and ProjectsPageClient.jsx
 // JP: 再利用可能なプロジェクトカードコンポーネント — Projects.jsx と ProjectsPageClient.jsx で使用
 
@@ -28,9 +30,10 @@ export default function ProjectCard({
 
       {/* EN: Project description */}
       {/* JP: プロジェクト説明 */}
-      <p className="relative z-10 mb-6 min-h-[8rem] text-sm font-light leading-relaxed text-[#D8E0DD]">
-        {description}
-      </p>
+      <ExpandableDescription
+        description={projects.description}
+        maxLength={150}
+      />  
 
       {/* EN: Technology tags */}
       {/* JP: 技術タグ */}
@@ -50,7 +53,7 @@ export default function ProjectCard({
           href={detailsPath}
           className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-transparent px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#D8E0DD] transition hover:border-[#A5B5A3] hover:text-white"
         >
-          Case Study
+          Case Study →
         </a>
       )}
 
@@ -64,7 +67,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            GitHub
+            GitHub →
           </a>
         )}
 
@@ -75,7 +78,7 @@ export default function ProjectCard({
             rel="noopener noreferrer"
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            Live Demo
+            Live Demo →
           </a>
         )}
 
@@ -85,7 +88,7 @@ export default function ProjectCard({
             onClick={() => onPreview(image, title)}
             className="inline-flex h-11 items-center justify-center border border-[#A5B5A3]/40 bg-[#A5B5A3] px-4 text-center text-xs font-normal uppercase tracking-[0.14em] text-[#243034] transition hover:border-white hover:bg-[#C4D1C1] hover:text-[#243034]"
           >
-            Preview
+            Preview →
           </button>
         )}
       </div>

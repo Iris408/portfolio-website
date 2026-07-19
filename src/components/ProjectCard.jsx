@@ -31,7 +31,7 @@ export default function ProjectCard({
       {/* EN: Project description */}
       {/* JP: プロジェクト説明 */}
       <ExpandableDescription
-        description={projects.description}
+        description={description}
         maxLength={150}
       />  
 

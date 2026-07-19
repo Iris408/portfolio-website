@@ -278,6 +278,31 @@ export const projects = [
   image: "",
   images: [],
 },
+{
+  featured: false,
+  title: "Java Mini User API",
+  category: "Java · Backend · Authentication",
+  status: "Foundation planned",
+  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "Spring Security", "JWT", "JPA", "Docker", "Testing"],
+  description:
+    "A Java and Spring Boot REST API designed to rebuild the core concepts of my FastAPI Mini User API using the Java backend ecosystem. The project will include user registration, password hashing, PostgreSQL persistence, request validation, JWT authentication, protected profile endpoints, role-based access control, exception handling, automated tests, Docker support, and API documentation.",
+  tech: [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "JWT",
+    "Docker",
+    "Maven",
+    "JUnit",
+    "Mockito",
+  ],
+  github: "",
+  demo: "",
+  image: "",
+  images: [],
+},
 
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage

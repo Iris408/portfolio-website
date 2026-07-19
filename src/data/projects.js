@@ -254,19 +254,55 @@ export const projects = [
   },
 
   {
-    title: "Japanese Employee Management System",
-    category: "Python · Automation · Japanese",
-    status: "Completed Python automation project",
-    description:
-      "A Python automation project that generates live weather reports with API request handling, retry and timeout logic, fallback error handling, and readable project documentation. Includes GitHub Actions Python CI for dependency installation and syntax validation.",
-    tech: ["Python", "API Requests", "ReportLab", "GitHub Actions"],
-    tags: ["Python", "Automation", "CI/CD"],
-    github: "https://github.com/Iris408/live_weather_report",
-    demo: "",
-    image: "",
-    images: [],
-    featured: false,
-  },
+  featured: false,
+  title: "社員管理システム · Employee Management System",
+  category: "Java · Backend · Technical Japanese",
+  status: "Backend foundation · In progress",
+  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "JPA", "Hibernate", "Docker", "Technical Japanese", "Internationalisation"],
+  description:
+    "A Japanese-first employee management system built with Java, Spring Boot, PostgreSQL, Spring Data JPA, and Docker. The project is designed to practise production-style backend development alongside technical Japanese, using Japanese domain terminology for employee records, departments, employment status, and administrative workflows. The planned system includes employee CRUD operations, validation, filtering, pagination, database migrations, API documentation, automated tests, and role-based administrative access.",
+  tech: [
+    "Java",
+    "Spring Boot",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "Hibernate",
+    "Docker",
+    "Maven",
+    "JUnit",
+    "Technical Japanese",
+  ],
+  github:
+    "https://github.com/Iris408/employee-management-system",
+  demo: "",
+  image: "",
+  images: [],
+},
+{
+  featured: false,
+  title: "Java Mini User API",
+  category: "Java · Backend · Authentication",
+  status: "Foundation planned",
+  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "Spring Security", "JWT", "JPA", "Docker", "Testing"],
+  description:
+    "A Java and Spring Boot REST API designed to rebuild the core concepts of my FastAPI Mini User API using the Java backend ecosystem. The project will include user registration, password hashing, PostgreSQL persistence, request validation, JWT authentication, protected profile endpoints, role-based access control, exception handling, automated tests, Docker support, and API documentation.",
+  tech: [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "JWT",
+    "Docker",
+    "Maven",
+    "JUnit",
+    "Mockito",
+  ],
+  github: "",
+  demo: "",
+  image: "",
+  images: [],
+},
 
   // featured: false にするとホームには出ず /projects のみに表示される
   // featured: false means it only shows on the /projects page, not the homepage

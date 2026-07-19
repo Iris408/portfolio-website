@@ -257,7 +257,7 @@ export const projects = [
   featured: false,
   title: "社員管理システム · Employee Management System",
   category: "Java · Backend · Technical Japanese",
-  status: "v0.2.0 · Employee CRUD and search complete",
+  status: "v0.2.0 · Employee CRUD and search complete", 
   tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "JPA", "Hibernate", "Docker", "Technical Japanese", "Internationalisation"],
   description:
     "A Japanese-first employee management system built with Java, Spring Boot, PostgreSQL, Spring Data JPA, and Docker. The project is designed to practise production-style backend development alongside technical Japanese, using Japanese domain terminology for employee records, departments, employment status, and administrative workflows. The planned system includes employee CRUD operations, validation, filtering, pagination, database migrations, API documentation, automated tests, and role-based administrative access.",

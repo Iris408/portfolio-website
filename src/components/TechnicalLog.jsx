@@ -2,6 +2,13 @@
 // JP: テクニカルノートのプレビューセクション — 完全な Technical Log ページへリンクします
 
 const logEntries = [
+  {
+    date: "2026-07-26",
+    title: "Fixing Inventory Dashboard Analytics",
+    description:
+      "Diagnosed and resolved a dashboard reporting issue caused by calculating full inventory metrics from a paginated ten-item API response.",
+    focus: "React · FastAPI · PostgreSQL · Dashboard analytics",
+  },
     {
     date: "2026-07-13",
     title: "Fixing Bloom Routine Synchronisation",

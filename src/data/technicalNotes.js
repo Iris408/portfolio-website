@@ -1,5 +1,50 @@
 export const technicalNotes = [
   {
+    title: "Fixing Inventory Dashboard Analytics",
+    project: "Inventory Management System",
+    category: "Full-Stack / React / FastAPI / PostgreSQL",
+    tags: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Debugging",
+      "Analytics",
+    ],
+    date: "2026-07-26",
+    status: "Fixed / Learned",
+    pinned: true,
+    summary:
+      "Diagnosed and resolved an analytics issue where dashboard totals were calculated from a paginated ten-item response instead of the full PostgreSQL inventory.",
+    problem:
+      "As new products were added, the inventory table updated correctly, but the dashboard continued to report totals for only ten items. Product count, quantity, inventory value, and stock-status metrics were therefore inaccurate.",
+    cause:
+      "The React frontend calculated global dashboard metrics directly from the /items response. That endpoint intentionally returns a paginated dataset with a default limit of ten records, while the backend aggregation endpoints already calculated statistics across the full database.",
+    fix:
+      "Separated paginated inventory data from reporting data. The inventory preview continued using /items, while dashboard KPIs and category analytics were connected to /items/stats, /items/category-summary, and /items/category-value. Added dedicated React state and refreshed aggregate data after create, update, and delete operations.",
+    lesson:
+      "Paginated operational data should not be reused for global analytics. When frontend totals do not match database records, trace the complete data flow and verify which endpoint supplies each part of the interface.",
+  },
+    {
+    title: "Fixing Bloom Routine Synchronisation",
+    project: "Bloom",
+    category: "Full-Stack / React / FastAPI / PostgreSQL",
+    tags: ["React", "FastAPI", "Debugging", "Full-Stack"],
+    date: "2026-07-13",
+    status: "Fixed / Learned",
+    pinned: true,
+    summary:
+      "Diagnosed and resolved a routine persistence issue where authenticated users were unknowingly using localStorage instead of the backend API.",
+    problem:
+      "Routines created on the Routines page did not appear on Home or Progress, and authenticated users were not persisting routine changes to PostgreSQL.",
+    cause:
+      "Routines.jsx imported backend CRUD functions but never called them. The page always used localStorage regardless of authentication state, creating two separate data sources.",
+    fix:
+      "Implemented backend CRUD flows for authenticated users, preserved localStorage behaviour for demo users, added cross-page synchronisation events, and connected routine operations to FastAPI.",
+    lesson:
+      "When multiple features fail together, trace the complete data flow before fixing individual symptoms. Often a single architectural issue is responsible for several visible bugs.",
+  },
+  {
     title: "Fixing Frontend CI TypeScript Errors",
     project: "AI HR Support Assistant",
     category: "Frontend / TypeScript / CI/CD",
@@ -17,25 +62,6 @@ export const technicalNotes = [
       "Created a typed AdminStatCard component, updated StatCard exports, and allowed StatCard to accept either title or label props.",
     lesson:
       "CI/CD can catch hidden frontend type issues before deployment. Reusable TypeScript components need consistent imports, exports, and props.",
-  },
-  {
-    title: "Fixing Backend Tests for AI HR Support Assistant",
-    project: "AI HR Support Assistant",
-    category: "Backend / FastAPI / Pytest",
-    tags: ["Backend", "FastAPI", "Pytest", "PostgreSQL"],
-    date: "2026-06-28",
-    status: "Fixed / Learned",
-    pinned: false,
-    summary:
-      "Cleaned up the backend testing checkpoint until the AI HR Support Assistant test suite passed successfully.",
-    problem:
-      "The backend needed a stable testing checkpoint before larger features like authentication, role-based access, and CI/CD.",
-    cause:
-      "The app was becoming more realistic, with FastAPI routes, PostgreSQL logic, SQLAlchemy models, schemas, and ticket workflows.",
-    fix:
-      "Validated the backend test setup until the suite reached 11 passing tests.",
-    lesson:
-      "Backend tests make a project stronger because they confirm the API works beyond manual testing.",
   },
   {
     title: "Fixing an Astro Build Hang",
@@ -57,22 +83,22 @@ export const technicalNotes = [
       "Build issues are not always code errors. Sometimes the local tooling environment needs to be reset.",
   },
   {
-    title: "Fixing Bloom Routine Synchronisation",
-    project: "Bloom",
-    category: "Full-Stack / React / FastAPI / PostgreSQL",
-    tags: ["React", "FastAPI", "Debugging", "Full-Stack"],
-    date: "2026-07-13",
+    title: "Fixing Backend Tests for AI HR Support Assistant",
+    project: "AI HR Support Assistant",
+    category: "Backend / FastAPI / Pytest",
+    tags: ["Backend", "FastAPI", "Pytest", "PostgreSQL"],
+    date: "2026-06-28",
     status: "Fixed / Learned",
-    pinned: true,
+    pinned: false,
     summary:
-      "Diagnosed and resolved a routine persistence issue where authenticated users were unknowingly using localStorage instead of the backend API.",
+      "Cleaned up the backend testing checkpoint until the AI HR Support Assistant test suite passed successfully.",
     problem:
-      "Routines created on the Routines page did not appear on Home or Progress, and authenticated users were not persisting routine changes to PostgreSQL.",
+      "The backend needed a stable testing checkpoint before larger features like authentication, role-based access, and CI/CD.",
     cause:
-      "Routines.jsx imported backend CRUD functions but never called them. The page always used localStorage regardless of authentication state, creating two separate data sources.",
+      "The app was becoming more realistic, with FastAPI routes, PostgreSQL logic, SQLAlchemy models, schemas, and ticket workflows.",
     fix:
-      "Implemented backend CRUD flows for authenticated users, preserved localStorage behaviour for demo users, added cross-page synchronisation events, and connected routine operations to FastAPI.",
+      "Validated the backend test setup until the suite reached 11 passing tests.",
     lesson:
-      "When multiple features fail together, trace the complete data flow before fixing individual symptoms. Often a single architectural issue is responsible for several visible bugs.",
+      "Backend tests make a project stronger because they confirm the API works beyond manual testing.",
   },
 ];

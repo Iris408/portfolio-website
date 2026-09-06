@@ -1,0 +1,383 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+import CaseStudyHero from "../../components/case-study/CaseStudyHero.jsx";
+import CaseStudySection from "../../components/case-study/CaseStudySection.jsx";
+import FeatureGrid from "../../components/case-study/FeatureGrid.jsx";
+import TechStack from "../../components/case-study/TechStack.jsx";
+import ChallengeCard from "../../components/case-study/ChallengeCard.jsx";
+import LearningList from "../../components/case-study/LearningList.jsx";
+import Timeline from "../../components/case-study/Timeline.jsx";
+import ArchitectureDiagram from "../../components/case-study/ArchitectureDiagram.jsx";
+import ImageGallery from "../../components/case-study/ImageGallery.jsx";
+
+const partspilotTags = [
+  "Full-Stack",
+  "React",
+  "TypeScript",
+  "FastAPI",
+  "PostgreSQL",
+  "Docker",
+  "Power BI",
+];
+
+const partspilotFeatures = [
+  {
+    title: "Inventory Management",
+    description:
+      "Authenticated creation, editing and deletion of inventory records with SKU, quantity, pricing, category and stock-threshold data.",
+  },
+  {
+    title: "Search and Filtering",
+    description:
+      "Search, category filtering, stock-status filtering, sorting and pagination across the inventory catalogue.",
+  },
+  {
+    title: "Operational Analytics",
+    description:
+      "Database-level product, quantity, inventory-value, category and low-stock reporting.",
+  },
+  {
+    title: "Business Intelligence",
+    description:
+      "Power BI reporting and CSV export for deeper inventory analysis and operational decision-making.",
+  },
+  {
+    title: "Supplier Workflows",
+    description:
+      "Supplier information and inventory relationships designed to support realistic stock-management processes.",
+  },
+  {
+    title: "Responsive Product Experience",
+    description:
+      "A React and TypeScript interface designed to remain usable across desktop and mobile layouts.",
+  },
+];
+
+const partspilotArchitecture = [
+  {
+    title: "React client",
+    description:
+      "Provides inventory management, search, filters, dashboard analytics and responsive user workflows.",
+  },
+  {
+    title: "FastAPI service",
+    description:
+      "Handles validation, authenticated inventory operations, reporting endpoints and database access.",
+  },
+  {
+    title: "PostgreSQL",
+    description:
+      "Stores products, stock levels, categories, supplier information and persistent operational data.",
+  },
+];
+
+const partspilotTechStack = [
+  {
+    title: "Frontend",
+    items: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Responsive dashboard interface",
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      "Python",
+      "FastAPI",
+      "REST API",
+      "JWT authentication",
+      "Request validation",
+    ],
+  },
+  {
+    title: "Data",
+    items: [
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic migrations",
+      "Aggregate reporting queries",
+      "CSV export",
+    ],
+  },
+  {
+    title: "Delivery and Analytics",
+    items: [
+      "Docker Compose",
+      "GitHub Actions",
+      "Vercel",
+      "Render",
+      "Power BI",
+    ],
+  },
+];
+
+const partspilotChallenges = [
+  {
+    title: "Separating inventory records from global analytics",
+    challenge:
+      "The inventory table used a paginated API response, but dashboard totals needed to represent every record in PostgreSQL.",
+    decision:
+      "I separated operational list data from reporting data and connected the dashboard to dedicated statistics and category aggregation endpoints.",
+    outcome:
+      "Product totals, quantities, inventory value and category reporting now represent the complete database rather than the current page of results.",
+  },
+  {
+    title: "Connecting React to a Dockerised API",
+    challenge:
+      "The browser could not reach FastAPI because the client used the container’s internal port rather than the port exposed to the host.",
+    decision:
+      "I traced the Docker mapping, corrected the client API address and configured FastAPI CORS for the frontend development origin.",
+    outcome:
+      "The React client could communicate with the containerised backend while maintaining the correct browser security configuration.",
+  },
+  {
+    title: "Handling API response shapes safely",
+    challenge:
+      "React attempted to map over an API wrapper object rather than the inventory array contained inside it.",
+    decision:
+      "I inspected the returned JSON structure and stored the nested items array in component state.",
+    outcome:
+      "Inventory records rendered correctly, and the frontend data flow now matches the backend response contract.",
+  },
+];
+
+const partspilotLearnings = [
+  "How to design separate endpoints for paginated operational data and global reporting data.",
+  "How to connect a React and TypeScript frontend to a FastAPI backend.",
+  "How Docker container ports differ from the host ports used by browser applications.",
+  "How to diagnose connection, routing, authentication, server and CORS errors separately.",
+  "How PostgreSQL aggregation supports dashboard and business-intelligence reporting.",
+  "How schema changes, validation and Alembic migrations affect the full application.",
+  "How automotive operational knowledge can be translated into practical product requirements.",
+];
+
+const partspilotTimeline = [
+  {
+    version: "Phase 01",
+    title: "Inventory API foundation",
+    description:
+      "Created the FastAPI and PostgreSQL inventory foundation with product CRUD operations and SQLAlchemy models.",
+  },
+  {
+    version: "Phase 02",
+    title: "Search and stock monitoring",
+    description:
+      "Added filtering, sorting, pagination, SKU data, minimum-stock thresholds and low-stock reporting.",
+  },
+  {
+    version: "Phase 03",
+    title: "Full-stack dashboard",
+    description:
+      "Connected the React and TypeScript interface to the API and added inventory management workflows.",
+  },
+  {
+    version: "Phase 04",
+    title: "Analytics and reporting",
+    description:
+      "Introduced statistics, category summaries, inventory valuation, CSV export and Power BI reporting.",
+  },
+  {
+    version: "Phase 05",
+    title: "Deployment and maintenance",
+    description:
+      "Added Docker workflows, GitHub Actions and deployed frontend and backend services.",
+  },
+];
+
+const partspilotFutureImprovements = [
+  {
+    title: "Expanded automated testing",
+    description:
+      "Increase endpoint, authentication, database and frontend integration coverage.",
+  },
+  {
+    title: "Security scanning",
+    description:
+      "Add CodeQL Analysis and Dependency Review to the GitHub Actions maintenance workflow.",
+  },
+  {
+    title: "Supplier workflows",
+    description:
+      "Expand supplier relationships, purchasing workflows and stock-replenishment reporting.",
+  },
+  {
+    title: "Deployment observability",
+    description:
+      "Improve production monitoring, structured error reporting and service-health visibility.",
+  },
+];
+
+const partspilotGallery = [
+  {
+    src: "/screenshots/partspilot-homepage.png",
+    alt: "PartsPilot inventory management homepage",
+    caption: "PartsPilot’s responsive inventory-management interface.",
+  },
+  {
+    src: "/screenshots/partspilot-dashboard-overview.png",
+    alt: "PartsPilot dashboard overview",
+    caption: "Operational inventory metrics and dashboard reporting.",
+  },
+  {
+    src: "/screenshots/partspilot-search-filter-sort.png",
+    alt: "PartsPilot inventory search and filtering",
+    caption: "Search, filtering and sorting across inventory records.",
+  },
+  {
+    src: "/screenshots/partspilot-mobile-dashboard.png",
+    alt: "PartsPilot mobile dashboard",
+    caption: "Responsive inventory workflows on a smaller screen.",
+  },
+  {
+    src: "/screenshots/partspilot-powerbi-inventory-analytics.png",
+    alt: "PartsPilot Power BI inventory analytics",
+    caption: "Power BI inventory analysis and business-intelligence reporting.",
+  },
+  {
+    src: "/screenshots/partspilot-api-docs.png",
+    alt: "PartsPilot FastAPI documentation",
+    caption: "Documented FastAPI inventory and reporting endpoints.",
+  },
+];
+---
+
+<MainLayout
+  title="PartsPilot Case Study | Ashleigh M"
+  description="A full-stack case study covering PartsPilot’s React interface, FastAPI backend, PostgreSQL inventory data, analytics and deployment."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
+    <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
+      <CaseStudyHero
+        eyebrow="Case Study · Full-Stack · Automotive"
+        title="PartsPilot"
+        summary="A full-stack automotive inventory management and analytics platform combining operational workflows, backend reporting and business intelligence."
+        tags={partspilotTags}
+        liveUrl="https://inventory-management-system-iris408.vercel.app"
+        githubUrl="https://github.com/Iris408/partspilot"
+        image="/screenshots/partspilot-homepage.png"
+        imageAlt="PartsPilot automotive inventory management application"
+      />
+
+      <CaseStudySection
+        eyebrow="Overview"
+        title="Inventory operations connected to useful reporting"
+      >
+        <p>
+          PartsPilot is an automotive inventory-management platform built to
+          explore how a realistic operational system moves beyond basic CRUD.
+        </p>
+
+        <p>
+          It combines authenticated inventory workflows, search, stock
+          monitoring, supplier information, reporting and Power BI analytics
+          within a responsive full-stack product.
+        </p>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Problem"
+        title="Inventory data needs to support action, not only storage"
+      >
+        <p>
+          A useful inventory system must help users understand what is
+          available, what is running low and where stock value is concentrated.
+          A table of database records alone does not provide that operational
+          visibility.
+        </p>
+
+        <p>
+          PartsPilot therefore needed to support everyday inventory changes
+          while also producing reliable aggregate information across the
+          complete PostgreSQL dataset.
+        </p>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Solution"
+        title="One product for inventory, monitoring and analysis"
+      >
+        <p>
+          The React interface connects to a FastAPI backend responsible for
+          inventory operations, validation and reporting. PostgreSQL provides
+          persistent storage, while dedicated aggregate endpoints supply
+          dashboard and category analytics.
+        </p>
+
+        <FeatureGrid features={partspilotFeatures} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Product Experience"
+        title="Desktop, mobile, API and analytics views"
+      >
+        <ImageGallery images={partspilotGallery} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Architecture"
+        title="How PartsPilot is structured"
+      >
+        <p>
+          PartsPilot separates the user interface, application service and
+          persistent data layers while using Docker to support a consistent
+          development environment.
+        </p>
+
+        <ArchitectureDiagram items={partspilotArchitecture} />
+
+        <TechStack groups={partspilotTechStack} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Engineering Decisions"
+        title="Challenges I worked through"
+      >
+        <div class="grid gap-6">
+          {partspilotChallenges.map((item) => (
+            <ChallengeCard
+              title={item.title}
+              challenge={item.challenge}
+              decision={item.decision}
+              outcome={item.outcome}
+            />
+          ))}
+        </div>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Learning"
+        title="What this project taught me"
+      >
+        <p>
+          PartsPilot brought frontend, backend, database, Docker and reporting
+          concerns together within one domain-focused application.
+        </p>
+
+        <LearningList items={partspilotLearnings} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Development"
+        title="How PartsPilot evolved"
+      >
+        <Timeline items={partspilotTimeline} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Next Steps"
+        title="Maintenance and future improvements"
+      >
+        <FeatureGrid features={partspilotFutureImprovements} />
+      </CaseStudySection>
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>

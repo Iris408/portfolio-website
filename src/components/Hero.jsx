@@ -1,95 +1,62 @@
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center px-6 pb-28 pt-36">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-        {/* EN: Main profile introduction */}
-        {/* JP: メインのプロフィール紹介 */}
-        <div>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-            § 01 / Profile
+    <section className="bg-[#F7F6F1] text-[#1E2823]">
+      <div className="grid w-full lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <div className="flex flex-col justify-center px-6 py-16 md:px-10 md:py-24 lg:py-28">
+          <p className="mb-7 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            Build <span aria-hidden="true">→</span> Solve{" "}
+            <span aria-hidden="true">→</span> Deploy
           </p>
 
-          <h1 className="mb-7 max-w-4xl text-4xl font-light leading-tight text-slate-100 md:text-6xl">
-            Ashleigh M
-            <span className="block text-3xl font-light text-[#A5B5A3] md:text-5xl">
-              Engineering Lab
-            </span>
+          <h1 className="max-w-2xl text-4xl font-normal leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+            Practical web applications for real people.
           </h1>
 
-          <p className="mb-5 max-w-2xl text-base font-light leading-relaxed text-slate-200 md:text-lg">
-            Backend-focused full-stack developer building practical,
-            production-style web applications.
+          <p className="mt-7 max-w-xl text-base leading-7 text-[#59615C] md:text-lg md:leading-8">
+            I&apos;m Ashleigh M, a backend-focused full-stack developer building
+            reliable web applications, APIs and digital products.
           </p>
 
-          <p className="max-w-2xl text-sm font-light leading-relaxed text-[#D8E0DD] md:text-base">
-            My current focus is the practical work behind production-ready applications: authentication, database persistence, 
-            accessible interfaces, testing, deployment and documentation.
+          <p className="mt-4 max-w-xl text-sm leading-7 text-[#69706B] md:text-base">
+            I focus on accessible interfaces, thoughtful architecture and
+            systems designed to work beyond the demo.
           </p>
 
-          {/* EN: Hero actions */}
-          {/* JP: ヒーローセクションのアクションボタン */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#projects"
-              className="inline-flex border border-[#A5B5A3]/40 bg-[#A5B5A3] px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-[#243034] transition hover:border-white hover:bg-white"
+              href="/work"
+              className="inline-flex items-center justify-center gap-3 bg-[#58705C] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544]"
             >
-              View featured projects
+              View my work <span aria-hidden="true">→</span>
             </a>
 
             <a
               href="#contact"
-              className="inline-flex border border-[#97A4AD]/40 px-6 py-3 text-sm font-normal uppercase tracking-[0.18em] text-slate-100 transition hover:border-[#A5B5A3]/70 hover:bg-white/10"            >
-              Contact
+              className="inline-flex items-center justify-center border border-[#879087] px-6 py-3.5 text-sm font-medium text-[#1E2823] transition hover:border-[#58705C] hover:bg-[#EDEDE6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+            >
+              Get in touch
             </a>
           </div>
         </div>
 
-        {/* EN: Engineering focus summary */}
-        {/* JP: エンジニアリングフォーカスの概要 */}
-        <div className="border border-[#97A4AD]/20 bg-white/5 p-6">
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.3em] text-[#A5B5A3]">
-            Current Stack
-          </p>
+        <picture className="block w-full overflow-hidden">
+          <source
+            media="(max-width: 639px)"
+            srcSet="/images/portfolio-workspace-mobile.webp"
+          />
 
-          <div className="grid gap-4">
-            <div className="border-b border-[#97A4AD]/20 pb-4">
-              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
-                Backend
-              </p>
-              <p className="mt-1 text-base font-normal text-slate-100">
-                Python · FastAPI · PostgreSQL · SQLAlchemy
-              </p>
-            </div>
+          <source
+            media="(max-width: 1023px)"
+            srcSet="/images/portfolio-workspace-tablet.webp"
+          />
 
-            <div className="border-b border-[#97A4AD]/20 pb-4">
-              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
-                Frontend
-              </p>
-              <p className="mt-1 text-base font-normal text-slate-100">
-                React · TypeScript · JavaScript · Tailwind CSS
-              </p>
-            </div>
-
-            <div className="border-b border-[#97A4AD]/20 pb-4">
-              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
-                DevOps / Workflow
-              </p>
-              <p className="mt-1 text-base font-normal text-slate-100">
-                Docker · GitHub Actions · Vercel · Render
-              </p>
-            </div>
-
-            <div>
-              <p className="text-xs font-light uppercase tracking-[0.18em] text-[#97A4AD]">
-                Project Direction
-              </p>
-              <p className="mt-1 text-base font-normal text-slate-100">
-                Backend-focused full-stack systems and accessible product design
-              </p>
-            </div>
-          </div>
+           <img
+            src="/images/portfolio-workspace-desktop.webp"
+            alt="A calm software engineering workspace with a laptop, books and plants"
+            className="block h-auto w-full"
+          />
+          </picture>
         </div>
-      </div>
     </section>
   );
 }

@@ -1,5 +1,5 @@
-// EN: Shared image preview modal — used by Projects.jsx (homepage) and ProjectsPageClient.jsx (/projects page)
-// JP: 共有画像プレビューモーダル — Projects.jsx（ホーム）と ProjectsPageClient.jsx（/projects ページ）で使用
+// EN: Shared image preview modal — used by the homepage and full Work page
+// JP: 共有画像プレビューモーダル — ホームページと完全な Work ページで使用
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"

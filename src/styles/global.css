@@ -1,21 +1,72 @@
 @import "tailwindcss";
 
 @theme {
-  --font-avantgarde-book: "Avant Garde", "Century Gothic", "Avenir Next", Arial, sans-serif;
+  --font-sans: "Manrope", "Zen Maru Gothic", system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-avantgarde-book: "Avant Garde", "Century Gothic", "Avenir Next",
+    Arial, sans-serif;
+
+  --color-portfolio-ink: #1e2823;
+  --color-portfolio-muted: #69706b;
+  --color-portfolio-green: #58705c;
+  --color-portfolio-green-dark: #405544;
+  --color-portfolio-paper: #f7f6f1;
+  --color-portfolio-line: #d8d4c8;
+}
+
+:root {
+  color-scheme: light;
+  background: #f7f6f1;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  font-family: "Montserrat", "Zen Maru Gothic", system-ui, sans-serif;
-  font-weight: 300;
+  min-width: 20rem;
+  margin: 0;
+  background: #f7f6f1;
+  color: #1e2823;
+  font-family: "Manrope", "Zen Maru Gothic", system-ui, sans-serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
 
-/* EN: Force the projects page to use the same portfolio font */
-/* JP: Projectsページでポートフォリオ全体と同じフォントを使います */
-.projects-page,
-.projects-page * {
-  font-family: "Montserrat", "Zen Maru Gothic", system-ui, sans-serif !important;
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #cdd7cc;
+  color: #1e2823;
+}
+
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid #526a57;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

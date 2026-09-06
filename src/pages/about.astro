@@ -1,258 +1,321 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 ---
 
-<MainLayout>
+<MainLayout
+  title="About | Ashleigh M"
+  description="Learn about Ashleigh M, a backend-focused full-stack developer building reliable, accessible and production-style web applications."
+>
   <Navbar client:load />
 
-  <main class="min-h-screen px-6 pb-28 pt-36">
-
-    <!-- ── § About / Background ─────────────────────────────────────── -->
-    <section class="mx-auto max-w-6xl">
-      <p class="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § About / Background
-      </p>
-
-      <h1 class="mb-12 max-w-4xl font-light leading-tight text-slate-100">
-        <span class="block text-4xl md:text-5xl">Building practical systems.</span>
-        <span class="block text-4xl md:text-5xl text-[#A5B5A3]">
-          Growing into backend-focused full-stack engineering.
-        </span>
-      </h1>
-
-      <div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-
-        <!-- Current Focus card -->
-        <aside class="border border-white/15 bg-white/5 p-6">
-          <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#A5B5A3]">
-            § Current Focus
+  <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
+    <!-- Hero -->
+    <section class="border-b border-[#D8D4C8] px-6 pb-20 pt-12 md:px-10 md:pb-20 md:pt-14">
+      <div class="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <p class="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            About
           </p>
 
-          <ul class="space-y-4 text-sm font-light leading-relaxed text-[#D8E0DD]">
-            <li>→ Building backend systems that go beyond the tutorial</li>
-            <li>→ Authentication, protected routes, and real database persistence</li>
-            <li>→ Full-stack apps with accessible, low-pressure interfaces</li>
-            <li>→ Testing, deployment, and documentation as first-class concerns</li>
-            <li>→ Learning to explain engineering concepts in Japanese</li>
-          </ul>
+          <h1 class="max-w-5xl font-serif text-4xl leading-tight md:text-6xl">
+            Systems thinking, practical engineering and a people-first
+            perspective.
+          </h1>
+        </div>
+
+        <div class="border-l border-[#AEB9AD] pl-6 md:pl-8">
+          <p class="text-base leading-8 text-[#626A65] md:text-lg">
+            I&apos;m Ashleigh M, a backend-focused full-stack developer building
+            reliable web applications, APIs and accessible digital products.
+          </p>
+
+          <p class="mt-5 text-sm leading-7 text-[#69706B]">
+            My work combines software engineering with experience in
+            automotive technology, operational systems and customer-facing
+            environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background -->
+    <section class="px-6 py-20 md:px-10 md:py-24">
+      <div class="grid w-full gap-14 lg:grid-cols-[0.75fr_1.25fr]">
+        <aside>
+          <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#6D7F70]">
+            Background
+          </p>
+
+          <div class="mt-6 border-t border-[#BCC4B9]">
+            <div class="border-b border-[#D8D4C8] py-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#89928B]">
+                Education
+              </p>
+
+              <p class="mt-2 font-serif text-lg text-[#26372D]">
+                MSc Computer Science
+              </p>
+
+              <p class="mt-1 text-sm text-[#69706B]">
+                Heriot-Watt University · In progress
+              </p>
+            </div>
+
+            <div class="border-b border-[#D8D4C8] py-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#89928B]">
+                Engineering direction
+              </p>
+
+              <p class="mt-2 font-serif text-lg text-[#26372D]">
+                Backend · Full-Stack · DevOps
+              </p>
+            </div>
+
+            <div class="border-b border-[#D8D4C8] py-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#89928B]">
+                Based
+              </p>
+
+              <p class="mt-2 font-serif text-lg text-[#26372D]">
+                United Kingdom
+              </p>
+
+              <p class="mt-1 text-sm leading-6 text-[#69706B]">
+                Open to remote, hybrid and international opportunities
+              </p>
+            </div>
+          </div>
         </aside>
 
-        <!-- About prose -->
-        <div class="flex max-w-3xl flex-col gap-10 text-base font-light leading-8 text-[#D8E0DD]">
+        <div class="max-w-4xl space-y-7 text-base leading-8 text-[#59615C]">
           <p>
-            I build full-stack and backend systems with React, TypeScript,
-            FastAPI, PostgreSQL, Docker, and GitHub Actions.
+            My route into software engineering began through customer
+            operations, management and automotive technology. Working with
+            high-volume operational systems and ADAS data shaped how I think
+            about reliability, process, communication and attention to detail.
           </p>
 
           <p>
-            My focus is turning beginner projects into realistic engineering
-            systems — the kind with real authentication, persistent databases,
-            protected routes, clean documentation, and deployment workflows
-            that actually hold up.
+            I now apply that experience to backend and full-stack development.
+            My projects are built around practical requirements such as
+            authentication, database persistence, validation, responsive
+            interfaces, testing, deployment and clear technical documentation.
           </p>
 
           <p>
-            I'm drawn to backend architecture, accessibility, and products
-            that solve real problems without overwhelming the people using
-            them. That interest led to Bloom — an accessible routine and
-            focus app built around low-pressure user experience and calm,
-            inclusive design.
+            I&apos;m particularly interested in the point where technical
+            architecture meets the person using the product. That is reflected
+            in projects such as Bloom, where accessibility and calm interaction
+            design are treated as core engineering requirements rather than
+            finishing touches.
           </p>
 
           <p>
-            I use every project as an engineering lab: a place to practise
-            debugging, architecture decisions, Git workflow, testing, and
-            explaining technical choices clearly — not just to make things
-            work, but to understand why they work.
+            Alongside my engineering portfolio, I&apos;m developing Iris &amp;
+            Oak, a small digital development business focused on clear,
+            responsive websites and useful digital products for organisations
+            and small businesses.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- ── § Direction ───────────────────────────────────────────────── -->
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
-
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Direction
-      </p>
-
-      <div class="grid gap-6 lg:grid-cols-3">
-
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Backend Engineering
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Building APIs that hold up — authentication, database
-            persistence, structured routes, validation, testing,
-            and deployment with FastAPI and PostgreSQL.
+    <!-- Engineering direction -->
+    <section class="border-y border-[#D8D4C8] bg-[#EFEEE8] px-6 py-20 md:px-10 md:py-24">
+      <div class="w-full">
+        <div class="mb-12">
+          <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#6D7F70]">
+            Engineering direction
           </p>
-        </article>
 
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Full&#8209;Stack Systems
+          <h2 class="mt-4 max-w-3xl font-serif text-3xl leading-tight md:text-4xl">
+            Building across the complete product path.
           </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Connecting frontend to backend with React and TypeScript —
-            protected routes, API integration, accessible interfaces,
-            and user flows that work end to end.
-          </p>
-        </article>
+        </div>
 
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Technical Communication
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Writing clearly about technical decisions — README files,
-            architecture notes, debugging recaps, and documentation
-            that makes projects readable beyond the code itself.
-          </p>
-        </article>
+        <div class="grid border-t border-[#BCC4B9] md:grid-cols-3">
+          <article class="border-b border-[#D8D4C8] py-7 md:border-r md:px-7 md:first:pl-0">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#6D7F70]">
+              01 / Backend
+            </p>
 
+            <h3 class="mt-5 font-serif text-2xl text-[#26372D]">
+              Reliable foundations
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-[#626A65]">
+              API design, authentication, database persistence, validation,
+              testing and structured application architecture using FastAPI
+              and PostgreSQL.
+            </p>
+          </article>
+
+          <article class="border-b border-[#D8D4C8] py-7 md:border-r md:px-7">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#6D7F70]">
+              02 / Full-Stack
+            </p>
+
+            <h3 class="mt-5 font-serif text-2xl text-[#26372D]">
+              Complete user flows
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-[#626A65]">
+              Connecting React and TypeScript interfaces to real backend
+              services, protected routes, persistent data and responsive,
+              accessible product experiences.
+            </p>
+          </article>
+
+          <article class="border-b border-[#D8D4C8] py-7 md:px-7 md:last:pr-0">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#6D7F70]">
+              03 / Delivery
+            </p>
+
+            <h3 class="mt-5 font-serif text-2xl text-[#26372D]">
+              Beyond the demo
+            </h3>
+
+            <p class="mt-4 text-sm leading-7 text-[#626A65]">
+              Docker environments, GitHub Actions, deployment workflows,
+              monitoring, documentation and the debugging needed to keep
+              applications working.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ── § Background ──────────────────────────────────────────────── -->
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
+    <!-- Current stack -->
+    <section class="bg-[#26372D] px-6 py-20 text-[#F7F6F1] md:px-10 md:py-24">
+      <div class="w-full">
+        <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#AEBDAE]">
+              Current stack
+            </p>
 
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Background
-      </p>
+            <h2 class="mt-4 max-w-xl font-serif text-3xl leading-tight md:text-4xl">
+              Tools I use to move from idea to deployed system.
+            </h2>
+          </div>
 
-      <div class="grid gap-6 lg:grid-cols-3">
+          <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2">
+            <div class="border-t border-white/20 pt-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#AEBDAE]">
+                Backend
+              </p>
 
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Education
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            MSc Computer Science — currently in progress.
-            Building engineering fundamentals alongside
-            practical project work.
-          </p>
-        </article>
+              <p class="mt-3 text-sm leading-7 text-[#D8E0D8]">
+                Python · FastAPI · PostgreSQL · SQLAlchemy · REST APIs · JWT
+              </p>
+            </div>
 
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Experience
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            ADAS Operations at Tesla, EMEA. Operational
-            systems experience that shaped how I think about
-            reliability, process, and attention to detail.
-          </p>
-        </article>
+            <div class="border-t border-white/20 pt-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#AEBDAE]">
+                Frontend
+              </p>
 
-        <article class="border border-white/15 bg-white/5 p-6">
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Location
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            London and Edinburgh. Open to remote, hybrid,
-            and international roles. Working toward
-            technical communication in Japanese.
-          </p>
-        </article>
+              <p class="mt-3 text-sm leading-7 text-[#D8E0D8]">
+                React · TypeScript · JavaScript · Astro · Tailwind CSS
+              </p>
+            </div>
 
+            <div class="border-t border-white/20 pt-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#AEBDAE]">
+                Workflow
+              </p>
+
+              <p class="mt-3 text-sm leading-7 text-[#D8E0D8]">
+                Docker · Git · GitHub Actions · Pytest · Vercel · Render
+              </p>
+            </div>
+
+            <div class="border-t border-white/20 pt-5">
+              <p class="text-xs uppercase tracking-[0.18em] text-[#AEBDAE]">
+                Developing
+              </p>
+
+              <p class="mt-3 text-sm leading-7 text-[#D8E0D8]">
+                Java · Spring Boot · AWS fundamentals · Technical Japanese
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ── § Building ────────────────────────────────────────────────── -->
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
-
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Building
-      </p>
-
-      <ul class="space-y-6 text-sm font-light leading-relaxed text-[#D8E0DD]">
-
-        <li class="flex flex-col gap-2 border-b border-white/10 pb-6">
-          <span class="text-base font-normal text-slate-100">Bloom</span>
-          <span>
-            An accessible routine and focus app for neurodivergent users.
-            React · FastAPI · PostgreSQL · JWT auth · v2.0.0 in progress.
-          </span>
-        </li>
-
-        <li class="flex flex-col gap-2 border-b border-white/10 pb-6">
-          <span class="text-base font-normal text-slate-100">
-            AI HR Support Assistant
-          </span>
-          <span>
-            Full-stack LLM-integrated support tool.
-            React · TypeScript · FastAPI · PostgreSQL · Docker.
-          </span>
-        </li>
-
-        <li class="flex flex-col gap-2 border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
-          <span class="text-base font-normal text-slate-100">
-            JWT Authentication Dashboard
-          </span>
-          <span>
-            Role-based access control with OAuth2 and JWT.
-            FastAPI · React · TypeScript · Vercel · Render.
-          </span>
-        </li>
-
-      </ul>
-    </section>
-
-    <!-- ── § Approach ────────────────────────────────────────────────── -->
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
-
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Approach
-      </p>
-
-      <ul class="space-y-4 text-sm font-light leading-relaxed text-[#D8E0DD]">
-        <li>→ Build things that work before making them clever</li>
-        <li>→ Understand the error before reaching for the fix</li>
-        <li>→ Write code as if someone else has to read it tomorrow</li>
-        <li>→ Documentation is part of the work, not an afterthought</li>
-        <li>→ Ship something small and real over something large and theoretical</li>
-        <li>→ Build for real people, not ideal users</li>
-      </ul>
-    </section>
-
-    <!-- ── § Writing ─────────────────────────────────────────────────── -->
-    <section class="mx-auto mt-40 max-w-6xl">
-      <div class="mb-24 border-t border-white/20"></div>
-
-      <p class="mb-12 font-mono text-xs uppercase tracking-[0.35em] text-[#A5B5A3]">
-        § Writing
-      </p>
-
-      <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
-
+    <!-- Working principles -->
+    <section class="px-6 py-20 md:px-10 md:py-24">
+      <div class="grid w-full gap-12 lg:grid-cols-[0.65fr_1.35fr]">
         <div>
-          <h2 class="mb-4 text-xl font-normal text-slate-100">
-            Technical Log
-          </h2>
-          <p class="text-sm font-light leading-7 text-[#D8E0DD]">
-            Field notes from building production-style apps —
-            bugs, decisions, fixes, and the reasoning behind them.
+          <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#6D7F70]">
+            Working principles
           </p>
+
+          <h2 class="mt-4 font-serif text-3xl text-[#1E2823] md:text-4xl">
+            How I approach the work.
+          </h2>
         </div>
 
-        <div class="flex items-start">
+        <ol class="border-t border-[#BCC4B9]">
+          {
+            [
+              "Build something useful before making it clever.",
+              "Understand the error before reaching for the fix.",
+              "Treat accessibility as an engineering requirement.",
+              "Write code and documentation for the next person.",
+              "Ship focused, working systems and improve them deliberately.",
+            ].map((principle, index) => (
+              <li class="grid grid-cols-[auto_1fr] gap-5 border-b border-[#D8D4C8] py-5">
+                <span class="font-mono text-xs text-[#829084]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span class="font-serif text-lg text-[#35453A]">
+                  {principle}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="border-t border-[#D8D4C8] bg-[#EFEEE8] px-6 py-16 md:px-10">
+      <div class="flex w-full flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#6D7F70]">
+            Explore further
+          </p>
+
+          <h2 class="mt-3 font-serif text-2xl text-[#26372D] md:text-3xl">
+            See the systems and thinking behind the work.
+          </h2>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
           <a
-            href="/technical-log"
-            class="inline-block border border-white/15 bg-white/5 px-5 py-3 text-sm font-light text-[#D8E0DD] transition hover:bg-white/10 hover:text-slate-100"
+            href="/work"
+            class="inline-flex items-center justify-center gap-2 bg-[#526A57] px-4 py-2.5 text-xs font-medium text-white transition hover:bg-[#405544] whitespace-nowrap"
           >
-            Read the log →
+            View my work
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a
+            href="/the-build-room"
+            class="inline-flex items-center justify-center gap-2 border border-[#9DAA9D] px-4 py-2.5 text-xs font-medium text-[#405544] transition hover:border-[#526A57] hover:bg-[#E3E9E1] whitespace-nowrap"
+          >
+            Enter The Build Room
+            <span aria-hidden="true">→</span>
           </a>
         </div>
-
       </div>
     </section>
-
   </main>
+
+  <Footer />
 </MainLayout>

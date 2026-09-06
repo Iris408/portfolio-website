@@ -1,0 +1,357 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+import CaseStudyHero from "../../components/case-study/CaseStudyHero.jsx";
+import CaseStudySection from "../../components/case-study/CaseStudySection.jsx";
+import FeatureGrid from "../../components/case-study/FeatureGrid.jsx";
+import TechStack from "../../components/case-study/TechStack.jsx";
+import ChallengeCard from "../../components/case-study/ChallengeCard.jsx";
+import LearningList from "../../components/case-study/LearningList.jsx";
+import Timeline from "../../components/case-study/Timeline.jsx";
+import ArchitectureDiagram from "../../components/case-study/ArchitectureDiagram.jsx";
+import ImageGallery from "../../components/case-study/ImageGallery.jsx";
+
+const irisAndOakTags = [
+  "Commercial Website",
+  "Astro",
+  "React",
+  "Tailwind CSS",
+  "Accessibility",
+  "Client Journey",
+];
+
+const irisAndOakFeatures = [
+  {
+    title: "Clear Service Structure",
+    description:
+      "Dedicated service information for one-page websites, small-business websites, website refreshes and custom digital development.",
+  },
+  {
+    title: "Guided Client Journey",
+    description:
+      "A structured enquiry experience covering the client, their needs, project requirements and final review.",
+  },
+  {
+    title: "Responsive Design",
+    description:
+      "Layouts and navigation designed to remain clear and usable across desktop, tablet and mobile screens.",
+  },
+  {
+    title: "Accessible Interaction",
+    description:
+      "Readable typography, clear hierarchy, visible focus states and interface decisions designed for a wider range of users.",
+  },
+  {
+    title: "Selected Work",
+    description:
+      "Project and concept presentation designed to demonstrate capability, process and commercial thinking.",
+  },
+  {
+    title: "Business Infrastructure",
+    description:
+      "A custom domain, professional business email and deployment workflow supporting a credible independent development service.",
+  },
+];
+
+const irisAndOakArchitecture = [
+  {
+    title: "Astro pages",
+    description:
+      "Provides fast, content-focused pages for services, selected work, business information and the main customer journey.",
+  },
+  {
+    title: "React interactions",
+    description:
+      "Supports interactive interface areas such as multi-step enquiry behaviour and responsive user controls.",
+  },
+  {
+    title: "Vercel and domain",
+    description:
+      "Delivers the production site through Vercel using the custom Iris & Oak domain and supporting business infrastructure.",
+  },
+];
+
+const irisAndOakTechStack = [
+  {
+    title: "Frontend",
+    items: [
+      "Astro",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Responsive components",
+    ],
+  },
+  {
+    title: "User Experience",
+    items: [
+      "Multi-step enquiry journey",
+      "Progressive disclosure",
+      "Accessible content hierarchy",
+      "Mobile-first interaction review",
+      "Clear calls to action",
+    ],
+  },
+  {
+    title: "Content and Product",
+    items: [
+      "Service positioning",
+      "Customer-focused copy",
+      "Selected work presentation",
+      "Project qualification questions",
+      "Business process design",
+    ],
+  },
+  {
+    title: "Delivery",
+    items: [
+      "Git and GitHub",
+      "Feature branches",
+      "Vercel deployment",
+      "Custom domain configuration",
+      "Google Workspace email",
+    ],
+  },
+];
+
+const irisAndOakChallenges = [
+  {
+    title: "Designing for customers rather than developers",
+    challenge:
+      "The website needed to explain technical services to small businesses and organisations without relying on engineering terminology.",
+    decision:
+      "I structured the content around customer needs, expected outcomes and clear next steps rather than listing technologies as the primary selling point.",
+    outcome:
+      "Visitors can understand what Iris & Oak offers and which service may suit them without needing technical knowledge.",
+  },
+  {
+    title: "Collecting useful project information without overwhelming people",
+    challenge:
+      "A detailed enquiry form can help qualify projects, but presenting every question at once can create unnecessary friction.",
+    decision:
+      "I divided the journey into four focused stages: About you, Your needs, Your project, and Review and send.",
+    outcome:
+      "The business receives more useful project context while the customer completes one manageable group of questions at a time.",
+  },
+  {
+    title: "Building credibility for a new development business",
+    challenge:
+      "As a new business, Iris & Oak needed to communicate professionalism before building a large catalogue of client work.",
+    decision:
+      "I combined a considered brand system, transparent service descriptions, selected engineering work and a visible development process.",
+    outcome:
+      "The website presents Iris & Oak as a focused digital development service while remaining honest about its current stage.",
+  },
+];
+
+const irisAndOakLearnings = [
+  "How commercial website copy differs from technical project documentation.",
+  "How to structure services around customer outcomes rather than technologies.",
+  "How progressive disclosure can make a detailed enquiry process feel manageable.",
+  "How to build reusable Astro and React components within a content-led website.",
+  "How visual hierarchy, spacing and calls to action guide visitors through a business site.",
+  "How custom domains, professional email and deployment contribute to a credible product experience.",
+  "How accessibility and responsive behaviour affect both design and commercial usability.",
+];
+
+const irisAndOakTimeline = [
+  {
+    version: "Phase 01",
+    title: "Business and service definition",
+    description:
+      "Defined the target audience, initial services, project scope and positioning for Iris & Oak.",
+  },
+  {
+    version: "Phase 02",
+    title: "Brand and website direction",
+    description:
+      "Developed the visual identity, colour system, typography and initial content structure.",
+  },
+  {
+    version: "Phase 03",
+    title: "Custom Astro website",
+    description:
+      "Built the responsive site using Astro, React and Tailwind CSS.",
+  },
+  {
+    version: "Phase 04",
+    title: "Client enquiry journey",
+    description:
+      "Created the four-stage Work With Us journey for gathering useful project requirements.",
+  },
+  {
+    version: "Phase 05",
+    title: "Deployment and business setup",
+    description:
+      "Connected the custom domain, professional email and production deployment workflow.",
+  },
+];
+
+const irisAndOakFutureImprovements = [
+  {
+    title: "Enquiry confirmation workflow",
+    description:
+      "Add clearer submission confirmation, customer follow-up and internal enquiry notifications.",
+  },
+  {
+    title: "Client portal",
+    description:
+      "Develop a secure space for proposals, project updates, files, feedback and delivery information.",
+  },
+  {
+    title: "CRM workflow",
+    description:
+      "Connect qualified enquiries to an organised client and project-management process.",
+  },
+  {
+    title: "Expanded case studies",
+    description:
+      "Add completed client outcomes, design decisions and measurable improvements as the business grows.",
+  },
+];
+
+const irisAndOakGallery = [
+  {
+    src: "/screenshots/irisoak-homepage.png",
+    alt: "Iris and Oak digital development website homepage",
+    caption:
+      "The Iris & Oak homepage introducing its services and visual direction.",
+  },
+];
+---
+
+<MainLayout
+  title="Iris & Oak Case Study | Ashleigh M"
+  description="A commercial website case study covering the design, development and customer journey behind Iris & Oak."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
+    <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
+      <CaseStudyHero
+        eyebrow="Case Study · Commercial Website · Client Journey"
+        title="Iris & Oak"
+        summary="A custom website and digital customer journey for an independent development business focused on clear, responsive and accessible digital products."
+        tags={irisAndOakTags}
+        liveUrl="https://www.irisoak.dev"
+        image="/screenshots/irisoak-homepage.png"
+        imageAlt="Iris and Oak digital development website"
+      />
+
+      <CaseStudySection
+        eyebrow="Overview"
+        title="A development business built from the customer journey outward"
+      >
+        <p>
+          Iris & Oak is an independent digital development business offering
+          websites, web applications, internal tools and technical support for
+          individuals, small businesses and organisations.
+        </p>
+
+        <p>
+          The website needed to present those services clearly, establish a
+          credible identity and give prospective customers a structured way to
+          explain what they need.
+        </p>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Problem"
+        title="Technical services can be difficult for customers to evaluate"
+      >
+        <p>
+          Many small-business customers know that their website or internal
+          process needs improving but may not know which technology, project
+          type or implementation approach they require.
+        </p>
+
+        <p>
+          The experience therefore needed to communicate services without
+          expecting visitors to arrive with a finished technical specification.
+        </p>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Solution"
+        title="Clear services and a guided path to starting a project"
+      >
+        <p>
+          Iris & Oak combines outcome-focused service descriptions with a
+          multi-step enquiry journey. Customers can describe themselves, select
+          their needs, provide project details and review their information
+          before submitting it.
+        </p>
+
+        <FeatureGrid features={irisAndOakFeatures} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Website Experience"
+        title="A calm and considered commercial interface"
+      >
+        <ImageGallery images={irisAndOakGallery} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Architecture"
+        title="How the website is structured"
+      >
+        <p>
+          The site uses Astro for fast content-focused pages and React where
+          richer interaction is useful. Tailwind CSS supports the responsive
+          visual system, while Vercel provides the production deployment.
+        </p>
+
+        <ArchitectureDiagram items={irisAndOakArchitecture} />
+
+        <TechStack groups={irisAndOakTechStack} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Engineering and Product Decisions"
+        title="Challenges I worked through"
+      >
+        <div class="grid gap-6">
+          {irisAndOakChallenges.map((item) => (
+            <ChallengeCard
+              title={item.title}
+              challenge={item.challenge}
+              decision={item.decision}
+              outcome={item.outcome}
+            />
+          ))}
+        </div>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Learning"
+        title="What building Iris & Oak taught me"
+      >
+        <p>
+          Iris & Oak required me to think beyond implementation and consider
+          positioning, customer confidence, project qualification and the
+          complete journey from discovery to enquiry.
+        </p>
+
+        <LearningList items={irisAndOakLearnings} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Development"
+        title="How Iris & Oak evolved"
+      >
+        <Timeline items={irisAndOakTimeline} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Next Steps"
+        title="Business and product improvements"
+      >
+        <FeatureGrid features={irisAndOakFutureImprovements} />
+      </CaseStudySection>
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>

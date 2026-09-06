@@ -1,16 +1,20 @@
 export default function LearningList({ items = [] }) {
   return (
-    <div className="mt-8 grid gap-4">
-      {items.map((item) => (
-        <div
+    <ol className="mt-8 border-t border-[#BCC4B9]">
+      {items.map((item, index) => (
+        <li
           key={item}
-          className="border-l-2 border-[#A5B5A3]/50 bg-white/5 px-5 py-4"
+          className="grid grid-cols-[auto_1fr] gap-5 border-b border-[#D8D4C8] py-5"
         >
-          <p className="leading-relaxed text-[#D8E0DD]">
+          <span className="font-mono text-xs text-[#829084]">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <p className="text-sm leading-7 text-[#59615C]">
             {item}
           </p>
-        </div>
+        </li>
       ))}
-    </div>
-  )
+    </ol>
+  );
 }

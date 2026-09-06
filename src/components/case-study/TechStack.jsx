@@ -1,25 +1,31 @@
 export default function TechStack({ groups = [] }) {
   return (
-    <div className="mt-10 grid gap-6 md:grid-cols-2">
+    <div className="mt-8 grid gap-5 md:grid-cols-2">
       {groups.map((group) => (
-        <div
+        <article
           key={group.title}
-          className="rounded-xl border border-white/10 bg-white/5 p-6"
+          className="border border-[#D8D4C8] bg-[#FCFBF7] p-6"
         >
-          <h3 className="text-lg font-medium text-white">
+          <h3 className="font-serif text-xl text-[#26372D]">
             {group.title}
           </h3>
 
-          <ul className="mt-4 space-y-3 text-[#D8E0DD]">
+          <ul className="mt-5 space-y-3">
             {group.items.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="text-[#A5B5A3]">—</span>
+              <li
+                key={item}
+                className="flex gap-3 text-sm leading-6 text-[#626A65]"
+              >
+                <span className="text-[#718574]" aria-hidden="true">
+                  —
+                </span>
+
                 <span>{item}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </article>
       ))}
     </div>
-  )
+  );
 }

@@ -1,0 +1,76 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import TheBuildRoomClient from "../components/TheBuildRoomClient.jsx";
+---
+
+<MainLayout
+  title="The Build Room | Ashleigh M"
+  description="Engineering notes documenting debugging, backend development, CI/CD, deployment decisions and lessons from practical software projects."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
+    <section class="border-b border-[#D8D4C8] px-6 pb-20 pt-12 md:px-10 md:pb-20 md:pt-14">
+      <div class="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <p class="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            The Build Room
+          </p>
+
+          <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">
+            The work behind the finished product.
+          </h1>
+
+          <p class="mt-7 max-w-3xl text-base leading-8 text-[#626A65] md:text-lg">
+            Debugging records, architecture decisions and engineering lessons
+            from building backend systems, full-stack applications and
+            deployment workflows.
+          </p>
+        </div>
+
+        <div class="border-l border-[#AEB9AD] pl-6 md:pl-8">
+          <p class="text-xs font-medium uppercase tracking-[0.22em] text-[#6D7F70]">
+            Documentation format
+          </p>
+
+          <p class="mt-4 font-serif text-2xl leading-snug text-[#26372D]">
+            Problem → Cause → Fix → Lesson
+          </p>
+
+          <p class="mt-4 text-sm leading-7 text-[#69706B]">
+            Each note records the reasoning behind a technical change—not only
+            the final result.
+          </p>
+
+          <a
+            href="https://iris408.github.io/technical-blog/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#405544] transition hover:text-[#1E2823]"
+          >
+            Visit the Japanese-first notebook
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-16 md:px-10 md:py-20">
+      <div class="mb-10">
+        <p class="text-xs font-medium uppercase tracking-[0.25em] text-[#6D7F70]">
+          Engineering notes
+        </p>
+
+        <h2 class="mt-4 font-serif text-3xl text-[#1E2823] md:text-4xl">
+          Problems investigated and lessons retained.
+        </h2>
+      </div>
+
+      <TheBuildRoomClient client:load />
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

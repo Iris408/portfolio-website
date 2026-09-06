@@ -4,20 +4,24 @@ export default function CaseStudySection({
   children,
 }) {
   return (
-    <section className="mt-20">
-      {eyebrow && (
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#A5B5A3]">
-          {eyebrow}
-        </p>
-      )}
+    <section className="border-b border-[#D8D4C8] py-16 md:py-20">
+      <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr] lg:gap-16">
+        <header>
+          {eyebrow && (
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#6D7F70]">
+              {eyebrow}
+            </p>
+          )}
 
-      <h2 className="mt-3 text-3xl font-light text-slate-100">
-        {title}
-      </h2>
+          <h2 className="mt-4 max-w-md font-serif text-3xl leading-tight text-[#1E2823] md:text-4xl">
+            {title}
+          </h2>
+        </header>
 
-      <div className="mt-8 space-y-6 leading-relaxed text-[#D8E0DD]">
-        {children}
+        <div className="space-y-6 text-base leading-8 text-[#5E6661]">
+          {children}
+        </div>
       </div>
     </section>
-  )
+  );
 }

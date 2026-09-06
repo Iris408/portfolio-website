@@ -9,6 +9,8 @@ import TechStack from "../../components/case-study/TechStack.jsx"
 import ChallengeCard from "../../components/case-study/ChallengeCard.jsx"
 import LearningList from "../../components/case-study/LearningList.jsx"
 import Timeline from "../../components/case-study/Timeline.jsx"
+import ArchitectureDiagram from "../../components/case-study/ArchitectureDiagram.jsx"
+import ImageGallery from "../../components/case-study/ImageGallery.jsx"
 
 const bloomTags = [
   "Public Beta",
@@ -200,144 +202,218 @@ const bloomFutureImprovements = [
       "Expand automated frontend and backend tests, add stronger error tracking and improve deployment observability.",
   },
 ]
+
+const bloomArchitecture = [
+  {
+    title: "React client",
+    description:
+      "Provides the responsive interface, guided demo, routines, focus sessions, progress views and accessibility controls.",
+  },
+  {
+    title: "FastAPI service",
+    description:
+      "Handles authentication, protected routes, validation and communication between the frontend and persistent data.",
+  },
+  {
+    title: "PostgreSQL",
+    description:
+      "Stores private account, profile, routine and progress data separately for each authenticated user.",
+  },
+]
+
+const bloomGallery = [
+  {
+    src: "/screenshots/bloom-homepage.png",
+    alt: "Bloom application homepage",
+    caption: "Bloom’s calm homepage and primary product navigation.",
+  },
+  {
+    src: "/screenshots/bloom-overview.png",
+    alt: "Bloom product overview",
+    caption: "Overview of the main routine, focus and progress experience.",
+  },
+  {
+    src: "/screenshots/bloom-page-controls.png",
+    alt: "Bloom accessibility controls",
+    caption: "Page and accessibility controls designed to support different needs.",
+  },
+  {
+    src: "/screenshots/bloom-demo-modal.png",
+    alt: "Bloom guided demo selection",
+    caption: "Guided demo options allow visitors to explore without registering.",
+  },
+  {
+    src: "/screenshots/bloom-routines.png",
+    alt: "Bloom routines interface",
+    caption: "Routine creation and completion workflow.",
+  },
+  {
+    src: "/screenshots/bloom-focus.png",
+    alt: "Bloom focus interface",
+    caption: "Low-pressure focus session experience.",
+  },
+]
+
 ---
 
-<MainLayout>
-  <Navbar />
+<MainLayout
+  title="Bloom Case Study | Ashleigh M"
+  description="A full-stack case study exploring Bloom’s accessibility-first design, React frontend, FastAPI backend and PostgreSQL persistence."
+>
+  <Navbar client:load />
 
-  <main class="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-10">
-    <CaseStudyHero
-      eyebrow="Case Study · Full-Stack · Accessibility"
-      title="Bloom"
-      summary="A calm, accessibility-first full-stack productivity application designed to support routines, focus, and progress without pressure."
-      tags={bloomTags}
-      liveUrl="https://bloom-app-three-xi.vercel.app/"
-      githubUrl="https://github.com/Iris408/bloom-app"
-    />
+  <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
+    <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
+      <CaseStudyHero
+        eyebrow="Case Study · Full-Stack · Accessibility"
+        title="Bloom"
+        summary="A calm, accessibility-first full-stack productivity application designed to support routines, focus, and progress without pressure."
+        tags={bloomTags}
+        liveUrl="https://bloom-app-three-xi.vercel.app/"
+        githubUrl="https://github.com/Iris408/bloom-app"
+        image="/screenshots/bloom-homepage.png"
+        imageAlt="Bloom accessibility-first routine and focus application"
+      />
 
-    <CaseStudySection
-      eyebrow="Overview"
-      title="A calmer approach to productivity"
-    >
-      <p>
-        Bloom began as a frontend prototype exploring calmer productivity for
-        neurodivergent users. It has since evolved into a full-stack application
-        with authenticated accounts, persistent routines, protected routes,
-        guided demos, and accessibility-first design.
-      </p>
+      <CaseStudySection
+        eyebrow="Overview"
+        title="A calmer approach to productivity"
+      >
+        <p>
+          Bloom began as a frontend prototype exploring calmer productivity for
+          neurodivergent users. It has since evolved into a full-stack application
+          with authenticated accounts, persistent routines, protected routes,
+          guided demos, and accessibility-first design.
+        </p>
 
-      <p>
-        Rather than rewarding long streaks or encouraging pressure, Bloom focuses
-        on helping users return after missed days with supportive routines and
-        gentle progress tracking.
-      </p>
-    </CaseStudySection>
+        <p>
+          Rather than rewarding long streaks or encouraging pressure, Bloom focuses
+          on helping users return after missed days with supportive routines and
+          gentle progress tracking.
+        </p>
+      </CaseStudySection>
 
-    <CaseStudySection
-      eyebrow="Problem"
-      title="Why traditional productivity tools can feel overwhelming"
-    >
-      <p>
-        Many productivity applications rely on streaks, constant notifications,
-        dense dashboards, and visible signs of missed progress. For neurodivergent
-        users, this can turn planning into another source of pressure.
-      </p>
+      <CaseStudySection
+        eyebrow="Problem"
+        title="Why traditional productivity tools can feel overwhelming"
+      >
+        <p>
+          Many productivity applications rely on streaks, constant notifications,
+          dense dashboards, and visible signs of missed progress. For neurodivergent
+          users, this can turn planning into another source of pressure.
+        </p>
 
-      <p>
-        Bloom was designed around a different question: how can a productivity
-        tool help someone return to a routine without making them feel that they
-        have failed?
-      </p>
-    </CaseStudySection>
+        <p>
+          Bloom was designed around a different question: how can a productivity
+          tool help someone return to a routine without making them feel that they
+          have failed?
+        </p>
+      </CaseStudySection>
 
-    <CaseStudySection
-      eyebrow="Solution"
-      title="A low-pressure workflow built around return and flexibility"
-    >
-      <p>
-        Bloom combines routines, focus sessions, progress tracking, reflections,
-        guided demos, and accessibility controls within a calm interface.
-      </p>
+      <CaseStudySection
+        eyebrow="Solution"
+        title="A low-pressure workflow built around return and flexibility"
+      >
+        <p>
+          Bloom combines routines, focus sessions, progress tracking, reflections,
+          guided demos, and accessibility controls within a calm interface.
+        </p>
 
-      <p>
-        Visitors can explore the application without creating an account, while
-        authenticated users can save their routines, profile preferences, and
-        progress through a FastAPI and PostgreSQL backend.
-      </p>
-    </CaseStudySection>
+        <p>
+          Visitors can explore the application without creating an account, while
+          authenticated users can save their routines, profile preferences, and
+          progress through a FastAPI and PostgreSQL backend.
+        </p>
+      </CaseStudySection>
 
-    <CaseStudySection
-      eyebrow="Features"
-      title="Key functionality"
-    >
-      <FeatureGrid features={bloomFeatures} />
-    </CaseStudySection>
+      <CaseStudySection
+        eyebrow="Product Experience"
+        title="Bloom across the complete user journey"
+      >
+        <p>
+          Bloom’s interface connects onboarding, routines, focus sessions,
+          progress and accessibility controls through one calm and consistent
+          product experience.
+        </p>
 
-    <CaseStudySection
-      eyebrow="Architecture"
-      title="How Bloom is structured"
-    >
-      <p>
-        Bloom uses a separate frontend, backend, and database architecture. The
-        React client communicates with a FastAPI API, while PostgreSQL stores
-        authenticated user data, routines, preferences, and progress.
-      </p>
+        <ImageGallery images={bloomGallery} />
+      </CaseStudySection>
 
-      <TechStack groups={bloomTechStack} />
-    </CaseStudySection>
+      <CaseStudySection
+        eyebrow="Features"
+        title="Key functionality"
+      >
+        <FeatureGrid features={bloomFeatures} />
+      </CaseStudySection>
 
-    <CaseStudySection
-      eyebrow="Engineering Decisions"
-      title="Challenges I worked through"
-    >
-      <div class="grid gap-6">
-        {bloomChallenges.map((item) => (
-          <ChallengeCard
-            title={item.title}
-            challenge={item.challenge}
-            decision={item.decision}
-            outcome={item.outcome}
-          />
-        ))}
-      </div>
-    </CaseStudySection>
+      <CaseStudySection
+        eyebrow="Architecture"
+        title="How Bloom is structured"
+      >
+        <p>
+          Bloom uses a separate frontend, backend, and database architecture. The
+          React client communicates with a FastAPI API, while PostgreSQL stores
+          authenticated user data, routines, preferences, and progress.
+        </p>
 
-    <CaseStudySection
-      eyebrow="Learning"
-      title="What this project taught me"
-    >
-      <p>
-        Bloom has been my main capstone project. It combines frontend,
-        backend, database, accessibility and engineering workflow skills.
-      </p>
+        <ArchitectureDiagram items={bloomArchitecture} />
 
-      <LearningList items={bloomLearnings} />
-    </CaseStudySection>
+        <TechStack groups={bloomTechStack} />
+      </CaseStudySection>
 
-    <CaseStudySection
-      eyebrow="Project Timeline"
-      title="How Bloom evolved"
-    >
-      <p>
-        Bloom has developed through several focused releases, moving from a
-        frontend prototype into a deployed full-stack application.
-      </p>
+      <CaseStudySection
+        eyebrow="Engineering Decisions"
+        title="Challenges I worked through"
+      >
+        <div class="grid gap-6">
+          {bloomChallenges.map((item) => (
+            <ChallengeCard
+              title={item.title}
+              challenge={item.challenge}
+              decision={item.decision}
+              outcome={item.outcome}
+            />
+          ))}
+        </div>
+      </CaseStudySection>
 
-      <Timeline items={bloomTimeline} />
-    </CaseStudySection>
+      <CaseStudySection
+        eyebrow="Learning"
+        title="What this project taught me"
+      >
+        <p>
+          Bloom has been my main capstone project. It combines frontend,
+          backend, database, accessibility and engineering workflow skills.
+        </p>
 
-    <CaseStudySection
-      eyebrow="Next Steps"
-      title="Future improvements"
-    >
-      <p>
-        Bloom remains in active development. The next phase focuses on mobile
-        usability, clearer product guidance, broader accessibility support and
-        stronger production readiness.
-      </p>
+        <LearningList items={bloomLearnings} />
+      </CaseStudySection>
 
-      <FeatureGrid features={bloomFutureImprovements} />
-    </CaseStudySection>
+      <CaseStudySection
+        eyebrow="Project Timeline"
+        title="How Bloom evolved"
+      >
+        <p>
+          Bloom has developed through several focused releases, moving from a
+          frontend prototype into a deployed full-stack application.
+        </p>
+
+        <Timeline items={bloomTimeline} />
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="Next Steps"
+        title="Future improvements"
+      >
+        <p>
+          Bloom remains in active development. The next phase focuses on mobile
+          usability, clearer product guidance, broader accessibility support and
+          stronger production readiness.
+        </p>
+
+        <FeatureGrid features={bloomFutureImprovements} />
+      </CaseStudySection>
+    </div>
   </main>
 
   <Footer />

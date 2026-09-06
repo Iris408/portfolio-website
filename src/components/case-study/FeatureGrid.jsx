@@ -1,20 +1,24 @@
 export default function FeatureGrid({ features = [] }) {
   return (
-    <div className="mt-10 grid gap-6 md:grid-cols-2">
-      {features.map((feature) => (
-        <div
+    <div className="mt-8 grid gap-5 md:grid-cols-2">
+      {features.map((feature, index) => (
+        <article
           key={feature.title}
-          className="rounded-xl border border-white/10 bg-white/5 p-6"
+          className="border-t border-[#AEB9AD] py-6"
         >
-          <h3 className="text-lg font-medium text-white">
+          <p className="text-xs font-medium text-[#89928B]">
+            {String(index + 1).padStart(2, "0")}
+          </p>
+
+          <h3 className="mt-4 font-serif text-xl text-[#26372D]">
             {feature.title}
           </h3>
 
-          <p className="mt-3 leading-relaxed text-[#D8E0DD]">
+          <p className="mt-3 text-sm leading-7 text-[#626A65]">
             {feature.description}
           </p>
-        </div>
+        </article>
       ))}
     </div>
-  )
+  );
 }

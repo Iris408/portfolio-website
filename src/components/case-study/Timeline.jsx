@@ -1,34 +1,40 @@
 export default function Timeline({ items = [] }) {
   return (
-    <div className="mt-10 space-y-8">
-      {items.map((item) => (
-        <article
+    <ol className="mt-8 border-t border-[#BCC4B9]">
+      {items.map((item, index) => (
+        <li
           key={item.version}
-          className="grid gap-3 border-l border-white/15 pl-6 sm:grid-cols-[140px_1fr]"
+          className="grid gap-4 border-b border-[#D8D4C8] py-6 sm:grid-cols-[9rem_1fr]"
         >
           <div>
-            <p className="font-mono text-sm text-[#A5B5A3]">
+            <p className="font-mono text-sm font-medium text-[#526A57]">
               {item.version}
             </p>
 
             {item.date && (
-              <p className="mt-1 text-xs text-[#97A4AD]">
+              <p className="mt-1 text-xs text-[#89928B]">
                 {item.date}
               </p>
             )}
           </div>
 
-          <div>
-            <h3 className="text-lg font-medium text-white">
-              {item.title}
-            </h3>
+          <div className="grid gap-4 md:grid-cols-[auto_1fr]">
+            <span className="font-mono text-xs text-[#89928B]">
+              {String(index + 1).padStart(2, "0")}
+            </span>
 
-            <p className="mt-2 leading-relaxed text-[#D8E0DD]">
-              {item.description}
-            </p>
+            <div>
+              <h3 className="font-serif text-xl text-[#26372D]">
+                {item.title}
+              </h3>
+
+              <p className="mt-2 text-sm leading-7 text-[#626A65]">
+                {item.description}
+              </p>
+            </div>
           </div>
-        </article>
+        </li>
       ))}
-    </div>
-  )
+    </ol>
+  );
 }

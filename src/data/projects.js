@@ -1,17 +1,64 @@
-// プロジェクトデータの共有ファイル
-// Shared data file — import this anywhere you need project data
+// EN: Shared portfolio project data
+// JP: ポートフォリオ全体で使用するプロジェクトデータ
 
 export const projects = [
-    // featured: true のプロジェクトだけホームページに表示される
-    // Only projects with featured: true appear on the homepage
+  /* ========================================
+     Featured and Primary Work
+  ======================================== */
 
   {
+    slug: "iris-and-oak",
     featured: true,
-    title: "PartsPilot",
-    category: "Full-Stack · Automotive",
-    status: "Feature-complete · Maintenance",
+    tier: "primary",
+    title: "Iris & Oak",
+    category: "Business Platform · Full-Stack",
+    status: "Production · Live",
+    summary:
+      "A production freelance business website with service-led journeys, case studies and transactional project enquiries.",
+    description:
+      "A production Next.js website created for Iris & Oak, my freelance software development business. The platform presents services, pricing and selected work while guiding prospective clients through a structured four-step enquiry journey. It includes service-specific questions, review and amend functionality, validation, privacy consent, server-side enquiry processing and transactional email delivery.",
     tags: [
       "Full-Stack",
+      "Business Website",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Resend",
+      "Responsive Design",
+      "Accessibility",
+      "Vercel",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "CSS",
+      "Resend",
+      "Vercel",
+    ],
+    featuredTech: ["Next.js", "TypeScript", "Resend"],
+    detailsPath: "/case-studies/iris-and-oak",
+    github: "",
+    demo: "https://www.irisoak.dev",
+    image: "/screenshots/irisoak-homepage.png",
+    images: ["/screenshots/irisoak-homepage.png"],
+  },
+
+  {
+    slug: "partspilot",
+    featured: true,
+    tier: "primary",
+    title: "PartsPilot",
+    category: "Automotive · Full-Stack",
+    status: "Feature-complete · Maintenance",
+    summary:
+      "An automotive inventory platform with authenticated workflows, stock monitoring, reporting and operational analytics.",
+    description:
+      "A full-stack automotive inventory management and analytics platform built with Next.js, TypeScript, FastAPI and PostgreSQL. PartsPilot combines authenticated inventory CRUD, search, filtering and sorting with stock monitoring, supplier management, operational reporting, CSV export and Power BI business intelligence in a responsive product experience.",
+    tags: [
+      "Full-Stack",
+      "Automotive",
+      "Next.js",
       "React",
       "TypeScript",
       "FastAPI",
@@ -24,13 +71,13 @@ export const projects = [
       "GitHub Actions",
       "Vercel",
     ],
-    description:
-      "A full-stack automotive inventory management and analytics platform built with React, TypeScript, FastAPI and PostgreSQL. PartsPilot combines authenticated inventory CRUD, search and filtering, stock monitoring, supplier management, operational analytics, reporting, CSV export and Power BI business intelligence within a responsive product experience.",
     tech: [
+      "Next.js",
       "React",
-      "TypeScript",
       "FastAPI",
       "PostgreSQL",
+      "TypeScript",
+      "Python",
       "SQLAlchemy",
       "JWT",
       "Docker",
@@ -38,10 +85,11 @@ export const projects = [
       "GitHub Actions",
       "Vercel",
     ],
+    featuredTech: ["Next.js", "FastAPI", "PostgreSQL"],
+    detailsPath: "/case-studies/partspilot",
     github: "https://github.com/Iris408/partspilot",
     demo: "https://inventory-management-system-iris408.vercel.app",
-    image: "/screenshots/partspilot-dashboard.png",
-    image: "/screenshots/partspilot-dashboard-overview.png",
+    image: "/screenshots/partspilot-homepage.png",
     images: [
       "/screenshots/partspilot-dashboard-overview.png",
       "/screenshots/partspilot-search-filter-sort.png",
@@ -52,31 +100,46 @@ export const projects = [
   },
 
   {
+    slug: "bloom",
     featured: true,
-    title: "Bloom — Calm Routine, Focus & Progress App",
-    category: "Capstone · Full-Stack · Accessibility",
-    status: "Public beta · Deployed full-stack application",
-    tags: ["Full-Stack", "React", "JavaScript", "FastAPI", "PostgreSQL", "Authentication", "Accessibility", "Responsive Design", "Docker", "Deployed", "Beta", "Capstone"],
+    tier: "primary",
+    title: "Bloom",
+    category: "Accessibility · Full-Stack",
+    status: "Early public beta · Live",
+    summary:
+      "An accessibility-first routine and focus application with persistent data, guided demos and configurable support.",
     description:
-      "Bloom is a calm, accessibility-first routine, focus, and progress application designed around neurodivergent-friendly support and low-pressure productivity. " +
-      "It includes authenticated user accounts, JWT-protected routes, persistent routines and profile data, focus sessions, progress tracking, moments and reflections, guided demo experiences, and configurable accessibility controls. " +
-      "The application uses a dual-mode architecture that keeps demo data separate from authenticated user data. Built with React, FastAPI, PostgreSQL, JWT authentication, and Docker, with development managed through structured testing, debugging, release documentation, GitHub, and Jira.",
+      "Bloom is a calm routine, focus and progress application designed around neurodivergent-friendly support and low-pressure productivity. It includes authenticated accounts, JWT-protected routes, persistent routines and profile data, focus sessions, progress tracking, moments and reflections, guided demos and configurable accessibility controls. Its dual-mode architecture keeps demonstration data separate from authenticated user data.",
+    tags: [
+      "Full-Stack",
+      "Accessibility",
+      "React",
+      "JavaScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Authentication",
+      "Docker",
+      "Responsive Design",
+      "Vercel",
+      "Public Beta",
+      "Capstone",
+    ],
     tech: [
       "React",
+      "FastAPI",
+      "PostgreSQL",
       "JavaScript",
       "Vite",
       "Tailwind CSS",
-      "FastAPI",
-      "PostgreSQL",
       "JWT Authentication",
       "Docker",
       "Vercel",
-      "Accessibility",
     ],
+    featuredTech: ["React", "FastAPI", "PostgreSQL"],
     detailsPath: "/case-studies/bloom",
     github: "https://github.com/Iris408/bloom-app",
     demo: "https://bloom-app-three-xi.vercel.app/",
-    image: "/screenshots/bloom-overview.png",
+    image: "/screenshots/bloom-homepage.png",
     images: [
       "/screenshots/bloom-overview.png",
       "/screenshots/bloom-page-controls.png",
@@ -90,66 +153,133 @@ export const projects = [
   },
 
   {
+    slug: "accesshub",
     featured: true,
-    title: "Secure User Management API",
-    category: "Backend · API",
-    status: "Portfolio-ready deployed backend",
-    tags: ["Backend", "API", "Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "JWT", "OAuth2", "Render", "Deployed", "CI/CD"],
+    tier: "primary",
+    title: "AccessHub",
+    category: "Authentication · Full-Stack",
+    status: "Production-style · Deployed",
+    summary:
+      "A full-stack authentication platform with protected routes, user profiles, administrative tools and role-based access.",
     description:
-      "A deployed FastAPI backend API with PostgreSQL, SQLAlchemy, JWT authentication, OAuth2 Swagger login, protected profile access, admin-only user listing, role-based access control, Docker support, Render deployment, and GitHub Actions CI. Recently improved with health/readiness endpoints, endpoint tests, CORS fixes for deployed frontend integrations, and safer admin role checking.",
-    tech: [
-      "Python",
+      "A connected React, TypeScript and FastAPI authentication platform demonstrating secure frontend and backend workflows. AccessHub includes JWT login, protected routes, authenticated profile loading, role-based interface behaviour and administrative user management. The backend provides PostgreSQL persistence, OAuth2-compatible authentication, protected endpoints, role checks, health endpoints, automated tests, Docker support and continuous integration.",
+    tags: [
+      "Full-Stack",
+      "Authentication",
+      "React",
+      "TypeScript",
       "FastAPI",
+      "Python",
       "PostgreSQL",
       "SQLAlchemy",
-      "Docker",
       "JWT",
       "OAuth2",
-      "Render",
+      "Role-Based Access",
+      "Docker",
       "GitHub Actions",
+      "Vercel",
+      "Render",
     ],
-    github: "https://github.com/Iris408/secure-user-management-api",
-    demo: "https://mini-user-api.onrender.com/docs",
-    image: "/screenshots/mini-user-api.png",
-  },
-
-  {
-    featured: false,
-    title: "JWT Authentication Dashboard",
-    category: "Frontend · Auth Integration",
-    status: "Portfolio-ready deployed auth dashboard",
-    tags: ["Frontend", "React", "TypeScript", "JWT", "Auth", "Vite", "Protected Routes", "Admin Dashboard", "FastAPI", "Vercel", "Render", "Deployed", "CI/CD"],
-    description:
-      "A polished React and TypeScript authentication dashboard connected to the deployed Mini User API backend. Includes JWT login, token storage, protected dashboard access, authenticated profile loading, admin-only user listing, role-based UI behaviour, loading and error states, Vercel deployment, Render backend integration, and GitHub Actions CI. This project demonstrates frontend authentication flow, protected routing, API integration, and admin access control.",
     tech: [
       "React",
       "TypeScript",
-      "Vite",
-      "React Router",
       "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "SQLAlchemy",
       "JWT",
+      "OAuth2",
+      "Docker",
+      "GitHub Actions",
       "Vercel",
       "Render",
-      "GitHub Actions",
     ],
+    featuredTech: ["React", "FastAPI", "PostgreSQL"],
     github: "https://github.com/Iris408/jwt-authentication-dashboard",
+    secondaryGithub:
+      "https://github.com/Iris408/secure-user-management-api",
     demo: "https://jwt-authentication-dashboard-sepia.vercel.app",
-    image: "/screenshots/jwt-dashboard-page.png",
+    apiDemo: "https://mini-user-api.onrender.com/docs",
+    image: "/screenshots/accesshub-dashboard-overview.png",
     images: [
-      "/screenshots/jwt-login-page.png",
-      "/screenshots/jwt-dashboard-page.png",
-      "/screenshots/jwt-admin-panel.png",
+      "/screenshots/accesshub-overview.png",
+      "/screenshots/accesshub-dashboard.png",
+      "/screenshots/accesshub-admin-panel.png",
+      "/screenshots/accesshub-loading-state.png",
     ],
   },
 
   {
+    slug: "pulse",
     featured: false,
-    title: "AI HR Support Assistant",
-    category: "Full-Stack · AI Workflow",
-    status: "Portfolio-ready MVP",
-    tags: ["Full-Stack", "Backend", "React", "Python", "PostgreSQL", "Docker", "CI/CD"],
+    tier: "primary",
+    title: "Pulse",
+    category: "DevOps · Monitoring",
+    status: "Production-style · Maintenance",
+    summary:
+      "A containerised infrastructure monitor with health metrics, alerts, Prometheus scraping and Grafana dashboards.",
     description:
-      "Built a full-stack AI-assisted HR support dashboard using React, TypeScript, FastAPI, PostgreSQL, SQLAlchemy, Alembic, and Docker Compose. The app allows employees to submit HR tickets, uses mock AI logic to classify category and priority, provides suggested response drafts for HR review, and includes HR/Admin dashboards with filtering, sorting, responsive ticket queues, and status update workflows. Includes GitHub Actions backend, frontend, and Docker CI pipelines.",
+      "A containerised infrastructure monitoring platform built with Python and FastAPI. Pulse tracks CPU, memory, disk usage and uptime, exposes health and Prometheus-compatible metrics endpoints, and includes structured logging, Slack and email alerts, cooldowns, recovery notifications, Prometheus scraping and Grafana dashboards.",
+    tags: [
+      "DevOps",
+      "Monitoring",
+      "Observability",
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Docker Compose",
+      "Prometheus",
+      "Grafana",
+      "GitHub Actions",
+      "Structured Logging",
+      "Health Checks",
+    ],
+    tech: [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Prometheus",
+      "Grafana",
+      "GitHub Actions",
+      "Structured Logging",
+      "Slack Webhooks",
+      "SMTP",
+    ],
+    featuredTech: ["FastAPI", "Docker", "Grafana"],
+    github:
+      "https://github.com/Iris408/pulse-infrastructure-monitor",
+    demo: "",
+    image: "/screenshots/pulse-grafana-dashboard.png",
+    images: [
+      "/screenshots/pulse-grafana-dashboard.png",
+      "/screenshots/pulse-health-endpoint.png",
+    ],
+  },
+
+  {
+    slug: "ai-hr-support-assistant",
+    featured: false,
+    tier: "primary",
+    title: "AI HR Support Assistant",
+    category: "AI Workflow · Full-Stack",
+    status: "Portfolio-ready MVP",
+    summary:
+      "An AI-assisted HR workflow for ticket classification, response drafting and administrative case management.",
+    description:
+      "A full-stack AI-assisted HR support dashboard built with React, TypeScript, FastAPI and PostgreSQL. Employees can submit HR tickets while a mock AI workflow classifies category and priority and prepares suggested response drafts. HR and administrative users can review, filter, sort and update cases through responsive dashboards.",
+    tags: [
+      "Full-Stack",
+      "AI Workflow",
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "Docker",
+      "GitHub Actions",
+    ],
     tech: [
       "React",
       "TypeScript",
@@ -158,163 +288,166 @@ export const projects = [
       "SQLAlchemy",
       "Alembic",
       "Docker Compose",
+      "GitHub Actions",
     ],
-    github: "https://github.com/Iris408/ai-hr-support-assistant",
+    featuredTech: ["React", "FastAPI", "PostgreSQL"],
+    github:
+      "https://github.com/Iris408/ai-hr-support-assistant",
     demo: "",
     image: "/screenshots/ai-hr-support-assistant.png",
+    images: ["/screenshots/ai-hr-support-assistant.png"],
   },
 
   {
-    featured: true,
-    title: "Pulse",
-    category: "DevOps · Monitoring · Observability",
-    status: "Production-style monitoring stack · Maintenance",
+    slug: "log-intelligence-analyzer",
+    featured: false,
+    tier: "primary",
+    title: "LogSense",
+    category: "Log Analysis · Backend",
+    status: "Backend API checkpoint complete",
+    summary:
+      "A backend service for importing logs, detecting error patterns and producing stored operational summaries.",
+    description:
+      "A Python and FastAPI backend that analyses log files, detects error patterns, stores imported records in PostgreSQL and exposes API endpoints for summaries, errors, reports and stored log data. The project includes SQLAlchemy persistence, Docker support and GitHub Actions checks for dependencies, Python syntax, tests and image builds.",
     tags: [
-      "DevOps",
+      "Backend",
+      "Log Analysis",
       "Python",
       "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
       "Docker",
-      "Docker Compose",
       "GitHub Actions",
-      "Monitoring",
-      "Observability",
-      "Prometheus",
-      "Grafana",
-      "Structured Logging",
-      "Health Checks",
     ],
-    description:
-      "A containerised infrastructure monitoring platform built with Python and FastAPI. Pulse tracks CPU, memory, disk usage, and uptime, exposes health and Prometheus-compatible metrics endpoints, and includes structured logging, Slack and email alerts, cooldowns, recovery notifications, Prometheus scraping, and Grafana dashboards.",
     tech: [
       "Python",
       "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
       "Docker",
-      "Docker Compose",
-      "Prometheus",
-      "Grafana",
       "GitHub Actions",
-      "psutil",
-      "Slack Webhooks",
-      "SMTP",
-      "Structured Logging",
     ],
-    github: "https://github.com/Iris408/pulse-infrastructure-monitor",
-    demo: "",
-    image: "/screenshots/grafana-dashboard.png",
-    images: [
-      "/screenshots/pulse-grafana-dashboard.png",
-      "/screenshots/pulse-health-endpoint.png",
-    ]
-  },
-
-  {
-    title: "Log Intelligence Analyzer",
-    category: "Backend · Log Analysis",
-    status: "Backend API checkpoint complete",
-    tags: ["Backend", "Python", "FastAPI", "PostgreSQL", "Docker", "CI/CD"],
-    description:
-      "A Python and FastAPI backend project that analyzes log files, detects error patterns, stores imported logs in PostgreSQL, and exposes API endpoints for summaries, errors, reports, and stored log data. Includes GitHub Actions backend CI for dependency checks, Python syntax validation, optional tests, and Docker image validation.",
-    tech: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQLAlchemy"],
-    github: "https://github.com/Iris408/log-intelligence-analyzer",
+    featuredTech: ["FastAPI", "PostgreSQL", "Docker"],
+    github:
+      "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
     image: "/screenshots/log_intelligence_output.png",
     images: [
       "/screenshots/log_intelligence_output.png",
       "/screenshots/log_intelligence_docker.png",
     ],
-    featured: false,
   },
 
+  /* ========================================
+     Smaller Projects
+     These will receive a dedicated section later.
+  ======================================== */
+
   {
-    featured: true,
-    title: "Vehicle Diagnostic UI Demo",
-    category: "Frontend · Vehicle Diagnostics",
-    status: "Portfolio-ready frontend MVP",
-    tags: ["Frontend", "React", "TypeScript"],
+    slug: "vehicle-diagnostic-ui",
+    featured: false,
+    tier: "small",
+    title: "Vehicle Diagnostic UI",
+    category: "Automotive · Frontend",
+    status: "Frontend MVP",
+    summary:
+      "A responsive vehicle-health dashboard for diagnostic alert triage and module-status monitoring.",
     description:
-      "A React and TypeScript frontend dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, module status tracking, and recent diagnostic event history using mock vehicle data.",
+      "A React and TypeScript frontend dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, module-status tracking and recent diagnostic-event history using mock vehicle data.",
+    tags: [
+      "Frontend",
+      "Automotive",
+      "React",
+      "TypeScript",
+      "Vite",
+      "Responsive Design",
+    ],
     tech: [
       "React",
       "TypeScript",
       "Vite",
       "CSS",
-      "Responsive Design",
       "Mock Diagnostic Data",
     ],
-    github: "https://github.com/Iris408/vehicle-diagnostic-ui-demo",
-    demo: "",
-    image: "/screenshots/vehicle-diagnostic-dashboard.png",
-  },
-
-  {
-    title: "Java Expense Tracker API",
-    category: "Java · Backend",
-    status: "Learning project · In progress",
-    tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "Docker"],
-    description:
-      "A Java backend learning project progressing from a console-based expense tracker toward a Spring Boot REST API. The roadmap includes PostgreSQL persistence, CRUD endpoints, request validation, Docker support, testing, and layered backend architecture practice.",
-    tech: ["Java", "Spring Boot", "PostgreSQL", "Docker", "Maven"],
-    github: "https://github.com/Iris408/java-expense-tracker-api",
+    featuredTech: ["React", "TypeScript", "Vite"],
+    github:
+      "https://github.com/Iris408/vehicle-diagnostic-ui-demo",
     demo: "",
     image: "",
     images: [],
-    featured: false,
   },
 
   {
+    slug: "java-expense-tracker",
     featured: false,
-    title: "Technical Blog · Engineer Notebook",
-    category: "Frontend · Documentation",
-    status: "One-page MVP",
-    tags: ["Frontend", "Documentation"],
+    tier: "small",
+    title: "Java Expense Tracker API",
+    category: "Java · Backend",
+    status: "Learning project · In progress",
+    summary:
+      "A Java learning project progressing from a console application toward a structured Spring Boot REST API.",
     description:
-      "A minimalist one-page technical blog built to document engineering notes, debugging lessons, project progress, and technical Japanese practice. The page uses a Japanese-first structure with English support, helping me practise clear technical explanations while maintaining a simple developer portfolio-style layout.",
+      "A Java backend learning project progressing from a console-based expense tracker toward a Spring Boot REST API. Planned work includes PostgreSQL persistence, CRUD endpoints, request validation, Docker support, testing and layered backend architecture.",
+    tags: [
+      "Java",
+      "Backend",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Maven",
+    ],
     tech: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive Design",
-      "Technical Writing",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Maven",
+    ],
+    featuredTech: ["Java", "Spring Boot", "PostgreSQL"],
+    github:
+      "https://github.com/Iris408/java-expense-tracker-api",
+    demo: "",
+    image: "",
+    images: [],
+  },
+
+  {
+    slug: "employee-management-system",
+    featured: false,
+    tier: "small",
+    title: "社員管理システム · Employee Management System",
+    category: "Java · Technical Japanese",
+    status: "v0.2.0 · CRUD and search complete",
+    summary:
+      "A Japanese-first Spring Boot system for practising backend development alongside technical Japanese.",
+    description:
+      "A Japanese-first employee management system built with Java, Spring Boot, PostgreSQL, Spring Data JPA and Docker. It practises production-style backend development alongside technical Japanese using Japanese domain terminology for employee records, departments, employment status and administrative workflows.",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "Spring Data JPA",
+      "PostgreSQL",
+      "Hibernate",
+      "Docker",
+      "Maven",
+      "JUnit",
       "Technical Japanese",
     ],
-    github: "https://github.com/Iris408/technical-blog",
-    demo: "https://iris408.github.io/technical-blog/",
-    image: "/screenshots/technical-blog-jp.png",
-    images: [
-      "/screenshots/technical-blog-jp.png",
-      "/screenshots/technical-blog-en.png",
-      "/screenshots/technical-blog-field-notes.png",
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Spring Data JPA",
+      "PostgreSQL",
+      "Hibernate",
+      "Docker",
+      "Maven",
+      "JUnit",
     ],
+    featuredTech: ["Java", "Spring Boot", "PostgreSQL"],
+    github:
+      "https://github.com/Iris408/employee-management-system",
+    demo: "",
+    image: "",
+    images: [],
   },
-
-  {
-  featured: false,
-  title: "社員管理システム · Employee Management System",
-  category: "Java · Backend · Technical Japanese",
-  status: "v0.2.0 · Employee CRUD and search complete",
-  tags: ["Java", "Backend", "Spring Boot", "PostgreSQL", "REST API", "JPA", "Hibernate", "Docker", "Technical Japanese", "Internationalisation"],
-  description:
-    "A Japanese-first employee management system built with Java, Spring Boot, PostgreSQL, Spring Data JPA, and Docker. The project is designed to practise production-style backend development alongside technical Japanese, using Japanese domain terminology for employee records, departments, employment status, and administrative workflows. The planned system includes employee CRUD operations, validation, filtering, pagination, database migrations, API documentation, automated tests, and role-based administrative access.",
-  tech: [
-    "Java",
-    "Spring Boot",
-    "Spring Data JPA",
-    "PostgreSQL",
-    "Hibernate",
-    "Docker",
-    "Maven",
-    "JUnit",
-    "Technical Japanese",
-  ],
-  github:
-    "https://github.com/Iris408/employee-management-system",
-  demo: "",
-  image: "",
-  images: [],
-},
-
-  // featured: false にするとホームには出ず /projects のみに表示される
-  // featured: false means it only shows on the /projects page, not the homepage
-
-  // 新しいプロジェクトはここに追加 / Add new projects here
 ];

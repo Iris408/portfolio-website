@@ -44,8 +44,8 @@ export default function Contact() {
             </a>
 
             <a
-              href="/Ashleigh_Magloire_FullStack_Resume.pdf"
-              download="Ashleigh_Magloire_FullStack_Resume.pdf"
+              href="/Ashleigh_Magloire_Software_Engineer_Resume.pdf"
+              download="Ashleigh_Magloire_Software_Engineer_Resume.pdf"
               className="inline-flex items-center justify-center gap-2 border border-[#AEBDAE]/50 px-6 py-3 text-sm font-medium text-[#F7F6F1] transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Download CV

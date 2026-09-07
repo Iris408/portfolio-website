@@ -88,7 +88,7 @@ export const projects = [
     featuredTech: ["Next.js", "FastAPI", "PostgreSQL"],
     detailsPath: "/case-studies/partspilot",
     github: "https://github.com/Iris408/partspilot",
-    demo: "https://inventory-management-system-iris408.vercel.app",
+    demo: "https://www.partspilot.uk",
     image: "/screenshots/partspilot-homepage.png",
     images: [
       "/screenshots/partspilot-dashboard-overview.png",

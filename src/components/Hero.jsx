@@ -13,7 +13,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-7 text-[#59615C] md:text-lg md:leading-8">
-            I&apos;m Ashleigh M, a backend-focused full-stack developer building
+            I&apos;m Ashleigh, a backend-focused full-stack developer building
             reliable web applications, APIs and digital products.
           </p>
 

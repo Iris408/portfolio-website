@@ -69,7 +69,7 @@ export default function Footer() {
             href="/"
             className="text-sm font-medium tracking-[0.06em] transition hover:text-white"
           >
-            Ashleigh M
+            Ashleigh Magloire
           </a>
 
           <p className="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[#AEBDAE]">

@@ -17,7 +17,7 @@ const irisAndOakTags = [
   "Astro",
   "React",
   "Tailwind CSS",
-  "Accessibility",
+  "Next.js",
   "Client Journey",
 ];
 
@@ -76,6 +76,7 @@ const irisAndOakTechStack = [
   {
     title: "Frontend",
     items: [
+      "Next.js",
       "Astro",
       "React",
       "JavaScript",
@@ -213,11 +214,17 @@ const irisAndOakFutureImprovements = [
 
 const irisAndOakGallery = [
   {
-    src: "/screenshots/irisoak-homepage.png",
+    src: "/screenshots/irisoak-how-i-work.png",
     alt: "Iris and Oak digital development website homepage",
     caption:
-      "The Iris & Oak homepage introducing its services and visual direction.",
+      "A homepage section introducing Iris & Oak’s approach to thoughtful, needs-led development.",
   },
+  {
+    src: "/screenshots/irisoak-services.png",
+    alt: "Service overview offered by Iris and Oak ",
+    caption:
+      "A services overview designed to make project options clear and easy to compare.",
+  }
 ];
 ---
 
@@ -230,9 +237,9 @@ const irisAndOakGallery = [
   <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
     <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
       <CaseStudyHero
-        eyebrow="Case Study · Commercial Website · Client Journey"
+        eyebrow="Personal Project · Freelance Business · Client Journey"
         title="Iris & Oak"
-        summary="A custom website and digital customer journey for an independent development business focused on clear, responsive and accessible digital products."
+        summary="I designed and built Iris & Oak as the public home for my freelance development work, bringing together my services, selected projects and client enquiry journey in one clear website."
         tags={irisAndOakTags}
         liveUrl="https://www.irisoak.dev"
         image="/screenshots/irisoak-homepage.png"
@@ -241,18 +248,18 @@ const irisAndOakGallery = [
 
       <CaseStudySection
         eyebrow="Overview"
-        title="A development business built from the customer journey outward"
+        title="Building my own development business from the customer journey outward."
       >
         <p>
-          Iris & Oak is an independent digital development business offering
-          websites, web applications, internal tools and technical support for
-          individuals, small businesses and organisations.
+          I created Iris & Oak to give my freelance development work a clear and
+          credible digital presence, with services focused on websites, web
+          applications, internal tools and practical technical support.
         </p>
 
         <p>
-          The website needed to present those services clearly, establish a
-          credible identity and give prospective customers a structured way to
-          explain what they need.
+          The site needed to present what I offer clearly, explain the value of each
+          service and give prospective clients a structured way to share what they need
+          before a project begins.
         </p>
       </CaseStudySection>
 
@@ -267,7 +274,7 @@ const irisAndOakGallery = [
         </p>
 
         <p>
-          The experience therefore needed to communicate services without
+          I needed the experience to communicate my services clearly without
           expecting visitors to arrive with a finished technical specification.
         </p>
       </CaseStudySection>
@@ -277,7 +284,7 @@ const irisAndOakGallery = [
         title="Clear services and a guided path to starting a project"
       >
         <p>
-          Iris & Oak combines outcome-focused service descriptions with a
+          I built Iris & Oak around outcome-focused service descriptions and a
           multi-step enquiry journey. Customers can describe themselves, select
           their needs, provide project details and review their information
           before submitting it.
@@ -298,9 +305,10 @@ const irisAndOakGallery = [
         title="How the website is structured"
       >
         <p>
-          The site uses Astro for fast content-focused pages and React where
-          richer interaction is useful. Tailwind CSS supports the responsive
-          visual system, while Vercel provides the production deployment.
+          I used a modern frontend stack across the project, including Astro,
+          Next.js, React and Tailwind CSS. The site combines content-focused pages
+          with interactive areas such as the client enquiry journey, while Vercel
+          supports production deployment.
         </p>
 
         <ArchitectureDiagram items={irisAndOakArchitecture} />
@@ -329,9 +337,9 @@ const irisAndOakGallery = [
         title="What building Iris & Oak taught me"
       >
         <p>
-          Iris & Oak required me to think beyond implementation and consider
-          positioning, customer confidence, project qualification and the
-          complete journey from discovery to enquiry.
+          Building Iris & Oak pushed me to think beyond implementation and consider
+          positioning, customer confidence, project qualification and the complete
+          journey from discovery to enquiry.
         </p>
 
         <LearningList items={irisAndOakLearnings} />

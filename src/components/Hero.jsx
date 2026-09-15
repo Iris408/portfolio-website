@@ -38,25 +38,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        <picture className="block w-full overflow-hidden">
-          <source
-            media="(max-width: 639px)"
-            srcSet="/images/portfolio-workspace-mobile.webp"
-          />
-
-          <source
-            media="(max-width: 1023px)"
-            srcSet="/images/portfolio-workspace-tablet.webp"
-          />
-
-           <img
-            src="/images/portfolio-workspace-desktop.webp"
-            alt="A calm software engineering workspace with a laptop, books and plants"
-            className="block h-auto w-full"
-          />
-          </picture>
-        </div>
+      </div>
     </section>
   );
 }

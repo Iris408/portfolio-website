@@ -41,7 +41,12 @@ export const projects = [
     github: "",
     demo: "https://www.irisoak.dev",
     image: "/screenshots/irisoak-homepage.png",
-    images: ["/screenshots/irisoak-homepage.png"],
+    images: [
+      "/screenshots/irisoak-homepage.png",
+      "/screenshots/irisoak-services.png",
+      "/screenshots/irisoak-selected-work.png",
+      "/screenshots/irisoak-contact-page.png",
+    ],
   },
 
   {
@@ -50,7 +55,7 @@ export const projects = [
     tier: "primary",
     title: "PartsPilot",
     category: "Automotive · Full-Stack",
-    status: "Feature-complete · Maintenance",
+    status: "Production demo · Maintenance",
     summary:
       "An automotive inventory platform with authenticated workflows, stock monitoring, reporting and operational analytics.",
     description:
@@ -70,6 +75,8 @@ export const projects = [
       "Power BI",
       "GitHub Actions",
       "Vercel",
+      "Railway",
+      "Production demo",
     ],
     tech: [
       "Next.js",
@@ -255,49 +262,6 @@ export const projects = [
       "/screenshots/pulse-health-endpoint.png",
     ],
   },
-
-  {
-    slug: "ai-hr-support-assistant",
-    featured: false,
-    tier: "primary",
-    title: "AI HR Support Assistant",
-    category: "AI Workflow · Full-Stack",
-    status: "Portfolio-ready MVP",
-    summary:
-      "An AI-assisted HR workflow for ticket classification, response drafting and administrative case management.",
-    description:
-      "A full-stack AI-assisted HR support dashboard built with React, TypeScript, FastAPI and PostgreSQL. Employees can submit HR tickets while a mock AI workflow classifies category and priority and prepares suggested response drafts. HR and administrative users can review, filter, sort and update cases through responsive dashboards.",
-    tags: [
-      "Full-Stack",
-      "AI Workflow",
-      "React",
-      "TypeScript",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Alembic",
-      "Docker",
-      "GitHub Actions",
-    ],
-    tech: [
-      "React",
-      "TypeScript",
-      "FastAPI",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Alembic",
-      "Docker Compose",
-      "GitHub Actions",
-    ],
-    featuredTech: ["React", "FastAPI", "PostgreSQL"],
-    github:
-      "https://github.com/Iris408/ai-hr-support-assistant",
-    demo: "",
-    image: "/screenshots/ai-hr-support-assistant.png",
-    images: ["/screenshots/ai-hr-support-assistant.png"],
-  },
-
   {
     slug: "log-intelligence-analyzer",
     featured: false,
@@ -331,7 +295,7 @@ export const projects = [
     github:
       "https://github.com/Iris408/log-intelligence-analyzer",
     demo: "",
-    image: "/screenshots/log_intelligence_output.png",
+    image: "/screenshots/log_intelligence_docker.png",
     images: [
       "/screenshots/log_intelligence_output.png",
       "/screenshots/log_intelligence_docker.png",

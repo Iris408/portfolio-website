@@ -40,7 +40,7 @@ export const projects = [
     detailsPath: "/case-studies/iris-and-oak",
     github: "",
     demo: "https://www.irisoak.dev",
-    image: "/screenshots/irisandoak/irisoak-homepage.png",
+    image: "/screenshots/irisoak-card.png",
     images: [
       "/screenshots/irisandoak/irisoak-homepage.png",
       "/screenshots/irisandoak/irisoak-services.png",

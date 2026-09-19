@@ -13,6 +13,8 @@ const filters = [
   "PostgreSQL",
   "Astro",
   "React",
+  "PHP",
+  "WordPress",
   "Debugging",
   "Full-Stack",
 ];

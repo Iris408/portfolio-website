@@ -308,39 +308,43 @@ export const projects = [
   ======================================== */
 
   {
-    slug: "vehicle-diagnostic-ui",
+    slug: "torqtrace",
     featured: false,
     tier: "small",
-    title: "Vehicle Diagnostic UI",
-    category: "Automotive · Frontend",
-    status: "Frontend MVP",
+    title: "TorqTrace",
+    category: "Automotive · WordPress Dashboard",
+    status: "v1.0.0 Complete",
     summary:
-      "A responsive vehicle-health dashboard for diagnostic alert triage and module-status monitoring.",
+      "A responsive automotive diagnostic dashboard concept rebuilt as a custom WordPress theme.",
     description:
-      "A React and TypeScript frontend dashboard that simulates vehicle health monitoring, diagnostic alert triage, severity filtering, selected alert details, module-status tracking and recent diagnostic-event history using mock vehicle data.",
+      "A WordPress frontend dashboard concept for vehicle health monitoring, diagnostic metrics, recent fault codes, inspection priorities and maintenance signals. I remodelled an earlier React vehicle diagnostic UI into a polished WordPress theme concept with responsive desktop, tablet and mobile layouts.",
     tags: [
-      "Frontend",
+      "WordPress",
+      "PHP",
+      "CSS",
       "Automotive",
-      "React",
-      "TypeScript",
-      "Vite",
+      "Dashboard UI",
       "Responsive Design",
     ],
     tech: [
-      "React",
-      "TypeScript",
-      "Vite",
+      "WordPress",
+      "PHP",
       "CSS",
-      "Mock Diagnostic Data",
+      "LocalWP",
+      "Responsive Dashboard Layout",
     ],
-    featuredTech: ["React", "TypeScript", "Vite"],
-    github:
-      "https://github.com/Iris408/vehicle-diagnostic-ui-demo",
+    featuredTech: ["WordPress", "PHP", "CSS"],
+    github: "https://github.com/Iris408/torqtrace",
     demo: "",
-    image: "",
-    images: [],
+    image: "/screenshots/torqtrace-desktop-hero.png",
+    images: [
+      "/screenshots/torqtrace-desktop-hero.png",
+      "/screenshots/torqtrace-desktop-dashboard.png",
+      "/screenshots/torqtrace-tablet.png",
+      "/screenshots/torqtrace-mobile-hero.png",
+      "/screenshots/torqtrace-mobile-dashboard.png",
+    ],
   },
-
   {
     slug: "java-expense-tracker",
     featured: false,
@@ -374,7 +378,6 @@ export const projects = [
     image: "",
     images: [],
   },
-
   {
     slug: "employee-management-system",
     featured: false,

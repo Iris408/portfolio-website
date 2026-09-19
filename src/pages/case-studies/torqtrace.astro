@@ -12,341 +12,305 @@ import Timeline from "../../components/case-study/Timeline.jsx";
 import ArchitectureDiagram from "../../components/case-study/ArchitectureDiagram.jsx";
 import ImageGallery from "../../components/case-study/ImageGallery.jsx";
 
-const partspilotTags = [
-  "Full-Stack",
-  "React",
-  "TypeScript",
-  "FastAPI",
-  "PostgreSQL",
-  "Docker",
-  "Power BI",
+const torqtraceTags = [
+  "WordPress",
+  "PHP",
+  "CSS",
+  "Automotive",
+  "Dashboard UI",
+  "Responsive Design",
 ];
 
-const partspilotFeatures = [
+const torqtraceFeatures = [
   {
-    title: "Inventory Management",
+    title: "WordPress Dashboard Concept",
     description:
-      "Authenticated creation, editing and deletion of inventory records with SKU, quantity, pricing, category and stock-threshold data.",
+      "Rebuilt an earlier vehicle diagnostic frontend into a custom WordPress theme with a dashboard-style homepage.",
   },
   {
-    title: "Search and Filtering",
+    title: "Vehicle Health Overview",
     description:
-      "Search, category filtering, stock-status filtering, sorting and pagination across the inventory catalogue.",
+      "Created a hero and dashboard preview area showing fleet health, selected vehicle status and diagnostic signal trends.",
   },
   {
-    title: "Operational Analytics",
+    title: "Diagnostic Metrics",
     description:
-      "Database-level product, quantity, inventory-value, category and low-stock reporting.",
+      "Added summary cards for tracked vehicles, open alerts, critical faults and average fleet health.",
   },
   {
-    title: "Business Intelligence",
+    title: "Fault-Code Monitoring",
     description:
-      "Power BI reporting and CSV export for deeper inventory analysis and operational decision-making.",
+      "Designed a technician-facing table for recent diagnostic events, affected systems, fault codes, status labels and timestamps.",
   },
   {
-    title: "Supplier Workflows",
+    title: "Inspection Queue",
     description:
-      "Supplier information and inventory relationships designed to support realistic stock-management processes.",
+      "Added inspection-priority cards to suggest next technician checks based on diagnostic signals.",
   },
   {
     title: "Responsive Product Experience",
     description:
-      "A React and TypeScript interface designed to remain usable across desktop and mobile layouts.",
-  },
-  {
-    title: "Production Demo",
-    description:
-      "Live public demo with authenticated read-only access, Vercel frontend hosting, Railway backend/database deployment and production route handling.",
+      "Refined the interface across mobile, tablet, laptop and desktop views so the project is screenshot-ready.",
   },
 ];
 
-const partspilotArchitecture = [
+const torqtraceArchitecture = [
   {
-    title: "React client",
+    title: "WordPress theme",
     description:
-      "Provides inventory management, search, filters, dashboard analytics and responsive user workflows.",
+      "Contains the project as a custom theme with separate header, footer, fallback and front-page templates.",
   },
   {
-    title: "FastAPI service",
+    title: "Static dashboard template",
     description:
-      "Handles validation, authenticated inventory operations, reporting endpoints and database access.",
+      "Uses front-page.php as the main dashboard concept rather than relying on dynamic WordPress content or backend data.",
   },
   {
-    title: "PostgreSQL",
+    title: "Responsive CSS system",
     description:
-      "Stores products, stock levels, categories, supplier information and persistent operational data.",
+      "Handles the full visual direction, dashboard cards, fault-code table, mobile layout and large-desktop polish.",
   },
 ];
 
-const partspilotTechStack = [
+const torqtraceTechStack = [
+  {
+    title: "CMS and Theme",
+    items: ["WordPress", "PHP", "LocalWP", "Theme templates"],
+  },
   {
     title: "Frontend",
+    items: ["HTML", "CSS", "Responsive layout", "Dashboard UI"],
+  },
+  {
+    title: "Design Focus",
     items: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "Responsive dashboard interface",
+      "Automotive diagnostics",
+      "Technician workflow",
+      "Dark interface styling",
+      "Status badges",
     ],
   },
   {
-    title: "Backend",
-    items: [
-      "Python",
-      "FastAPI",
-      "REST API",
-      "JWT authentication",
-      "Request validation",
-    ],
-  },
-  {
-    title: "Data",
-    items: [
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Alembic migrations",
-      "Aggregate reporting queries",
-      "CSV export",
-    ],
-  },
-  {
-    title: "Delivery and Analytics",
-    items: [
-      "Docker Compose",
-      "GitHub Actions",
-      "Vercel",
-      "Railway",
-      "Production demo",
-      "Power BI",
-    ],
+    title: "Workflow",
+    items: ["Git", "GitHub", "VS Code", "Local testing"],
   },
 ];
 
-const partspilotChallenges = [
+const torqtraceChallenges = [
   {
-    title: "Separating inventory records from global analytics",
+    title: "Turning an older demo into a stronger portfolio project",
     challenge:
-      "The inventory table used a paginated API response, but dashboard totals needed to represent every record in PostgreSQL.",
+      "The original vehicle diagnostic UI showed useful frontend ideas, but it felt more like a small technical exercise than a finished portfolio piece.",
     decision:
-      "I separated operational list data from reporting data and connected the dashboard to dedicated statistics and category aggregation endpoints.",
+      "I remodelled the concept as a WordPress theme and focused on visual polish, dashboard structure and responsive screenshots.",
     outcome:
-      "Product totals, quantities, inventory value and category reporting now represent the complete database rather than the current page of results.",
+      "TorqTrace now works as a clearer portfolio project that connects automotive domain knowledge with WordPress and frontend UI design.",
   },
   {
-    title: "Connecting React to a Dockerised API",
+    title: "Keeping the scope controlled",
     challenge:
-      "The browser could not reach FastAPI because the client used the container’s internal port rather than the port exposed to the host.",
+      "It would have been easy to add backend logic, real data handling or more complex WordPress functionality before the visual concept was complete.",
     decision:
-      "I traced the Docker mapping, corrected the client API address and configured FastAPI CORS for the frontend development origin.",
+      "I kept v1.0.0 as a static frontend dashboard concept and avoided adding unnecessary backend or admin complexity.",
     outcome:
-      "The React client could communicate with the containerised backend while maintaining the correct browser security configuration.",
+      "The project reached a complete v1.0.0 state quickly, with a polished interface, archived previous version and updated documentation.",
   },
   {
-    title: "Handling API response shapes safely",
+    title: "Fixing responsive behaviour without hiding layout issues",
     challenge:
-      "React attempted to map over an API wrapper object rather than the inventory array contained inside it.",
+      "The mobile layout initially behaved too much like the desktop view and some lower sections overflowed.",
     decision:
-      "I inspected the returned JSON structure and stored the nested items array in component state.",
+      "I cleaned up the CSS, removed patchy overflow fixes and used proper mobile layout rules, width constraints and text wrapping.",
     outcome:
-      "Inventory records rendered correctly, and the frontend data flow now matches the backend response contract.",
+      "The final layout is usable across 390px mobile, 768px tablet, 1024px laptop and 1440px desktop views.",
   },
 ];
 
-const partspilotLearnings = [
-  "How to design separate endpoints for paginated operational data and global reporting data.",
-  "How to connect a React and TypeScript frontend to a FastAPI backend.",
-  "How Docker container ports differ from the host ports used by browser applications.",
-  "How to diagnose connection, routing, authentication, server and CORS errors separately.",
-  "How PostgreSQL aggregation supports dashboard and business-intelligence reporting.",
-  "How schema changes, validation and Alembic migrations affect the full application.",
-  "How automotive operational knowledge can be translated into practical product requirements.",
+const torqtraceLearnings = [
+  "How to structure a custom WordPress theme with header, footer, index and front-page templates.",
+  "How to use front-page.php for a focused custom homepage experience.",
+  "How to remodel an older frontend project into a stronger portfolio-ready concept.",
+  "How to keep scope controlled by separating a visual concept from backend functionality.",
+  "How to debug mobile overflow without relying on global overflow hiding.",
+  "How to design dashboard sections that work across desktop, tablet and mobile screenshots.",
+  "How automotive domain knowledge can support realistic UI and product decisions.",
 ];
 
-const partspilotTimeline = [
+const torqtraceTimeline = [
   {
-    version: "Phase 01",
-    title: "Inventory API foundation",
+    version: "Original concept",
+    title: "React diagnostic dashboard",
     description:
-      "Created the FastAPI and PostgreSQL inventory foundation with product CRUD operations and SQLAlchemy models.",
+      "The project started as a React and TypeScript vehicle diagnostic UI using mock data and dashboard cards.",
   },
   {
-    version: "Phase 02",
-    title: "Search and stock monitoring",
+    version: "Remodel",
+    title: "WordPress theme direction",
     description:
-      "Added filtering, sorting, pagination, SKU data, minimum-stock thresholds and low-stock reporting.",
+      "I decided to rebuild the concept as a WordPress frontend dashboard to practise theme structure and create a stronger visual portfolio piece.",
   },
   {
-    version: "Phase 03",
-    title: "Full-stack dashboard",
+    version: "v1.0.0",
+    title: "WordPress dashboard release",
     description:
-      "Connected the React and TypeScript interface to the API and added inventory management workflows.",
-  },
-  {
-    version: "Phase 04",
-    title: "Analytics and reporting",
-    description:
-      "Introduced statistics, category summaries, inventory valuation, CSV export and Power BI reporting.",
-  },
-  {
-    version: "Phase 05",
-    title: "Production deployment and routing",
-    description:
-      "Deployed the React frontend on Vercel, the FastAPI backend and PostgreSQL database on Railway, then added production routing support, authenticated demo access and a custom 404 experience.",
+      "Completed a custom WordPress theme with a diagnostic homepage, responsive dashboard sections, fault-code table, inspection queue and maintenance cards.",
   },
 ];
 
-const partspilotFutureImprovements = [
+const torqtraceFutureImprovements = [
   {
-    title: "Expanded automated testing",
+    title: "Editable WordPress content",
     description:
-      "Increase endpoint, authentication, database and frontend integration coverage.",
+      "Add custom fields or custom post types so vehicle, alert and maintenance content can be managed through WordPress.",
   },
   {
-    title: "Security scanning",
+    title: "Backend API integration",
     description:
-      "Add CodeQL Analysis and Dependency Review to the GitHub Actions maintenance workflow.",
+      "Connect the dashboard to a FastAPI service with stored diagnostic events and vehicle health records.",
   },
   {
-    title: "Supplier workflows",
+    title: "Real-time updates",
     description:
-      "Expand supplier relationships, purchasing workflows and stock-replenishment reporting.",
+      "Add WebSocket-driven alert updates to simulate live technician monitoring.",
   },
   {
-    title: "Deployment observability",
+    title: "Testing and CI",
     description:
-      "Improve production monitoring, structured error reporting and service-health visibility.",
+      "Add automated checks and GitHub Actions workflows for future maintenance.",
   },
 ];
 
-const partspilotGallery = [
+const torqtraceGallery = [
   {
-    src: "/screenshots/partspilot/partspilot-homepage.png",
-    alt: "PartsPilot inventory management homepage",
-    caption: "PartsPilot’s live inventory platform homepage.",
+    src: "/screenshots/torqtrace/torqtrace-desktop-hero.png",
+    alt: "TorqTrace desktop dashboard hero",
+    caption:
+      "Desktop dashboard hero introducing the vehicle diagnostic concept and fleet health preview.",
   },
   {
-    src: "/screenshots/partspilot/partspilot-dashboard-overview.png",
-    alt: "PartsPilot dashboard overview",
-    caption: "Operational inventory metrics and dashboard reporting.",
+    src: "/screenshots/torqtrace/torqtrace-desktop-dashboard-card.png",
+    alt: "TorqTrace desktop diagnostic dashboard sections",
+    caption:
+      "Diagnostic metrics, fault-code monitoring, inspection priorities and maintenance signals.",
   },
   {
-    src: "/screenshots/partspilot/partspilot-search-filter-sort.png",
-    alt: "PartsPilot inventory search and filtering",
-    caption: "Search, filtering and stock management across inventory records.",
+    src: "/screenshots/torqtrace/torqtrace-tablet-card.png",
+    alt: "TorqTrace tablet responsive dashboard layout",
+    caption:
+      "Tablet layout showing the dashboard adapted into a narrower stacked structure.",
   },
   {
-    src: "/screenshots/partspilot/partspilot-mobile-dashboard.png",
-    alt: "PartsPilot mobile dashboard",
-    caption: "Responsive inventory workflows on a smaller screen.",
+    src: "/screenshots/torqtrace/torqtrace-mobile-hero.png",
+    alt: "TorqTrace mobile dashboard hero",
+    caption:
+      "Mobile hero layout with compact dashboard cards and simplified navigation.",
   },
   {
-    src: "/screenshots/partspilot/partspilot-powerbi-inventory-analytics.png",
-    alt: "PartsPilot Power BI inventory analytics",
-    caption: "Power BI inventory analysis and business-intelligence reporting.",
-  },
-  {
-    src: "/screenshots/partspilot/partspilot-api-docs.png",
-    alt: "PartsPilot FastAPI documentation",
-    caption: "Documented FastAPI inventory and reporting endpoints.",
+    src: "/screenshots/torqtrace/torqtrace-mobile-dashboard.png",
+    alt: "TorqTrace mobile diagnostic sections",
+    caption:
+      "Mobile diagnostic sections with contained cards and responsive table behaviour.",
   },
 ];
 ---
 
 <MainLayout
-  title="PartsPilot Case Study | Ashleigh Magloire"
-  description="A full-stack software engineering case study covering PartsPilot’s React and TypeScript interface, FastAPI backend, PostgreSQL inventory data, analytics and deployment."
+  title="TorqTrace Case Study | Ashleigh Magloire"
+  description="A WordPress frontend dashboard case study covering TorqTrace, an automotive diagnostic interface concept built with WordPress, PHP and responsive CSS."
 >
   <Navbar client:load />
 
   <main class="min-h-screen bg-[#F7F6F1] text-[#1E2823]">
     <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
       <CaseStudyHero
-        eyebrow="Case Study · Full-Stack · Automotive"
-        title="PartsPilot"
-        summary="A full-stack automotive inventory management and analytics platform combining operational workflows, backend reporting and business intelligence."
-        tags={partspilotTags}
-        liveUrl="https://www.partspilot.uk"
-        githubUrl="https://github.com/Iris408/partspilot"
-        image="/screenshots/partspilot/partspilot-homepage.png"
-        imageAlt="PartsPilot automotive inventory management application"
+        eyebrow="Case Study · WordPress · Automotive Dashboard"
+        title="TorqTrace"
+        summary="A WordPress frontend dashboard concept for automotive diagnostics, featuring vehicle health metrics, fault-code monitoring, inspection queues and responsive interface design."
+        tags={torqtraceTags}
+        githubUrl="https://github.com/Iris408/torqtrace"
+        image="/screenshots/torqtrace/torqtrace-desktop-hero.png"
+        imageAlt="TorqTrace automotive diagnostic dashboard"
       />
 
       <CaseStudySection
         eyebrow="Overview"
-        title="Inventory operations connected to useful reporting"
+        title="A diagnostic dashboard concept rebuilt as a WordPress theme"
       >
         <p>
-          PartsPilot is an automotive inventory-management platform built to
-          explore how a realistic operational system moves beyond basic CRUD.
+          TorqTrace is a frontend dashboard concept for vehicle diagnostics. It
+          presents technician-focused information such as fleet health, active
+          alerts, recent fault codes, inspection priorities and maintenance
+          signals.
         </p>
 
         <p>
-          It combines authenticated inventory workflows, search, stock
-          monitoring, supplier information, reporting and Power BI analytics
-          within a responsive full-stack product.
+          The project originally existed as a smaller React and TypeScript
+          frontend demo. I rebuilt it as a custom WordPress theme to practise
+          theme structure, responsive CSS, dashboard composition and
+          screenshot-ready visual polish.
         </p>
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Problem"
-        title="Inventory data needs to support action, not only storage"
+        title="The original concept needed a stronger portfolio presentation"
       >
         <p>
-          A useful inventory system must help users understand what is
-          available, what is running low and where stock value is concentrated.
-          A table of database records alone does not provide that operational
-          visibility.
+          The earlier diagnostic UI demonstrated useful frontend ideas, but it
+          felt more like a technical exercise than a finished project. I wanted
+          the remodel to feel more intentional, visually stronger and easier to
+          present in screenshots.
         </p>
 
         <p>
-          PartsPilot therefore needed to support everyday inventory changes
-          while also producing reliable aggregate information across the
-          complete PostgreSQL dataset.
+          TorqTrace therefore needed a cleaner product identity, a more polished
+          dashboard layout and a responsive structure that worked properly
+          across desktop, tablet and mobile views.
         </p>
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Solution"
-        title="One product for inventory, monitoring and analysis"
+        title="A focused WordPress dashboard concept"
       >
         <p>
-          The React interface connects to a FastAPI backend responsible for
-          inventory operations, validation and reporting. PostgreSQL provides
-          persistent storage, while dedicated aggregate endpoints supply
-          dashboard and category analytics.
+          I kept the project deliberately scoped as a static WordPress frontend
+          concept. Instead of adding backend logic, I focused on the dashboard
+          layout, theme files, responsive styling and the automotive diagnostic
+          product experience.
         </p>
 
-        <FeatureGrid features={partspilotFeatures} />
+        <FeatureGrid features={torqtraceFeatures} />
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Product Experience"
-        title="Desktop, mobile, API and analytics views"
+        title="Desktop, tablet and mobile dashboard views"
       >
-        <ImageGallery images={partspilotGallery} />
+        <ImageGallery images={torqtraceGallery} />
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Architecture"
-        title="How PartsPilot is structured"
+        title="How TorqTrace is structured"
       >
         <p>
-          PartsPilot separates the user interface, application service and
-          persistent data layers while using Docker to support a consistent
-          development environment.
+          TorqTrace is organised as a custom WordPress theme. The main dashboard
+          is rendered through front-page.php, with shared structure handled by
+          the header, footer and fallback template files.
         </p>
 
-        <ArchitectureDiagram items={partspilotArchitecture} />
+        <ArchitectureDiagram items={torqtraceArchitecture} />
 
-        <TechStack groups={partspilotTechStack} />
+        <TechStack groups={torqtraceTechStack} />
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="Engineering Decisions"
+        eyebrow="Development Decisions"
         title="Challenges I worked through"
       >
         <div class="grid gap-6">
-          {partspilotChallenges.map((item) => (
+          {torqtraceChallenges.map((item) => (
             <ChallengeCard
               title={item.title}
               challenge={item.challenge}
@@ -362,25 +326,26 @@ const partspilotGallery = [
         title="What this project taught me"
       >
         <p>
-          PartsPilot brought frontend, backend, database, Docker and reporting
-          concerns together within one domain-focused application.
+          TorqTrace helped me practise WordPress theme development while
+          keeping the project connected to automotive workflows and dashboard
+          interface design.
         </p>
 
-        <LearningList items={partspilotLearnings} />
+        <LearningList items={torqtraceLearnings} />
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Development"
-        title="How PartsPilot evolved"
+        title="How TorqTrace evolved"
       >
-        <Timeline items={partspilotTimeline} />
+        <Timeline items={torqtraceTimeline} />
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="Next Steps"
-        title="Maintenance and future improvements"
+        title="Possible future improvements"
       >
-        <FeatureGrid features={partspilotFutureImprovements} />
+        <FeatureGrid features={torqtraceFutureImprovements} />
       </CaseStudySection>
     </div>
   </main>

@@ -63,11 +63,11 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/15 bg-[#26372D] px-6 py-8 text-[#F7F6F1] md:px-10">
-      <div className="flex w-full flex-col gap-6 uppercase sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <a
             href="/"
-            className="text-sm font-medium tracking-[0.15em] transition hover:text-white"
+            className="text-sm font-medium uppercase tracking-[0.15em] transition hover:text-white"
           >
             Ashleigh Magloire
           </a>

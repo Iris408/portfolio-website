@@ -9,7 +9,7 @@ export default function CaseStudyHero({
   imageAlt = "",
 }) {
   return (
-    <section className="border-b border-[#D8D4C8] pb-16">
+    <section className="border-b border-[var(--portfolio-line)] pb-16">
       <div
         className={`grid gap-10 ${
           image
@@ -18,15 +18,15 @@ export default function CaseStudyHero({
         }`}
       >
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6D7F70]">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[var(--portfolio-accent)]">
             {eyebrow}
           </p>
 
-          <h1 className="mt-5 max-w-4xl font-serif text-4xl leading-tight text-[#1E2823] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 max-w-4xl font-serif text-4xl leading-tight text-[var(--portfolio-ink)] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-8 text-[#626A65] md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--portfolio-muted)] md:text-lg">
             {summary}
           </p>
 
@@ -35,7 +35,7 @@ export default function CaseStudyHero({
               {tags.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-[#E8ECE5] px-3 py-1.5 text-xs font-medium text-[#526156]"
+                  className="rounded-full bg-[#F7F6F1] px-3 py-1.5 text-xs font-medium text-[#26372D]"
                 >
                   {item}
                 </span>
@@ -49,7 +49,7 @@ export default function CaseStudyHero({
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#526A57] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#405544]"
+                className="inline-flex items-center justify-center gap-2 bg-[#526A57] px-6 py-3 text-sm font-medium text-[#F7F6F1] transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
               >
                 View live project
                 <span aria-hidden="true">↗</span>
@@ -61,7 +61,7 @@ export default function CaseStudyHero({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-[#9DAA9D] px-6 py-3 text-sm font-medium text-[#405544] transition hover:border-[#526A57] hover:bg-[#E3E9E1]"
+                className="inline-flex items-center justify-center gap-2 border border-[var(--portfolio-line)] px-6 py-3 text-sm font-medium text-[var(--portfolio-accent)] transition hover:border-[var(--portfolio-accent)] hover:bg-[var(--portfolio-surface)] hover:text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
               >
                 View GitHub
                 <span aria-hidden="true">↗</span>
@@ -71,7 +71,7 @@ export default function CaseStudyHero({
         </div>
 
         {image ? (
-          <div className="overflow-hidden bg-[#E9E8E1]">
+          <div className="overflow-hidden border border-[var(--portfolio-line)] bg-[var(--portfolio-surface-soft)]">
             <img
               src={image}
               alt={imageAlt}
@@ -79,12 +79,12 @@ export default function CaseStudyHero({
             />
           </div>
         ) : (
-          <div className="border-l border-[#AEB9AD] pl-6 md:pl-8">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#6D7F70]">
+          <div className="border-l border-[var(--portfolio-line)] pl-6 md:pl-8">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--portfolio-accent)]">
               Case study
             </p>
 
-            <p className="mt-4 font-serif text-2xl leading-snug text-[#35453A]">
+            <p className="mt-4 font-serif text-2xl leading-snug text-[var(--portfolio-ink)]">
               Product thinking, technical decisions and lessons from the build.
             </p>
           </div>

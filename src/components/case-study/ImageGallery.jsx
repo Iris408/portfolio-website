@@ -28,7 +28,7 @@ export default function ImageGallery({ images = [] }) {
             href={image.src}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex min-h-0 items-center justify-center overflow-hidden border border-[#D8D4C8] bg-[#E9E8E1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#526A57]"
+            className="group flex min-h-0 items-center justify-center overflow-hidden border border-[var(--portfolio-line)] bg-[var(--portfolio-surface-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
           >
             <img
               src={image.src}
@@ -40,7 +40,7 @@ export default function ImageGallery({ images = [] }) {
           </a>
 
           {image.caption && (
-            <figcaption className="mt-3 text-sm leading-relaxed text-[#69706B]">
+            <figcaption className="mt-3 text-sm leading-relaxed text-[var(--portfolio-muted)]">
               {image.caption}
             </figcaption>
           )}

@@ -29,12 +29,12 @@ export default function CurrentStack() {
   return (
     <section
       aria-labelledby="current-stack-heading"
-      className="border-t border-[#D8D4C8] bg-[#F7F6F1] px-6 py-16 text-[#1E2823] md:px-10 md:py-20"
+      className="border-t border-[var(--portfolio-line)] bg-[#314638] px-6 py-16 text-[#F7F6F1] md:px-10 md:py-20"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-9 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
               Current Stack
             </p>
 
@@ -46,7 +46,7 @@ export default function CurrentStack() {
             </h2>
           </div>
 
-          <p className="text-sm text-[#69706B]">
+          <p className="text-sm text-[#D8E0D8]">
             Always learning, always building.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function CurrentStack() {
           {tools.map(({ name, icon: Icon, colour }) => (
             <div
               key={name}
-              className="group flex min-h-28 flex-col items-center justify-center gap-3 border border-[#D8D4C8] bg-white/50 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-[#9AAA9C] hover:bg-[#E8ECE5] motion-reduce:transform-none"
+              className="group flex min-h-28 flex-col items-center justify-center gap-3 border border-[#D8D4C8] bg-white/75 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-[#9AAA9C] hover:bg-white motion-reduce:transform-none"
             >
               <Icon
                 aria-hidden="true"

@@ -63,21 +63,21 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/15 bg-[#26372D] px-6 py-8 text-[#F7F6F1] md:px-10">
-      <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex w-full flex-col gap-6 uppercase sm:flex-row sm:items-center sm:justify-between">
         <div>
           <a
             href="/"
-            className="text-sm font-medium tracking-[0.06em] transition hover:text-white"
+            className="text-sm font-medium tracking-[0.15em] transition hover:text-white"
           >
             Ashleigh Magloire
           </a>
 
-          <p className="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[#AEBDAE]">
-            Software Engineer
+          <p className="mt-1 text-[0.65rem] uppercase tracking-[0.4em] text-[#AEBDAE]">
+            Junior Full-Stack Developer
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           {socialLinks.map(({ label, href, icon: Icon }) => (
             <a
               key={label}
@@ -86,7 +86,7 @@ export default function Footer() {
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               aria-label={label}
               title={label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#D8E0D8] transition hover:border-white hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex h-13 w-13 items-center justify-center border border-white/20 text-[#D8E0D8] transition hover:border-white hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <Icon />
             </a>
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div className="text-xs leading-6 text-[#AEBDAE] sm:text-right">
-          <p>© 2026 Ashleigh M.</p>
+          <p>© 2026 Ashleigh Magloire.</p>
           <p>Built with Astro, React and Tailwind CSS.</p>
         </div>
       </div>

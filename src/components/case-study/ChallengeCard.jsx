@@ -11,8 +11,8 @@ export default function ChallengeCard({
   ];
 
   return (
-    <article className="border border-[#D8D4C8] bg-[#FCFBF7] p-6 md:p-8">
-      <h3 className="font-serif text-2xl leading-snug text-[#1E2823]">
+    <article className="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6 md:p-8">
+      <h3 className="font-serif text-2xl leading-snug text-[var(--portfolio-ink)]">
         {title}
       </h3>
 
@@ -22,15 +22,15 @@ export default function ChallengeCard({
             key={section.label}
             className={
               index > 0
-                ? "border-t border-[#E0DDD4] pt-6 md:border-l md:border-t-0 md:pl-7 md:pt-0"
+                ? "border-t border-[var(--portfolio-line)] pt-6 md:border-l md:border-t-0 md:pl-7 md:pt-0"
                 : ""
             }
           >
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#617464]">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--portfolio-accent)]">
               {section.label}
             </p>
 
-            <p className="mt-3 text-sm leading-7 text-[#626A65]">
+            <p className="mt-3 text-sm leading-7 text-[var(--portfolio-muted)]">
               {section.content}
             </p>
           </section>

@@ -13,22 +13,22 @@ function formatDate(date) {
 
 function BuildNoteCard({ entry, index }) {
   return (
-    <article className="flex h-full flex-col border-t border-[#BCC4B9] py-6">
+    <article className="flex h-full flex-col border-t border-[var(--portfolio-line)] py-6">
       <div className="flex items-start justify-between gap-4">
-        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#6D7F70]">
+        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[var(--portfolio-accent)]">
           {entry.project}
         </p>
 
-        <span className="font-mono text-xs text-[#89928B]">
-          0{index + 1}
+        <span className="font-mono text-xs text-[var(--portfolio-muted-soft)]">
+          {String(index + 1).padStart(2, "0")}
         </span>
       </div>
 
-      <h3 className="mt-5 font-serif text-xl leading-snug text-[#1E2823]">
+      <h3 className="mt-5 font-serif text-xl leading-snug text-[var(--portfolio-ink)]">
         {entry.title}
       </h3>
 
-      <p className="mt-4 text-sm leading-6 text-[#69706B]">
+      <p className="mt-4 text-sm leading-6 text-[var(--portfolio-muted)]">
         {entry.summary}
       </p>
 
@@ -36,14 +36,14 @@ function BuildNoteCard({ entry, index }) {
         {entry.tags.slice(0, 3).map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-[#E8ECE5] px-3 py-1 text-[0.68rem] font-medium text-[#526156]"
+            className="rounded-full bg-[#F7F6F1] px-3 py-1 text-[0.68rem] font-medium text-[#26372D]"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <p className="mt-auto pt-6 text-xs uppercase tracking-[0.14em] text-[#89928B]">
+      <p className="mt-auto pt-6 text-xs uppercase tracking-[0.14em] text-[var(--portfolio-muted-soft)]">
         {formatDate(entry.date)}
       </p>
     </article>
@@ -60,21 +60,21 @@ export default function TheBuildRoom() {
   return (
     <section
       id="build-room"
-      className="border-t border-[#D8D4C8] bg-[#EFEEE8] px-6 py-20 pt-14 text-[#1E2823] md:px-10 md:py-24 md:pt-16"
+      className="border-t border-[var(--portfolio-line)] bg-[var(--portfolio-surface-soft)] px-6 py-20 pt-14 text-[var(--portfolio-ink)] md:px-10 md:py-24 md:pt-16"
     >
       <div className="w-full">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.55fr)] lg:items-end">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
               03 / The Build Room
             </p>
 
-            <h2 className="max-w-3xl font-serif text-3xl leading-tight md:text-4xl">
+            <h2 className="max-w-3xl font-serif text-3xl leading-tight text-[var(--portfolio-ink)] md:text-4xl">
               Notes from behind the build.
             </h2>
           </div>
 
-          <p className="max-w-xl text-sm leading-7 text-[#69706B] md:text-base">
+          <p className="max-w-xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
             A working record of problems investigated, decisions made and
             lessons learned while building full-stack applications, backend
             systems and deployment workflows.

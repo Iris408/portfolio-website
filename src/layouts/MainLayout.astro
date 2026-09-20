@@ -14,42 +14,66 @@ const socialImage = new URL(image, Astro.site);
 
 <!doctype html>
 <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
-      <meta name="theme-color" content="#f7f6f1" />
+    <meta
+      name="theme-color"
+      content="#1f2c24"
+      id="theme-color-meta"
+    />
 
-      <link rel="canonical" href={canonicalURL} />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const shouldUseDark = savedTheme ? savedTheme === "dark" : true;
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalURL} />
-      <meta property="og:image" content={socialImage} />
-      <meta property="og:site_name" content="Ashleigh Magloire" />
+        document.documentElement.classList.toggle("dark", shouldUseDark);
+        document.documentElement.classList.toggle("light", !shouldUseDark);
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={socialImage} />
+        const themeColorMeta = document.querySelector("#theme-color-meta");
 
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      <link rel="icon" href="/favicon.ico" sizes="any" />
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute(
+            "content",
+            shouldUseDark ? "#1f2c24" : "#f7f6f1"
+          );
+        }
+      })();
+    </script>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
 
-      <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
-        rel="stylesheet"
-      />
-    </head>
+    <link rel="canonical" href={canonicalURL} />
 
-  <body class="min-h-screen bg-[#F7F6F1] text-[#1E2823] antialiased">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:site_name" content="Ashleigh Magloire" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)] antialiased">
     <slot />
   </body>
 </html>

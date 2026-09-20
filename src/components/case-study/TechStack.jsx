@@ -4,9 +4,9 @@ export default function TechStack({ groups = [] }) {
       {groups.map((group) => (
         <article
           key={group.title}
-          className="border border-[#D8D4C8] bg-[#FCFBF7] p-6"
+          className="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6"
         >
-          <h3 className="font-serif text-xl text-[#26372D]">
+          <h3 className="font-serif text-xl text-[var(--portfolio-ink)]">
             {group.title}
           </h3>
 
@@ -14,9 +14,12 @@ export default function TechStack({ groups = [] }) {
             {group.items.map((item) => (
               <li
                 key={item}
-                className="flex gap-3 text-sm leading-6 text-[#626A65]"
+                className="flex gap-3 text-sm leading-6 text-[var(--portfolio-muted)]"
               >
-                <span className="text-[#718574]" aria-hidden="true">
+                <span
+                  className="text-[var(--portfolio-accent)]"
+                  aria-hidden="true"
+                >
                   —
                 </span>
 

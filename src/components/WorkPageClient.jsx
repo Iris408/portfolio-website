@@ -14,13 +14,13 @@ const primaryFilters = [
 function ProjectImage({ project, onPreview }) {
   if (!project.image) {
     return (
-      <div className="flex h-48 items-center justify-center bg-[#E9E8E1] md:h-56">
+      <div className="flex h-48 items-center justify-center bg-[var(--portfolio-surface-soft)] md:h-56">
         <div className="text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.24em] text-[#829084]">
+          <p className="text-xs font-medium uppercase tracking-[0.24em] text-[var(--portfolio-muted-soft)]">
             Engineering project
           </p>
 
-          <p className="mt-3 font-serif text-xl text-[#526156]">
+          <p className="mt-3 font-serif text-xl text-[var(--portfolio-ink)]">
             {project.title}
           </p>
         </div>
@@ -38,7 +38,7 @@ function ProjectImage({ project, onPreview }) {
           title: project.title,
         })
       }
-      className="group block h-48 w-full overflow-hidden bg-[#E9E8E1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#526A57] md:h-56"
+      className="group block h-48 w-full overflow-hidden bg-[var(--portfolio-surface-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--portfolio-accent)] md:h-56"
       aria-label={`Preview images from ${project.title}`}
     >
       <img
@@ -78,7 +78,7 @@ function ProjectLinks({ project }) {
 
   if (links.length === 0) {
     return (
-      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#8A928C]">
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--portfolio-muted-soft)]">
         Development in progress
       </p>
     );
@@ -95,7 +95,7 @@ function ProjectLinks({ project }) {
             href={link.href}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#405544] transition hover:text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#526A57]"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
           >
             {link.label}
             <span aria-hidden="true">
@@ -113,27 +113,27 @@ function WorkCard({ project, onPreview }) {
     project.featuredTech || project.tech?.slice(0, 5) || [];
 
   return (
-    <article className="flex h-full flex-col overflow-hidden border border-[#D8D4C8] bg-[#FCFBF7] transition duration-300 hover:-translate-y-1 hover:border-[#8FA08F] hover:shadow-[0_16px_40px_rgba(30,40,35,0.08)]">
+    <article className="work-card flex h-full flex-col overflow-hidden border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] transition duration-300 hover:-translate-y-1 hover:border-[var(--portfolio-accent)] hover:shadow-[0_16px_40px_rgba(17,20,18,0.18)]">
       <ProjectImage project={project} onPreview={onPreview} />
 
       <div className="flex flex-1 flex-col p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
-          <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#6D7F70]">
+          <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[var(--portfolio-accent)]">
             {project.category}
           </p>
 
           {project.status && (
-            <span className="border border-[#B8C1B7] px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-[0.12em] text-[#617064]">
+            <span className="border border-[var(--portfolio-line)] px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-[0.12em] text-[var(--portfolio-muted)]">
               {project.status}
             </span>
           )}
         </div>
 
-        <h2 className="mt-4 font-serif text-2xl leading-snug text-[#1E2823]">
+        <h2 className="mt-4 font-serif text-2xl leading-snug text-[var(--portfolio-ink)]">
           {project.title}
         </h2>
 
-        <p className="mt-4 text-sm leading-7 text-[#626A65]">
+        <p className="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
           {project.summary || project.description}
         </p>
 
@@ -141,14 +141,14 @@ function WorkCard({ project, onPreview }) {
           {displayedTech.map((item) => (
             <span
               key={item}
-              className="rounded-full bg-[#ECEEE8] px-3 py-1.5 text-xs font-medium text-[#526156]"
+              className="rounded-full bg-[#F7F6F1] px-3 py-1.5 text-xs font-medium text-[#26372D]"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <div className="mt-auto border-t border-[#E0DDD4] pt-6">
+        <div className="mt-auto border-t border-[var(--portfolio-line)] pt-6">
           <ProjectLinks project={project} />
         </div>
       </div>
@@ -202,7 +202,7 @@ export default function WorkPageClient() {
 
   return (
     <>
-      <div className="border-y border-[#D8D4C8]">
+      <div className="border-y border-[var(--portfolio-line)]">
         <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-center lg:justify-between">
           <div
             className="flex flex-wrap gap-2"
@@ -214,8 +214,8 @@ export default function WorkPageClient() {
               aria-pressed={activeCollection === "primary"}
               className={`px-4 py-2.5 text-sm font-medium transition ${
                 activeCollection === "primary"
-                  ? "bg-[#526A57] text-white"
-                  : "border border-[#C9CEC5] text-[#5F6861] hover:border-[#718574]"
+                  ? "bg-[#526A57] text-[#F7F6F1]"
+                  : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
               }`}
             >
               Primary work ({primaryCount})
@@ -227,8 +227,8 @@ export default function WorkPageClient() {
               aria-pressed={activeCollection === "small"}
               className={`px-4 py-2.5 text-sm font-medium transition ${
                 activeCollection === "small"
-                  ? "bg-[#526A57] text-white"
-                  : "border border-[#C9CEC5] text-[#5F6861] hover:border-[#718574]"
+                  ? "bg-[#526A57] text-[#F7F6F1]"
+                  : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
               }`}
             >
               Smaller builds ({smallCount})
@@ -250,8 +250,8 @@ export default function WorkPageClient() {
                   aria-pressed={isActive}
                   className={`rounded-full border px-3.5 py-2 text-xs font-medium transition ${
                     isActive
-                      ? "border-[#526A57] bg-[#E3E9E1] text-[#26372D]"
-                      : "border-[#C9CEC5] text-[#5F6861] hover:border-[#718574]"
+                      ? "border-[#D6E3C4] bg-[#F7F6F1] text-[#26372D]"
+                      : "border-[var(--portfolio-line)] text-[var(--portfolio-muted)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
                   }`}
                 >
                   {filter}
@@ -264,20 +264,23 @@ export default function WorkPageClient() {
 
       <div className="flex items-end justify-between gap-6 py-10">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#6D7F70]">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--portfolio-accent)]">
             {activeCollection === "primary"
               ? "Production-style portfolio"
               : "Learning and focused builds"}
           </p>
 
-          <h2 className="mt-3 font-serif text-3xl text-[#1E2823]">
+          <h2 className="mt-3 font-serif text-3xl text-[var(--portfolio-ink)]">
             {activeCollection === "primary"
               ? "Primary engineering work"
               : "Smaller engineering projects"}
           </h2>
         </div>
 
-        <p className="shrink-0 text-sm text-[#69706B]" aria-live="polite">
+        <p
+          className="shrink-0 text-sm text-[var(--portfolio-muted)]"
+          aria-live="polite"
+        >
           {visibleProjects.length}{" "}
           {visibleProjects.length === 1 ? "project" : "projects"}
         </p>
@@ -294,15 +297,15 @@ export default function WorkPageClient() {
           ))}
         </div>
       ) : (
-        <div className="border border-[#D8D4C8] bg-[#FCFBF7] p-10 text-center">
-          <p className="text-sm text-[#69706B]">
+        <div className="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-10 text-center">
+          <p className="text-sm text-[var(--portfolio-muted)]">
             No work matches this filter.
           </p>
 
           <button
             type="button"
             onClick={() => setActiveFilter("All")}
-            className="mt-5 text-sm font-medium text-[#405544] underline underline-offset-4"
+            className="mt-5 text-sm font-medium text-[var(--portfolio-accent)] underline underline-offset-4 transition hover:text-[var(--portfolio-ink)]"
           >
             Show all work
           </button>

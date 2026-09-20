@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 @theme {
   --font-sans: "Manrope", "Zen Maru Gothic", system-ui, sans-serif;
@@ -16,9 +17,41 @@
   --color-portfolio-line: #d8d4c8;
 }
 
+/* Default theme: dark */
 :root {
+  color-scheme: dark;
+
+  --portfolio-bg: #1f2c24;
+  --portfolio-surface: #1f2e25;
+  --portfolio-surface-soft: #314638;
+  --portfolio-ink: #f7f6f1;
+  --portfolio-muted: #d8e0d8;
+  --portfolio-muted-soft: #c1cec4;
+  --portfolio-line: #5a6b5f;
+  --portfolio-accent: #d6e3c4;
+
+  background: var(--portfolio-bg);
+}
+
+/* Toggle theme: light */
+html.light {
   color-scheme: light;
-  background: #f7f6f1;
+
+  --portfolio-bg: #f7f6f1;
+  --portfolio-surface: #ffffff;
+  --portfolio-surface-soft: #edede6;
+  --portfolio-ink: #1e2823;
+  --portfolio-muted: #69706b;
+  --portfolio-muted-soft: #879087;
+  --portfolio-line: #d8d4c8;
+  --portfolio-accent: #58705c;
+
+  background: var(--portfolio-bg);
+}
+
+html.dark {
+  color-scheme: dark;
+  background: var(--portfolio-bg);
 }
 
 html {
@@ -26,33 +59,17 @@ html {
   scroll-padding-top: 6rem;
 }
 
-html.dark {
-  color-scheme: dark;
-  background: #111412;
-}
-
 body {
   min-width: 20rem;
   margin: 0;
-  background: #f7f6f1;
-  color: #1e2823;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-ink);
   font-family: "Manrope", "Zen Maru Gothic", system-ui, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-}
-
-html.dark body {
-  background: #111412;
-  color: #f7f6f1;
-}
-
-.hero-bg {
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
-.hero-bg--light {
-  opacity: 1;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 button,
@@ -77,6 +94,141 @@ img {
   outline-offset: 4px;
 }
 
+/* Hero background images — dark first */
+.hero-bg {
+  opacity: 0;
+  transform: scale(1.025);
+  transform-origin: center;
+  transition: opacity 260ms ease;
+  will-change: opacity, transform, filter;
+}
+
+.hero-bg--dark {
+  opacity: 1;
+}
+
+.hero-bg--light {
+  opacity: 0;
+}
+
+html.light .hero-bg--dark {
+  opacity: 0;
+}
+
+html.light .hero-bg--light {
+  opacity: 1;
+}
+
+html.dark .hero-bg--dark {
+  opacity: 1;
+}
+
+html.dark .hero-bg--light {
+  opacity: 0;
+}
+
+/* Hero overlays */
+.hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(17, 20, 18, 0.76) 0%,
+    rgba(17, 20, 18, 0.42) 42%,
+    rgba(17, 20, 18, 0.08) 100%
+  );
+}
+
+.hero-bottom-fade {
+  background: linear-gradient(
+    0deg,
+    var(--portfolio-bg) 0%,
+    rgba(17, 20, 18, 0) 100%
+  );
+}
+
+html.light .hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 246, 241, 0.58) 0%,
+    rgba(247, 246, 241, 0.24) 42%,
+    rgba(247, 246, 241, 0.02) 100%
+  );
+}
+
+html.light .hero-bottom-fade {
+  background: linear-gradient(
+    0deg,
+    var(--portfolio-bg) 0%,
+    rgba(247, 246, 241, 0) 100%
+  );
+}
+
+/* One-time hero reveal animation */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.light) .hero-bg--dark,
+  html.light .hero-bg--light {
+    animation: hero-image-reveal 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .hero-overlay {
+    animation: hero-overlay-reveal 900ms ease both;
+  }
+
+  .hero-actions {
+    animation: hero-actions-rise 650ms ease 180ms both;
+  }
+}
+
+@keyframes hero-image-reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.055);
+    filter: brightness(0.72) saturate(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.025);
+    filter: brightness(1) saturate(1);
+  }
+}
+
+@keyframes hero-overlay-reveal {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-actions-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Work cards — soften bright screenshots in dark mode */
+html.dark .work-card img,
+html:not(.light) .work-card img {
+  filter: brightness(0.8) saturate(0.86) contrast(0.96);
+  transition:
+    filter 220ms ease,
+    transform 220ms ease;
+}
+
+html.dark .work-card:hover img,
+html:not(.light) .work-card:hover img {
+  filter: brightness(0.9) saturate(0.92) contrast(1);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

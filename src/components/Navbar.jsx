@@ -23,7 +23,7 @@ function ThemeToggle({ isDark, onToggle }) {
       onClick={onToggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="inline-flex h-10 w-10 items-center justify-center border border-[#D8D4C8] bg-[#F7F6F1]/70 text-[#1E2823] transition hover:border-[#58705C] hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:border-[#F7F6F1]/20 dark:bg-[#111412]/60 dark:text-[#F7F6F1] dark:hover:border-[#AAB8AD] dark:hover:text-[#AAB8AD]"
+      className="inline-flex h-10 w-10 items-center justify-center border border-[var(--portfolio-line)] bg-[#F7F6F1]/70 text-[var(--portfolio-ink)] transition hover:border-[#58705C] hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:border-[#F7F6F1]/20 dark:bg-[#111412]/60 dark:text-[#F7F6F1] dark:hover:border-[#AAB8AD] dark:hover:text-[#AAB8AD]"
     >
       <Icon className="h-6 w-6" aria-hidden="true" />
     </button>
@@ -32,7 +32,7 @@ function ThemeToggle({ isDark, onToggle }) {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const navigationLinks = [
     { label: "Home", href: "/" },
@@ -43,13 +43,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("portfolio-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    const shouldUseDark =
-      savedTheme === "dark" || (!savedTheme && prefersDark);
+    const shouldUseDark = savedTheme ? savedTheme === "dark" : true;
 
     document.documentElement.classList.toggle("dark", shouldUseDark);
     document.documentElement.classList.toggle("light", !shouldUseDark);
+
     setIsDark(shouldUseDark);
   }, []);
 
@@ -65,7 +64,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full border-b border-[#D8D4C8] bg-[#F7F6F1]/90 text-[#1E2823] backdrop-blur transition dark:border-[#F7F6F1]/15 dark:bg-[#111412]/88 dark:text-[#F7F6F1]"
+      className="sticky top-0 z-50 w-full border-b border-[var(--portfolio-line)] bg-[#F7F6F1]/90 text-[var(--portfolio-ink)] backdrop-blur transition dark:border-[#F7F6F1]/15 dark:bg-[#111412]/88 dark:text-[#F7F6F1]"
       aria-label="Primary navigation"
     >
       <div className="flex w-full items-center justify-between px-6 py-4 md:px-10">
@@ -73,17 +72,17 @@ export default function Navbar() {
           href="/"
           className="flex flex-col leading-none transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
         >
-          <span className="text-base font-medium tracking-[0.04em]">
-            Ashleigh M
+          <span className="text-[1.25rem] font-bold uppercase tracking-[0.25em]">
+            Ashleigh Magloire
           </span>
 
-          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-[#69706B] dark:text-[#B9C4BC]">
-            Software Engineer
+          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.32em] text-[var(--portfolio-muted)] dark:text-[#B9C4BC]">
+            Junior Full-Stack Developer
           </span>
         </a>
 
         <div className="hidden items-center gap-7 md:flex">
-          <div className="flex items-center gap-6 text-sm font-normal">
+          <div className="flex items-center gap-6 text-sm tracking-[0.12em] font-normal">
             {navigationLinks.map((link) => (
               <a
                 key={link.href}
@@ -109,7 +108,7 @@ export default function Navbar() {
 
           <a
             href="/#contact"
-            className="rounded-sm bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544] dark:bg-[#6F896F] dark:hover:bg-[#58705C]"
+            className="rounded-sm bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white tracking-[0.1em] transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544] dark:bg-[#6F896F] dark:hover:bg-[#58705C]"
           >
             Get in touch
           </a>
@@ -121,7 +120,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((current) => !current)}
-            className="relative h-11 w-11 text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#58705C] dark:text-[#F7F6F1]"
+            className="relative h-11 w-11 text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#58705C] dark:text-[#F7F6F1]"
             aria-label={
               isOpen ? "Close navigation menu" : "Open navigation menu"
             }
@@ -152,7 +151,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="border-t border-[#D8D4C8] bg-[#F7F6F1] px-6 pb-7 pt-5 md:hidden dark:border-[#F7F6F1]/15 dark:bg-[#111412]"
+          className="border-t border-[var(--portfolio-line)] bg-[#F7F6F1] px-6 pb-7 pt-5 md:hidden dark:border-[#F7F6F1]/15 dark:bg-[#111412]"
         >
           <div className="flex flex-col gap-5">
             {navigationLinks.map((link) => (

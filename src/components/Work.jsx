@@ -12,7 +12,7 @@ function FeaturedWorkCard({ project, onPreview }) {
     project.featuredTech || project.tech.slice(0, 3);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden border border-[#D8D4C8] bg-[#FCFBF7] transition duration-300 hover:-translate-y-1 hover:border-[#8FA08F] hover:shadow-[0_16px_40px_rgba(30,40,35,0.08)]">
+    <article className="work-card group flex h-full flex-col overflow-hidden border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] transition duration-300 hover:-translate-y-1 hover:border-[#8FA08F] hover:shadow-[0_16px_40px_rgba(30,40,35,0.08)]">
       {project.image && (
         <button
           type="button"
@@ -37,15 +37,15 @@ function FeaturedWorkCard({ project, onPreview }) {
       )}
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#6D7F70]">
+        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[var(--portfolio-accent)]">
           {project.category}
         </p>
 
-        <h3 className="mt-3 font-serif text-xl leading-snug text-[#1E2823]">
+        <h3 className="mt-3 font-serif text-xl leading-snug text-[var(--portfolio-ink)]">
           {project.title}
         </h3>
 
-        <p className="mt-3 text-sm leading-6 text-[#626A65]">
+        <p className="mt-3 text-sm leading-6 text-[var(--portfolio-muted)]">
           {project.summary}
         </p>
 
@@ -65,7 +65,7 @@ function FeaturedWorkCard({ project, onPreview }) {
             href={projectHref}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
-            className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-medium text-[#405544] transition hover:text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+            className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-medium text-[var(--portfolio-ink)] transition hover:text-[var(--portfolio-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
           >
             View project <span aria-hidden="true">→</span>
           </a>
@@ -85,12 +85,12 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="border-t border-[#D8D4C8] bg-[#F7F6F1] px-6 py-20 text-[#1E2823] md:px-10 md:py-24"
+      className="border-t border-[var(--portfolio-line)] bg-[var(--portfolio-bg)] px-6 py-20 text-[var(--portfolio-ink)] md:px-10 md:py-24"
     >
       <div className="w-full">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#6D7F70]">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
               02 / Featured Work
             </p>
 
@@ -98,7 +98,7 @@ export default function Work() {
               A few things I&apos;ve built.
             </h2>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#69706B] md:text-base">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
               Production-style applications shaped around practical
               requirements, accessible interfaces and maintainable systems.
             </p>
@@ -106,7 +106,7 @@ export default function Work() {
 
           <a
             href="/work"
-            className="inline-flex w-fit items-center gap-2 text-sm font-medium text-[#405544] transition hover:text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+            className="inline-flex w-fit items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
           >
             View all work <span aria-hidden="true">→</span>
           </a>

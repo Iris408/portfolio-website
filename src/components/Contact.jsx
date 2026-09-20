@@ -1,12 +1,13 @@
 export default function Contact() {
   const roleFocus = [
-    "Backend systems",
-    "Full-stack applications",
-    "API development",
+    "Backend Systems",
+    "Full-Stack Applications",
+    "API Development",
     "PostgreSQL",
     "Authentication",
-    "Accessible interfaces",
-    "Deployment workflows",
+    "Accessible Interfaces",
+    "Deployment Workflows",
+    "Web Applications",
   ];
 
   return (
@@ -16,22 +17,21 @@ export default function Contact() {
     >
       <div className="grid w-full gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
-          <p className="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[#AEBDAE]">
+          <p className="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
             04 / Contact
           </p>
 
-          <h2 className="max-w-3xl font-serif text-4xl leading-tight md:text-5xl">
-            Let&apos;s build something together.
+          <h2 className="max-w-3xl font-serif text-4xl leading-tight md:text-6xl">
+            Let&apos;s Connect.
           </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#D8E0D8]">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#D8E0D8]">
             I&apos;m open to junior backend and full-stack engineering roles,
-            freelance web projects and thoughtful product collaborations.
+            freelance web projects and collaborations on interesting products.
           </p>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#BFC9BF]">
-            Based in the UK and open to remote, hybrid and international
-            opportunities.
+          <p className="mt-4 max-w-2xl text-base leading-7 text-[#BFC9BF]">
+            Based in the UK, with flexibility for remote, hybrid or international opportunities.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -55,7 +55,7 @@ export default function Contact() {
         </div>
 
         <div className="border border-white/15 bg-white/[0.04] p-7 md:p-8">
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#AEBDAE]">
+          <p className="text-xs font-medium uppercase tracking-[0.25em] text-[var(--portfolio-accent)]">
             Current focus
           </p>
 

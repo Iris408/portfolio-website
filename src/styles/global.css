@@ -55,14 +55,6 @@ html.dark body {
   opacity: 1;
 }
 
-.dark .hero-bg--light {
-  opacity: 0;
-}
-
-.dark .hero-bg--dark {
-  opacity: 1;
-}
-
 button,
 input,
 textarea,

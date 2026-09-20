@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { WiSunrise, WiSunset } from "react-icons/wi";
 
 function GitHubIcon() {
   return (
@@ -13,8 +14,25 @@ function GitHubIcon() {
   );
 }
 
+function ThemeToggle({ isDark, onToggle }) {
+  const Icon = isDark ? WiSunrise : WiSunset;
+
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="inline-flex h-10 w-10 items-center justify-center border border-[#D8D4C8] bg-[#F7F6F1]/70 text-[#1E2823] transition hover:border-[#58705C] hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:border-[#F7F6F1]/20 dark:bg-[#111412]/60 dark:text-[#F7F6F1] dark:hover:border-[#AAB8AD] dark:hover:text-[#AAB8AD]"
+    >
+      <Icon className="h-6 w-6" aria-hidden="true" />
+    </button>
+  );
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   const navigationLinks = [
     { label: "Home", href: "/" },
@@ -23,21 +41,43 @@ export default function Navbar() {
     { label: "About", href: "/about" },
   ];
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const shouldUseDark =
+      savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    document.documentElement.classList.toggle("dark", shouldUseDark);
+    document.documentElement.classList.toggle("light", !shouldUseDark);
+    setIsDark(shouldUseDark);
+  }, []);
+
+  function toggleTheme() {
+    const nextIsDark = !isDark;
+
+    document.documentElement.classList.toggle("dark", nextIsDark);
+    document.documentElement.classList.toggle("light", !nextIsDark);
+
+    localStorage.setItem("portfolio-theme", nextIsDark ? "dark" : "light");
+    setIsDark(nextIsDark);
+  }
+
   return (
     <nav
-      className="sticky top-0 z-50 w-full border-b border-[#D8D4C8] bg-[#F7F6F1]/95 text-[#1E2823] backdrop-blur"
+      className="sticky top-0 z-50 w-full border-b border-[#D8D4C8] bg-[#F7F6F1]/90 text-[#1E2823] backdrop-blur transition dark:border-[#F7F6F1]/15 dark:bg-[#111412]/88 dark:text-[#F7F6F1]"
       aria-label="Primary navigation"
     >
       <div className="flex w-full items-center justify-between px-6 py-4 md:px-10">
         <a
           href="/"
-          className="flex flex-col leading-none transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+          className="flex flex-col leading-none transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
         >
           <span className="text-base font-medium tracking-[0.04em]">
             Ashleigh M
           </span>
 
-          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-[#69706B]">
+          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-[#69706B] dark:text-[#B9C4BC]">
             Software Engineer
           </span>
         </a>
@@ -48,7 +88,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+                className="transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
               >
                 {link.label}
               </a>
@@ -60,51 +100,59 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Ashleigh's GitHub profile"
-            className="transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
+            className="transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
           >
             <GitHubIcon />
           </a>
 
+          <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+
           <a
             href="/#contact"
-            className="rounded-sm bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544]"
+            className="rounded-sm bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544] dark:bg-[#6F896F] dark:hover:bg-[#58705C]"
           >
             Get in touch
           </a>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen((current) => !current)}
-          className="relative h-11 w-11 text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#58705C] md:hidden"
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-        >
-          <span
-            className={`absolute left-2 top-3 h-0.5 w-7 bg-current transition duration-300 ${
-              isOpen ? "translate-y-2 rotate-45" : ""
-            }`}
-          />
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
 
-          <span
-            className={`absolute left-2 top-5 h-0.5 w-7 bg-current transition duration-300 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
+          <button
+            type="button"
+            onClick={() => setIsOpen((current) => !current)}
+            className="relative h-11 w-11 text-[#1E2823] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#58705C] dark:text-[#F7F6F1]"
+            aria-label={
+              isOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
+            <span
+              className={`absolute left-2 top-3 h-0.5 w-7 bg-current transition duration-300 ${
+                isOpen ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
 
-          <span
-            className={`absolute left-2 top-7 h-0.5 w-7 bg-current transition duration-300 ${
-              isOpen ? "-translate-y-2 -rotate-45" : ""
-            }`}
-          />
-        </button>
+            <span
+              className={`absolute left-2 top-5 h-0.5 w-7 bg-current transition duration-300 ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+
+            <span
+              className={`absolute left-2 top-7 h-0.5 w-7 bg-current transition duration-300 ${
+                isOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       {isOpen && (
         <div
           id="mobile-navigation"
-          className="border-t border-[#D8D4C8] bg-[#F7F6F1] px-6 pb-7 pt-5 md:hidden"
+          className="border-t border-[#D8D4C8] bg-[#F7F6F1] px-6 pb-7 pt-5 md:hidden dark:border-[#F7F6F1]/15 dark:bg-[#111412]"
         >
           <div className="flex flex-col gap-5">
             {navigationLinks.map((link) => (
@@ -112,7 +160,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-base transition hover:text-[#58705C]"
+                className="text-base transition hover:text-[#58705C] dark:hover:text-[#AAB8AD]"
               >
                 {link.label}
               </a>
@@ -122,7 +170,7 @@ export default function Navbar() {
               href="https://github.com/Iris408"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base transition hover:text-[#58705C]"
+              className="text-base transition hover:text-[#58705C] dark:hover:text-[#AAB8AD]"
             >
               GitHub
             </a>
@@ -130,7 +178,7 @@ export default function Navbar() {
             <a
               href="/#contact"
               onClick={() => setIsOpen(false)}
-              className="inline-flex w-fit items-center gap-2 bg-[#9A6046] px-4 py-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white transition hover:bg-[#7F4E39]"
+              className="inline-flex w-fit items-center gap-2 bg-[#58705C] px-4 py-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white transition hover:bg-[#405544]"
             >
               Get in touch
             </a>

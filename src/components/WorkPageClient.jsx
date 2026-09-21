@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo, useState } from "react";
 import { projects } from "../data/projects.js";
 import PreviewModal from "./PreviewModal.jsx";
@@ -221,18 +223,20 @@ export default function WorkPageClient() {
               Primary work ({primaryCount})
             </button>
 
-            <button
-              type="button"
-              onClick={() => changeCollection("small")}
-              aria-pressed={activeCollection === "small"}
-              className={`px-4 py-2.5 text-sm font-medium transition ${
-                activeCollection === "small"
-                  ? "bg-[#526A57] text-[#F7F6F1]"
-                  : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
-              }`}
-            >
-              Smaller builds ({smallCount})
-            </button>
+            {smallCount > 0 && (    
+              <button
+                type="button"
+                onClick={() => changeCollection("small")}
+                aria-pressed={activeCollection === "small"}
+                className={`px-4 py-2.5 text-sm font-medium transition ${
+                  activeCollection === "small"
+                    ? "bg-[#526A57] text-[#F7F6F1]"
+                    : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
+                }`}
+              >
+                Additional builds ({smallCount})
+              </button>
+            )}
           </div>
 
           <div
@@ -267,13 +271,13 @@ export default function WorkPageClient() {
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--portfolio-accent)]">
             {activeCollection === "primary"
               ? "Production-style portfolio"
-              : "Learning and focused builds"}
+              : "Additional project work"}
           </p>
 
           <h2 className="mt-3 font-serif text-3xl text-[var(--portfolio-ink)]">
             {activeCollection === "primary"
               ? "Primary engineering work"
-              : "Smaller engineering projects"}
+              : "Additional engineering work"}
           </h2>
         </div>
 

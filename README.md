@@ -45,8 +45,8 @@ More projects and engineering notes are available on the portfolio's [Work](http
 Requires Node.js 20 or later.
 
 ```bash
-git clone https://github.com/Iris408/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/Iris408/portfolio-website.git
+cd portfolio-website
 npm install
 npm run dev
 ```
@@ -121,8 +121,8 @@ The source code is licensed under the MIT License. Portfolio content, branding a
 Node.js 20以降が必要です。
 
 ```bash
-git clone https://github.com/Iris408/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/Iris408/portfolio-website.git
+cd portfolio-website
 npm install
 npm run dev
 ```

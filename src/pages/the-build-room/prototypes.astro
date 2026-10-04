@@ -1,0 +1,38 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+---
+
+<MainLayout
+  title="Prototypes | The Build Room | Ashleigh Magloire"
+  description="Early software prototypes and proof-of-concept work by Ashleigh Magloire."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
+    <section class="px-6 py-12 md:px-10 md:py-16">
+      <a href="/the-build-room" class="text-sm font-medium text-[var(--portfolio-accent)]">
+        ← Back
+      </a>
+
+      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+        The Build Room / Prototypes
+      </p>
+
+      <h1 class="font-serif text-4xl md:text-6xl">Prototypes</h1>
+
+      <div class="mt-10 max-w-2xl border-t border-[var(--portfolio-line)] pt-6">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
+          In the works
+        </p>
+        <p class="mt-3 text-base leading-7 text-[var(--portfolio-muted)]">
+          This space is for early builds and proof-of-concepts. I’ll add
+          prototypes here when I have one ready to share.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

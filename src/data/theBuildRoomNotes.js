@@ -1,4 +1,24 @@
 export const theBuildRoomNotes = [
+    {
+    id: "BR-010",
+    title: "Keeping .NET Build Output Out of Git",
+    project: "PartsPilot v3",
+    category: "Backend / .NET / Git",
+    tags: ["Backend", "Docker", "Git"],
+    date: "2026-09-28",
+    status: "Fixed / Learned",
+    pinned: false,
+    summary:
+      "Cleaned up generated .NET build files that were appearing in Git changes during the ongoing PartsPilot v3 migration.",
+    problem:
+      "Generated files in the bin/ and obj/ folders were showing up alongside the source changes, making the repository status harder to review.",
+    cause:
+      "The generated build output was not fully excluded from Git tracking.",
+    fix:
+      "Updated the ignore rules and removed the generated files from Git tracking. This kept the cleanup focused on repository contents; it did not complete the PartsPilot v3 migration.",
+    lesson:
+      "Ignore build output early. If generated files are already tracked, updating .gitignore alone is not enough; remove them from the index, then check Git status before staging source changes.",
+  },
   {
     id: "BR-009",
     title: "Fixing React API Response-Shape Rendering",

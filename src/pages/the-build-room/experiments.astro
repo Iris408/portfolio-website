@@ -1,0 +1,38 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+---
+
+<MainLayout
+  title="Experiments | The Build Room | Ashleigh Magloire"
+  description="Small experiments with software tools, technologies and techniques by Ashleigh Magloire."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
+    <section class="px-6 py-12 md:px-10 md:py-16">
+      <a href="/the-build-room" class="text-sm font-medium text-[var(--portfolio-accent)]">
+        ← Back
+      </a>
+
+      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+        The Build Room / Experiments
+      </p>
+
+      <h1 class="font-serif text-4xl md:text-6xl">Experiments</h1>
+
+      <div class="mt-10 max-w-2xl border-t border-[var(--portfolio-line)] pt-6">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
+          Coming soon
+        </p>
+        <p class="mt-3 text-base leading-7 text-[var(--portfolio-muted)]">
+          This space is for focused tests of tools, technologies and approaches.
+          I’ll add experiments here as I have useful findings to share.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

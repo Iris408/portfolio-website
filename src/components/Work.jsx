@@ -90,8 +90,8 @@ export default function Work() {
       <div className="w-full">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
-              02 / Featured Work
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+              02 / Projects
             </p>
 
             <h2 className="font-serif text-3xl leading-tight md:text-4xl">
@@ -99,16 +99,16 @@ export default function Work() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
-              Production-style applications shaped around practical
-              requirements, accessible interfaces and maintainable systems.
+              Applications I've designed, built and kept improving, 
+              from backend systems to the screens in front of them.
             </p>
           </div>
 
           <a
-            href="/work"
+            href="/projects"
             className="inline-flex w-fit items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C]"
           >
-            View all work <span aria-hidden="true">→</span>
+            View all projects <span aria-hidden="true">→</span>
           </a>
         </div>
 

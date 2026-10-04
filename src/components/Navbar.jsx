@@ -32,11 +32,11 @@ function ThemeToggle({ isDark, onToggle }) {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   const navigationLinks = [
     { label: "Home", href: "/" },
-    { label: "Work", href: "/work" },
+    { label: "Projects", href: "/projects" },
     { label: "The Build Room", href: "/the-build-room" },
     { label: "About", href: "/about" },
   ];
@@ -44,7 +44,7 @@ export default function Navbar() {
   useEffect(() => {
     const savedTheme = localStorage.getItem("portfolio-theme");
 
-    const shouldUseDark = savedTheme ? savedTheme === "dark" : true;
+    const shouldUseDark = savedTheme ? savedTheme === "dark" : false;
 
     document.documentElement.classList.toggle("dark", shouldUseDark);
     document.documentElement.classList.toggle("light", !shouldUseDark);
@@ -64,7 +64,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full border-b border-[var(--portfolio-line)] bg-[#F7F6F1]/90 text-[var(--portfolio-ink)] backdrop-blur transition dark:border-[#F7F6F1]/15 dark:bg-[#111412]/88 dark:text-[#F7F6F1]"
+      className="w-full border-b border-[var(--portfolio-line)] bg-[#F7F6F1]/90 text-[var(--portfolio-ink)] backdrop-blur transition dark:border-[#F7F6F1]/15 dark:bg-[#111412]/88 dark:text-[#F7F6F1]"
       aria-label="Primary navigation"
     >
       <div className="flex w-full items-center justify-between px-6 py-4 md:px-10">
@@ -72,12 +72,8 @@ export default function Navbar() {
           href="/"
           className="flex flex-col leading-none transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
         >
-          <span className="text-[1.25rem] font-bold uppercase tracking-[0.25em]">
+          <span className="text-[0.75rem] font-bold uppercase tracking-[0.25em]">
             Ashleigh Magloire
-          </span>
-
-          <span className="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.32em] text-[var(--portfolio-muted)] dark:text-[#B9C4BC]">
-            Junior Full-Stack Developer
           </span>
         </a>
 
@@ -89,7 +85,14 @@ export default function Navbar() {
                 href={link.href}
                 className="transition hover:text-[#58705C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#58705C] dark:hover:text-[#AAB8AD]"
               >
-                {link.label}
+                {link.href === "/the-build-room" ? (
+                  <>
+                    <span className="hidden md:inline lg:hidden">TBR</span>
+                    <span className="hidden lg:inline">The Build Room</span>
+                  </>
+                ) : (
+                  link.label
+                )}
               </a>
             ))}
           </div>
@@ -108,9 +111,9 @@ export default function Navbar() {
 
           <a
             href="/#contact"
-            className="rounded-sm bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white tracking-[0.1em] transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544] dark:bg-[#6F896F] dark:hover:bg-[#58705C]"
+            className="bg-[#58705C] px-5 py-2.5 text-sm font-medium text-white tracking-[0.1em] transition hover:bg-[#405544] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#405544] dark:bg-[#6F896F] dark:hover:bg-[#58705C]"
           >
-            Get in touch
+            Contact
           </a>
         </div>
 
@@ -179,7 +182,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="inline-flex w-fit items-center gap-2 bg-[#58705C] px-4 py-2.5 text-xs font-medium uppercase tracking-[0.14em] text-white transition hover:bg-[#405544]"
             >
-              Get in touch
+              Contact
             </a>
           </div>
         </div>

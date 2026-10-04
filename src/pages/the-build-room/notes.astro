@@ -1,0 +1,44 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+import TheBuildRoomClient from "../../components/TheBuildRoomClient.jsx";
+---
+
+<MainLayout
+  title="Engineering Notes | The Build Room | Ashleigh Magloire"
+  description="English engineering notes covering debugging, backend development, CI/CD, and lessons from practical software projects."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
+    <section class="border-b border-[var(--portfolio-line)] px-6 pb-12 pt-12 md:px-10 md:pb-16">
+      <a
+        href="/the-build-room"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
+      >
+        <span aria-hidden="true">←</span>
+        Back
+      </a>
+
+      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+        The Build Room / Notes
+      </p>
+
+      <h1 class="max-w-4xl font-serif text-4xl leading-tight text-[var(--portfolio-ink)] md:text-6xl">
+        Engineering Notes
+      </h1>
+
+      <p class="mt-6 max-w-3xl text-base leading-8 text-[var(--portfolio-muted)] md:text-lg">
+        Problems I’ve investigated, the fixes I made, and the lessons I’m
+        carrying into future projects.
+      </p>
+    </section>
+
+    <section class="px-6 py-12 md:px-10 md:py-16">
+      <TheBuildRoomClient client:load />
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

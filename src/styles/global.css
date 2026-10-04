@@ -17,23 +17,23 @@
   --color-portfolio-line: #d8d4c8;
 }
 
-/* Default theme: dark */
+/* Toggle theme: dark */
 :root {
   color-scheme: dark;
 
-  --portfolio-bg: #1f2c24;
-  --portfolio-surface: #1f2e25;
-  --portfolio-surface-soft: #314638;
-  --portfolio-ink: #f7f6f1;
-  --portfolio-muted: #d8e0d8;
-  --portfolio-muted-soft: #c1cec4;
-  --portfolio-line: #5a6b5f;
-  --portfolio-accent: #d6e3c4;
+  --portfolio-bg: #101211;
+  --portfolio-surface: #171a18;
+  --portfolio-surface-soft: #1d221f;
+  --portfolio-ink: #f4f2eb;
+  --portfolio-muted: #c7ccc5;
+  --portfolio-muted-soft: #a4aea4;
+  --portfolio-line: #37413b;
+  --portfolio-accent: #b8c8aa;
 
   background: var(--portfolio-bg);
 }
 
-/* Toggle theme: light */
+/* Default theme: light */
 html.light {
   color-scheme: light;
 

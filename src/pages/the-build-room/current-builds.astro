@@ -1,0 +1,70 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
+---
+
+<MainLayout
+  title="Current Builds | The Build Room | Ashleigh Magloire"
+  description="Current software projects and engineering work by Ashleigh Magloire."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
+    <section class="border-b border-[var(--portfolio-line)] px-6 pb-12 pt-12 md:px-10 md:pb-16">
+      <a
+        href="/the-build-room"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
+      >
+        <span aria-hidden="true">←</span>
+        Back
+      </a>
+
+      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+        The Build Room / Current Builds
+      </p>
+
+      <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">
+        Current Builds
+      </h1>
+
+      <p class="mt-6 max-w-3xl text-base leading-8 text-[var(--portfolio-muted)] md:text-lg">
+        Projects I’m actively developing and the engineering work behind them.
+      </p>
+    </section>
+
+    <section class="px-6 py-12 md:px-10 md:py-16">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6 md:p-8">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
+            PartsPilot · In progress
+          </p>
+
+          <h2 class="mt-4 font-serif text-2xl leading-snug md:text-3xl">
+            PartsPilot v3 Migration
+          </h2>
+
+          <p class="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
+            Migrating the PartsPilot backend from FastAPI to a .NET Minimal API.
+          </p>
+        </article>
+
+        <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6 md:p-8">
+          <p class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
+            Bloom · Public beta
+          </p>
+
+          <h2 class="mt-4 font-serif text-2xl leading-snug md:text-3xl">
+            Bloom v3
+          </h2>
+
+          <p class="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
+            The public live beta of my visual task planner.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

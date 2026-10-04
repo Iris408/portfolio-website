@@ -5,18 +5,11 @@ const filters = [
   "All",
   "Backend",
   "Frontend",
-  "CI/CD",
-  "Docker",
-  "TypeScript",
-  "JavaScript",
+  "Full-Stack",
+  "Debugging",
   "FastAPI",
   "PostgreSQL",
-  "Astro",
-  "React",
-  "PHP",
-  "WordPress",
-  "Debugging",
-  "Full-Stack",
+  "Docker",
 ];
 
 function formatDate(date) {

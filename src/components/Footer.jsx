@@ -62,18 +62,18 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/15 bg-[#26372D] px-6 py-8 text-[#F7F6F1] md:px-10">
+    <footer className="border-t border-white/15 bg-[var(--portfolio-bg)] px-6 py-8 text-[var(--portfolio-ink)] md:px-10">
       <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <a
             href="/"
-            className="text-sm font-medium uppercase tracking-[0.15em] transition hover:text-white"
+            className="text-xs font-medium uppercase tracking-[0.15em] transition hover:text-[var(--portfolio-muted)]"
           >
             Ashleigh Magloire
           </a>
 
-          <p className="mt-1 text-[0.65rem] uppercase tracking-[0.4em] text-[#AEBDAE]">
-            Junior Full-Stack Developer
+          <p className="mt-1 text-[0.5rem] uppercase tracking-[0.4em] text-[var(--portfolio-ink)]">
+            Backend & Full-Stack Developer
           </p>
         </div>
 
@@ -86,16 +86,15 @@ export default function Footer() {
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               aria-label={label}
               title={label}
-              className="inline-flex h-13 w-13 items-center justify-center border border-white/20 text-[#D8E0D8] transition hover:border-white hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex h-13 w-13 items-center justify-center border border-[var(--portfolio-ink)] text-[var(--portfolio-ink)] transition hover:border-[var(--portfolio-ink)] hover:bg-[var(--portfolio-muted-soft)] hover:text-white dark:hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <Icon />
             </a>
           ))}
         </div>
 
-        <div className="text-xs leading-6 text-[#AEBDAE] sm:text-right">
+        <div className="text-xs leading-6 text-[var(--portfolio-muted)] sm:text-right">
           <p>© 2026 Ashleigh Magloire.</p>
-          <p>Built with Astro, React and Tailwind CSS.</p>
         </div>
       </div>
     </footer>

@@ -1,59 +1,149 @@
-# Engineering Portfolio / 開発者ポートフォリオ
+# Ashleigh Magloire — Engineering Portfolio
 
-A backend-focused full-stack engineering portfolio featuring deployed applications, technical case studies, DevOps-focused project work and notes from my ongoing development journey.
+**English** · [日本語](#開発者ポートフォリオ)
 
-バックエンドを中心としたフルスタック開発プロジェクト、技術ケーススタディ、DevOpsに関連するプロジェクト、継続的な学習記録を紹介するポートフォリオです。
+A backend-focused full-stack engineering portfolio showcasing live applications, project case studies, client work and notes on how the work is built.
 
-## Live Portfolio / ライブサイト
+## Live Portfolio
 
 [ashleighmagloire.com](https://www.ashleighmagloire.com)
 
-## Current Focus / 現在の重点分野
+## Current Focus
 
-My current development focus is building production-style full-stack systems with stronger backend architecture, authentication, databases, CI/CD, Docker, deployment workflows and cloud infrastructure foundations.
+I build practical full-stack applications with an emphasis on backend architecture, APIs, authentication, relational databases, testing, CI/CD and deployment. I'm currently developing LogSense and progressing the PartsPilot .NET migration.
 
-現在は、バックエンド設計、認証、データベース、CI/CD、Docker、デプロイ手順、クラウドインフラの基礎を含む、本番環境を意識したフルスタック開発に重点を置いています。
+## Highlights
 
-## Highlights / 主な内容
+- Responsive portfolio with light and dark themes
+- Selected backend, full-stack, monitoring and accessibility-focused projects
+- Project case studies covering the problem, approach, implementation and progress
+- The Build Room, organised into Current Builds, Prototypes, Experiments and Notes
+- Links to live projects, source repositories, my CV and contact details
 
-- Responsive and accessible portfolio interface
-- Selected full-stack, backend, DevOps and accessibility-focused projects
-- Detailed engineering case studies
-- The Build Room, documenting architecture, debugging and development decisions
-- Live demos, GitHub repositories, CV and contact links
+## Selected Projects
 
-## Selected Projects / 主なプロジェクト
+- **PartsPilot** — A live automotive inventory and analytics application with a production demo. Built with React, TypeScript, FastAPI and PostgreSQL; a .NET migration is in progress.
+- **Bloom** — An accessibility-focused routine and focus application. Its live beta (v2) is collecting user feedback while the next release is in development.
+- **AccessHub** — A full-stack user authentication and management application with protected routes and role-based access.
+- **Pulse** — An infrastructure monitoring project using health checks, Prometheus metrics, Grafana dashboards and Docker.
+- **LogSense** — A log analysis project that identifies error patterns and produces operational summaries, with a cloud roadmap planned.
+- **Iris & Oak** — My independent web studio, featured in the portfolio's client-work section.
 
-- **PartsPilot** — An automotive inventory and analytics platform built with React, TypeScript, FastAPI and PostgreSQL
-- **Bloom** — An accessibility-first routine, focus and progress application currently in early public beta
-- **AccessHub** — A full-stack authentication platform featuring JWT authentication, protected routes and role-based access
-- **Pulse** — A containerised infrastructure monitoring project with health checks, metrics, alerts, Prometheus and Grafana
-- **Iris & Oak** — A production business website with service pathways and a guided client enquiry flow
+More projects and engineering notes are available on the portfolio's [Work](https://www.ashleighmagloire.com/work) and [The Build Room](https://www.ashleighmagloire.com/the-build-room) pages.
 
-Additional projects are available on the portfolio’s Work page.
-
-## Portfolio Stack / 使用技術
+## Portfolio Stack
 
 - Astro
 - React
 - JavaScript
 - Tailwind CSS
-- React Icons
 - Vercel
 - Git and GitHub
 
-## Accessibility / アクセシビリティ
+## Running Locally
 
-The portfolio includes semantic page structure, keyboard-visible focus states, a skip-to-content link, reduced-motion support and responsive layouts.
+Requires Node.js 20 or later.
 
-セマンティックなページ構造、キーボード操作時のフォーカス表示、本文へのスキップリンク、視差効果の軽減、レスポンシブデザインに対応しています。
+```bash
+git clone https://github.com/Iris408/<repo-name>.git
+cd <repo-name>
+npm install
+npm run dev
+```
 
-## Deployment / デプロイ
+The site runs at `http://localhost:4321`.
 
-The portfolio is version-controlled with GitHub and continuously deployed through Vercel.
+To create and preview a production build:
 
-GitHubでバージョン管理を行い、Vercelを利用して継続的にデプロイしています。
+```bash
+npm run build
+npm run preview
+```
 
-## Licence / ライセンス
+## Accessibility
+
+The portfolio uses semantic page structure, visible keyboard focus states, a skip-to-content link, reduced-motion support and responsive layouts.
+
+## Deployment
+
+The source code is version-controlled with GitHub and continuously deployed through Vercel.
+
+## Licence
 
 The source code is licensed under the MIT License. Portfolio content, branding and images remain the property of their respective owners.
+
+---
+
+# 開発者ポートフォリオ
+
+[English](#ashleigh-magloire--engineering-portfolio) · **日本語**
+
+バックエンドを中心としたフルスタック開発ポートフォリオです。公開中のアプリケーション、プロジェクトのケーススタディ、クライアントワーク、開発過程の記録を紹介しています。
+
+## ライブサイト
+
+[ashleighmagloire.com](https://www.ashleighmagloire.com)
+
+## 現在の重点分野
+
+バックエンド設計、API、認証、リレーショナルデータベース、テスト、CI/CD、デプロイを重視し、実用的なフルスタックアプリケーションを開発しています。現在はLogSenseの開発とPartsPilotの.NET移行に取り組んでいます。
+
+## 主な内容
+
+- ライトテーマとダークテーマに対応したレスポンシブなポートフォリオ
+- バックエンド、フルスタック、監視、アクセシビリティに関するプロジェクト
+- 課題、方針、実装、進捗を紹介するケーススタディ
+- Current Builds、Prototypes、Experiments、Notesで構成された「The Build Room」
+- 公開中のプロジェクト、ソースコード、履歴書、お問い合わせ先へのリンク
+
+## 主なプロジェクト
+
+- **PartsPilot** — 自動車業界向けの在庫管理・分析アプリケーションです。React、TypeScript、FastAPI、PostgreSQLで構築し、公開デモを運用しています。.NETへの移行を進めています。
+- **Bloom** — アクセシビリティを重視した習慣・集中支援アプリです。公開中のベータ版（v2）でユーザーからのフィードバックを集めながら、次のリリースを開発しています。
+- **AccessHub** — 保護されたルートとロールベースアクセスを備えた、ユーザー認証・管理アプリケーションです。
+- **Pulse** — ヘルスチェック、Prometheusメトリクス、Grafanaダッシュボード、Dockerを使用したインフラ監視プロジェクトです。
+- **LogSense** — エラーパターンを検出し、運用サマリーを作成するログ分析プロジェクトです。クラウド対応を計画しています。
+- **Iris & Oak** — ポートフォリオのクライアントワーク欄で紹介している、個人で運営するウェブスタジオです。
+
+その他のプロジェクトや開発記録は、ポートフォリオの[Work](https://www.ashleighmagloire.com/work)および[The Build Room](https://www.ashleighmagloire.com/the-build-room)をご覧ください。
+
+## 使用技術
+
+- Astro
+- React
+- JavaScript
+- Tailwind CSS
+- Vercel
+- Git、GitHub
+
+## ローカル環境での実行
+
+Node.js 20以降が必要です。
+
+```bash
+git clone https://github.com/Iris408/<repo-name>.git
+cd <repo-name>
+npm install
+npm run dev
+```
+
+`http://localhost:4321` でサイトが起動します。
+
+本番用のビルドとプレビュー：
+
+```bash
+npm run build
+npm run preview
+```
+
+## アクセシビリティ
+
+セマンティックなページ構造、キーボード操作時のフォーカス表示、本文へのスキップリンク、アニメーションを抑える設定（prefers-reduced-motion）への対応、レスポンシブデザインを採用しています。
+
+## デプロイ
+
+ソースコードはGitHubで管理し、Vercelを利用して継続的にデプロイしています。
+
+## ライセンス
+
+ソースコードはMITライセンスで公開しています。ポートフォリオの文章、ブランド、画像は各権利者に帰属します。

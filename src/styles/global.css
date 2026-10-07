@@ -1,3 +1,15 @@
+/*
+  Contents
+  1. Tailwind and theme configuration
+  2. Theme variables
+  3. Base styles
+  4. Hero image theme switching
+  5. Hero background images and overlays
+  6. Animations
+  7. Work card image treatment
+  8. Reduced motion
+*/
+
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -92,6 +104,23 @@ img {
 :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
   outline: 2px solid #526a57;
   outline-offset: 4px;
+}
+
+/* Hero portrait image theme switching */
+.hero-portrait--dark {
+  display: block;
+}
+
+.hero-portrait--light {
+  display: none;
+}
+
+html.light .hero-portrait--dark {
+  display: none;
+}
+
+html.light .hero-portrait--light {
+  display: block;
 }
 
 /* Hero background images — dark first */

@@ -62,7 +62,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/15 bg-[var(--portfolio-bg)] px-6 py-8 text-[var(--portfolio-ink)] md:px-10">
+    <footer className="border-t border-[var(--portfolio-line)] bg-[var(--portfolio-bg)] px-6 py-8 text-[var(--portfolio-ink)] md:px-10">
       <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <a

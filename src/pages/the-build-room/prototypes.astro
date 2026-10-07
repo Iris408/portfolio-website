@@ -6,30 +6,178 @@ import Footer from "../../components/Footer.jsx";
 
 <MainLayout
   title="Prototypes | The Build Room | Ashleigh Magloire"
-  description="Early software prototypes and proof-of-concept work by Ashleigh Magloire."
+  description="Early product concepts and prototypes by Ashleigh Magloire."
 >
   <Navbar client:load />
 
   <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
-    <section class="px-6 py-12 md:px-10 md:py-16">
-      <a href="/the-build-room" class="text-sm font-medium text-[var(--portfolio-accent)]">
-        ← Back
+    <div class="px-6 pt-8 md:px-10 md:pt-10">
+      <a
+        href="/the-build-room"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)]"
+      >
+        <span aria-hidden="true">←</span>
+        Back to The Build Room
       </a>
+    </div>
 
-      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
-        The Build Room / Prototypes
-      </p>
+    <section class="border-b border-[var(--portfolio-line)] px-6 pb-16 pt-8 md:px-10 md:pb-20 md:pt-10">
+      <div class="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <p class="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+            The Build Room / Prototypes
+          </p>
 
-      <h1 class="font-serif text-4xl md:text-6xl">Prototypes</h1>
+          <h1 class="max-w-4xl font-serif text-4xl leading-tight text-[var(--portfolio-ink)] md:text-6xl">
+            Ideas, built far enough 
+            <br />
+            to test.
+          </h1>
+        </div>
 
-      <div class="mt-10 max-w-2xl border-t border-[var(--portfolio-line)] pt-6">
-        <p class="text-sm font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
-          In the works
-        </p>
-        <p class="mt-3 text-base leading-7 text-[var(--portfolio-muted)]">
-          This space is for early builds and proof-of-concepts. I’ll add
-          prototypes here when I have one ready to share.
-        </p>
+        <div class="lg:justify-self-end">
+          <p class="min-h-28 max-w-xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
+            Real interfaces for ideas that aren't real products yet. 
+            <br />
+            Each one is designed, built and ready to click through.
+          </p>
+
+          <p class="mt-5 text-sm text-[var(--portfolio-muted)]">
+            <span class="font-serif text-2xl text-[var(--portfolio-ink)]"> 2 </span>
+            prototypes
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="px-6 py-10 md:px-10 md:py-14"
+      aria-label="Prototypes"
+    >
+      <div class="grid gap-6 xl:grid-cols-2">
+        <article class="overflow-hidden rounded-xl border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)]">
+          <div class="bg-[#75B8F5] p-4 sm:p-6">
+            <div class="relative aspect-[16/10] overflow-hidden rounded-lg border border-black/10 bg-[#75B8F5]">
+              <img
+                src="/images/build-room/save-state-studio.png"
+                alt="Save State Studio game library concept with a retro desktop interface"
+                class="h-full w-full object-cover object-center"
+                loading="lazy"
+              />
+
+              <span class="absolute left-3 top-3 rounded-full bg-[#F7F3DC] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#26372D]">
+                Product concept
+              </span>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-7">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
+              Game Company · Desktop app · Concept
+            </p>
+
+            <h2 class="mt-3 font-serif text-3xl text-[var(--portfolio-ink)] md:text-4xl">
+              Save State Studio
+            </h2>
+
+            <p class="mt-4 min-h-14 max-w-2xl text-sm leading-7 text-[var(--portfolio-muted)]">
+              A bilingual retro desktop-style game studio site, built with Next.js and TypeScript.
+            </p>
+
+            <ul class="mt-6 grid gap-3 border-t border-[var(--portfolio-line)] pt-5 text-sm text-[var(--portfolio-muted)] sm:grid-cols-3">
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#3274C8]" aria-hidden="true">▱</span>
+                Next.js Build
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#3274C8]" aria-hidden="true">♧</span>
+                EN / JA localisation
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#3274C8]" aria-hidden="true">▧</span>
+                Retro desktop OS interface
+              </li>
+            </ul>
+
+            <details class="group mt-6 border-t border-[var(--portfolio-line)] pt-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-[var(--portfolio-ink)]">
+                <span>Bench Notes</span>
+                <span class="text-xl transition group-open:rotate-45" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+
+              <div class="mt-4 border-l-2 border-[#3274C8] pl-4">
+                <p class="text-sm leading-7 text-[var(--portfolio-muted)]">
+                  A playful game studio site styled as a retro desktop, 
+                  with a game library, trailers and saved progress built in.
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-xl border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)]">
+          <div class="bg-[#071321] p-4 sm:p-6">
+            <div class="relative aspect-[16/10] overflow-hidden rounded-lg border border-[#1C3C58] bg-[#0B1930]">
+              <img
+                src="/images/build-room/torqtrace-preview.png"
+                alt="TorqTrace vehicle diagnostics concept showing fleet health and diagnostic information"
+                class="h-full w-full object-cover object-center"
+                loading="lazy"
+              />
+
+              <span class="absolute left-3 top-3 rounded-full border border-[#69DDE3]/40 bg-[#0B2637]/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#9AF0E8]">
+                Website concept
+              </span>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-7">
+            <p class="text-xs font-medium uppercase tracking-[0.2em] text-[#168A91]">
+              Vehicle diagnostics · Dashboard · Concept
+            </p>
+
+            <h2 class="mt-3 font-serif text-3xl text-[var(--portfolio-ink)] md:text-4xl">
+              TorqTrace
+            </h2>
+
+            <p class="mt-4 min-h-14 max-w-2xl text-sm leading-7 text-[var(--portfolio-muted)]">
+              A technician-focused vehicle diagnostics interface, rebuilt in WordPress from a React prototype.
+            </p>
+
+            <ul class="mt-6 grid gap-3 border-t border-[var(--portfolio-line)] pt-5 text-sm text-[var(--portfolio-muted)] sm:grid-cols-3">
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#168A91]" aria-hidden="true">◉</span>
+                WordPress
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#168A91]" aria-hidden="true">⌁</span>
+                Fault-code signals
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-lg text-[#168A91]" aria-hidden="true">⌕</span>
+                Technician workflow
+              </li>
+            </ul>
+
+            <details class="group mt-6 border-t border-[var(--portfolio-line)] pt-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-[var(--portfolio-ink)]">
+                <span>Bench Notes</span>
+                <span class="text-xl transition group-open:rotate-45" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+
+              <div class="mt-4 border-l-2 border-[#168A91] pl-4">
+                <p class="text-sm leading-7 text-[var(--portfolio-muted)]">
+                  A technician-focused diagnostics interface that brings 
+                  vehicle data, fault codes and service history into one place.
+                </p>
+              </div>
+            </details>
+          </div>
+        </article>
       </div>
     </section>
   </main>

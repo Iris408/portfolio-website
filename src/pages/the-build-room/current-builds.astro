@@ -2,11 +2,60 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Navbar from "../../components/Navbar.jsx";
 import Footer from "../../components/Footer.jsx";
+import { theBuildRoomNotes } from "../../data/theBuildRoomNotes.js";
+
+const currentBuilds = [
+  {
+    project: "PartsPilot",
+    category: "Backend migration",
+    status: "In progress",
+    summary: "Moving the API from FastAPI to a .NET Minimal API.",
+    focus: "Setting up the .NET Minimal API foundation, including the health check.",
+    next: "Port the existing inventory and reporting endpoints from FastAPI.",
+    caseStudyHref: "/case-studies/partspilot",
+    githubHref: "https://github.com/Iris408/partspilot",
+    milestones: [
+      { label: "v1.0.0", date: "2026-06-22" },
+      { label: "v2.0.0", date: "2026-08-31" },
+    ],
+  },
+  {
+    project: "Bloom",
+    category: "Product development",
+    status: "Live beta",
+    summary: "The visual planner is live while I refine the next release.",
+    focus: "Refining the live beta and finalising Bloom’s logo and product identity.",
+    next: "Continue shaping the next release around clear, accessible routine and focus flows.",
+    caseStudyHref: "/case-studies/bloom",
+    githubHref: "https://github.com/Iris408/bloom-app",
+    milestones: [
+      { label: "v2.1.0", date: "2026-07-15" },
+      { label: "v2.1.1", date: "2026-07-18" },
+    ],
+  },
+];
+
+const recentUpdates = [...theBuildRoomNotes]
+  .filter(
+    (note) =>
+      note.project?.startsWith("PartsPilot") ||
+      note.project?.startsWith("Bloom")
+  )
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 3);
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(`${date}T00:00:00`));
+}
 ---
 
 <MainLayout
   title="Current Builds | The Build Room | Ashleigh Magloire"
-  description="Current software projects and engineering work by Ashleigh Magloire."
+  description="A snapshot of Ashleigh Magloire's current software projects."
 >
   <Navbar client:load />
 
@@ -14,56 +63,190 @@ import Footer from "../../components/Footer.jsx";
     <section class="border-b border-[var(--portfolio-line)] px-6 pb-12 pt-12 md:px-10 md:pb-16">
       <a
         href="/the-build-room"
-        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)]"
       >
         <span aria-hidden="true">←</span>
-        Back
+        Back to The Build Room
       </a>
 
-      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
-        The Build Room / Current Builds
-      </p>
+      <header class="mb-10 mt-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.24em] text-[var(--portfolio-accent)]">
+            The Build Room / Current Builds
+          </p>
 
-      <h1 class="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">
-        Current Builds
-      </h1>
+          <h1 class="mt-4 font-serif text-4xl leading-tight md:text-6xl">
+            What I'm building right now.
+          </h1>
 
-      <p class="mt-6 max-w-3xl text-base leading-8 text-[var(--portfolio-muted)] md:text-lg">
-        Projects I’m actively developing and the engineering work behind them.
-      </p>
+          <p class="mt-4 max-w-2xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
+            Each project here is in active development, from backend migrations to live betas.
+          </p>
+        </div>
+
+        <p class="flex shrink-0 items-baseline gap-2 text-sm text-[var(--portfolio-muted)]">
+          <span class="font-serif text-3xl text-[var(--portfolio-ink)]">
+            {currentBuilds.length}
+          </span>
+          active builds
+        </p>
+      </header>
     </section>
 
-    <section class="px-6 py-12 md:px-10 md:py-16">
-      <div class="grid gap-6 md:grid-cols-2">
-        <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6 md:p-8">
-          <p class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
-            PartsPilot · In progress
+    <div class="px-6 py-12 md:px-10 md:py-16">
+      <section
+        class="grid gap-4 lg:grid-cols-2"
+        aria-label="Current software builds"
+      >
+        {currentBuilds.map((build) => (
+          <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-5 md:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--portfolio-accent)]">
+                {build.category}
+              </p>
+
+              <span class="inline-flex items-center gap-2 rounded-full bg-[var(--portfolio-surface-soft)] px-3 py-1.5 text-xs font-medium text-[var(--portfolio-accent)]">
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-[var(--portfolio-accent)]"
+                  aria-hidden="true"
+                ></span>
+                {build.status}
+              </span>
+            </div>
+
+            <h2 class="mt-4 font-serif text-3xl">{build.project}</h2>
+
+            <p class="mt-3 text-sm leading-7 text-[var(--portfolio-muted)]">
+              {build.summary}
+            </p>
+
+            <div class="mt-5 grid gap-4 border-t border-[var(--portfolio-line)] pt-5">
+              <div class="flex gap-3">
+                <span
+                  class="text-lg text-[var(--portfolio-accent)]"
+                  aria-hidden="true"
+                >
+                  ◎
+                </span>
+
+                <div>
+                  <h3 class="text-sm font-medium">Recent focus</h3>
+                  <p class="mt-1 text-sm leading-6 text-[var(--portfolio-muted)]">
+                    {build.focus || "No update added yet."}
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <span
+                  class="text-lg text-[var(--portfolio-accent)]"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+
+                <div>
+                  <h3 class="text-sm font-medium">Next</h3>
+                  <p class="mt-1 text-sm leading-6 text-[var(--portfolio-muted)]">
+                    {build.next || "Not listed yet."}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 border-t border-[var(--portfolio-line)] pt-4">
+              <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-muted)]">
+                Milestones
+              </p>
+
+              <ul class="mt-3 grid gap-2">
+                {build.milestones.map((milestone) => (
+                  <li class="flex items-baseline justify-between gap-4 text-sm">
+                    <span class="font-medium text-[var(--portfolio-ink)]">
+                      {milestone.label}
+                    </span>
+
+                    <time
+                      datetime={milestone.date}
+                      class="shrink-0 text-[var(--portfolio-muted)]"
+                    >
+                      {formatDate(milestone.date)}
+                    </time>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3 border-t border-[var(--portfolio-line)] pt-5">
+              <a
+                href={build.caseStudyHref}
+                class="text-sm font-medium text-[var(--portfolio-ink)] underline underline-offset-4 transition hover:text-[var(--portfolio-accent)]"
+              >
+                Case study <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href={build.githubHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-medium text-[var(--portfolio-muted)] underline underline-offset-4 transition hover:text-[var(--portfolio-ink)]"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section class="mt-10 border-t border-[var(--portfolio-line)] pt-7">
+        <div class="flex flex-wrap items-baseline justify-between gap-4">
+          <h2 class="font-serif text-2xl">Recent updates</h2>
+
+          <a
+            href="/the-build-room/notes"
+            class="text-sm font-medium text-[var(--portfolio-accent)] underline underline-offset-4 transition hover:text-[var(--portfolio-ink)]"
+          >
+            Browse all notes <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        {recentUpdates.length > 0 ? (
+          <div class="mt-5 border-l border-[var(--portfolio-line)] pl-5">
+            {recentUpdates.map((note) => (
+              <article class="relative border-b border-[var(--portfolio-line)] py-4 last:border-b-0">
+                <span
+                  class="absolute -left-[1.55rem] top-6 h-2 w-2 rounded-full bg-[var(--portfolio-accent)]"
+                  aria-hidden="true"
+                ></span>
+
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p class="text-xs font-medium text-[var(--portfolio-accent)]">
+                    {note.project}
+                  </p>
+
+                  <time
+                    datetime={note.date}
+                    class="text-xs text-[var(--portfolio-muted)]"
+                  >
+                    {formatDate(note.date)}
+                  </time>
+                </div>
+
+                <h3 class="mt-1 font-serif text-lg">{note.title}</h3>
+
+                <p class="mt-1 text-sm leading-6 text-[var(--portfolio-muted)]">
+                  {note.summary}
+                </p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="mt-5 border-l border-[var(--portfolio-line)] py-2 pl-5 text-sm text-[var(--portfolio-muted)]">
+            No recent PartsPilot or Bloom notes yet.
           </p>
-
-          <h2 class="mt-4 font-serif text-2xl leading-snug md:text-3xl">
-            PartsPilot v3 Migration
-          </h2>
-
-          <p class="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
-            Migrating the PartsPilot backend from FastAPI to a .NET Minimal API.
-          </p>
-        </article>
-
-        <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-6 md:p-8">
-          <p class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
-            Bloom · Public beta
-          </p>
-
-          <h2 class="mt-4 font-serif text-2xl leading-snug md:text-3xl">
-            Bloom v3
-          </h2>
-
-          <p class="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
-            The public live beta of my visual task planner.
-          </p>
-        </article>
-      </div>
-    </section>
+        )}
+      </section>
+    </div>
   </main>
 
   <Footer />

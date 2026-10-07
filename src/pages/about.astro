@@ -18,11 +18,14 @@ import Footer from "../components/Footer.jsx";
           class="border-b border-[var(--portfolio-line)] pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10"
           aria-label="Profile details"
         >
-          <img
-            src="/images/hero/illustration-portrait.png"
-            alt="Illustrated portrait of Ashleigh"
-            class="aspect-square w-full max-w-xs object-cover"
-          />
+          <div class="flex aspect-square w-full max-w-xs items-center justify-center border border-[var(--portfolio-line)] bg-transparent p-4">
+            <img
+              src="/images/hero/chibi-illustration.png"
+              alt="Illustrated portrait of Ashleigh"
+              class="h-full w-full object-contain"
+            />
+          </div>
+
 
           <h2 class="mt-6 text-lg tracking-[0.16em]">
             Ashleigh Magloire
@@ -182,7 +185,7 @@ import Footer from "../components/Footer.jsx";
             </ul>
 
             <p class="mt-4 text-sm text-[var(--portfolio-muted-soft)]">
-              Currently exploring C# and .NET by migrating 
+              Currently exploring <strong>C#</strong> and <strong>.NET</strong> by migrating 
               <a
                 href="https://partspilot.uk"
                 target="_blank"
@@ -211,7 +214,7 @@ import Footer from "../components/Footer.jsx";
             </a>  
 
             <a
-              href="/contact"
+              href="mailto:ashmagloire45@icloud.com"
               class="text-sm text-[var(--portfolio-ink)] underline decoration-[var(--portfolio-line)] underline-offset-4 transition hover:decoration-[var(--portfolio-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
             >
               Get in touch <span aria-hidden="true">→</span>

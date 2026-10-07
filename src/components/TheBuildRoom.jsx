@@ -1,5 +1,11 @@
 // EN: Homepage Build Room preview
 // JP: ホームページの Build Room プレビュー
+const buildRoomLinks = [
+  { label: "Current Builds", href: "/the-build-room#current-builds" },
+  { label: "Prototypes", href: "/the-build-room#prototypes" },
+  { label: "Experiments", href: "/the-build-room#experiments" },
+  { label: "Notes", href: "/the-build-room#notes" },
+];
 
 const categories = [
   {
@@ -118,13 +124,6 @@ export default function TheBuildRoom() {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-          <a
-            href="/the-build-room"
-            className="font-medium underline underline-offset-4"
-          >
-            Enter The Build Room →
-          </a>
-
           <a
             href="https://iris408.github.io/technical-blog/"
             target="_blank"

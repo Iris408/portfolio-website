@@ -109,50 +109,6 @@ export const projects = [
       "/screenshots/pulse/pulse-health-endpoint.png",
     ],
   },
-
-  {
-    slug: "iris-and-oak",
-    featured: false,
-    tier: "primary",
-    title: "Iris & Oak",
-    category: "Business Platform · Full-Stack",
-    status: "Production · Live",
-    summary:
-      "A production freelance business website with service-led journeys, case studies and transactional project enquiries.",
-    description:
-      "A production Next.js website created for Iris & Oak, my freelance software development business. The platform presents services, pricing and selected work while guiding prospective clients through a structured four-step enquiry journey. It includes service-specific questions, review and amend functionality, validation, privacy consent, server-side enquiry processing and transactional email delivery.",
-    tags: [
-      "Full-Stack",
-      "Business Website",
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Resend",
-      "Responsive Design",
-      "Accessibility",
-      "Vercel",
-    ],
-    tech: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "CSS",
-      "Resend",
-      "Vercel",
-    ],
-    featuredTech: ["Next.js", "TypeScript", "Resend"],
-    detailsPath: "/case-studies/iris-and-oak",
-    github: "",
-    demo: "https://www.irisoak.dev",
-    image: "/screenshots/irisandoak/irisoak-card.png",
-    images: [
-      "/screenshots/irisandoak/irisoak-homepage.png",
-      "/screenshots/irisandoak/irisoak-services.png",
-      "/screenshots/irisandoak/irisoak-selected-work.png",
-      "/screenshots/irisandoak/irisoak-contact-page.png",
-    ],
-  },
-
   {
     slug: "bloom",
     featured: true,
@@ -205,7 +161,6 @@ export const projects = [
       "/screenshots/bloom/bloom-exit-demo.png",
     ],
   },
-
   {
     slug: "logsense",
     featured: false,
@@ -245,11 +200,53 @@ export const projects = [
       "/screenshots/logsense/log_intelligence_docker.png",
     ],
   },
+  /* ========================================
+     "Workshop projects" and smaller experiments
+  ======================================== */
 
-    {
+  {
+    slug: "torqtrace",
+    featured: false,
+    tier: "small",
+    title: "TorqTrace",
+    category: "Automotive · WordPress Dashboard",
+    status: "v1.0.0 Complete",
+    summary:
+      "A responsive automotive diagnostic dashboard concept rebuilt as a custom WordPress theme.",
+    description:
+      "A WordPress frontend dashboard concept for vehicle health monitoring, diagnostic metrics, recent fault codes, inspection priorities and maintenance signals. I remodelled an earlier React vehicle diagnostic UI into a polished WordPress theme concept with responsive desktop, tablet and mobile layouts.",
+    tags: [
+      "WordPress",
+      "PHP",
+      "CSS",
+      "Automotive",
+      "Dashboard UI",
+      "Responsive Design",
+    ],
+    tech: [
+      "WordPress",
+      "PHP",
+      "CSS",
+      "LocalWP",
+      "Responsive Dashboard Layout",
+    ],
+    featuredTech: ["WordPress", "PHP", "CSS"],
+    detailsPath: "/case-studies/torqtrace",
+    github: "https://github.com/Iris408/torqtrace",
+    demo: "",
+    image: "/screenshots/torqtrace/torqtrace-dashboard-card.png",
+    images: [
+      "/screenshots/torqtrace/torqtrace-desktop-hero.png",
+      "/screenshots/torqtrace/torqtrace-desktop-dashboard.png",
+      "/screenshots/torqtrace/torqtrace-tablet.png",
+      "/screenshots/torqtrace/torqtrace-mobile-hero.png",
+      "/screenshots/torqtrace/torqtrace-mobile-dashboard.png",
+    ],
+  },
+  {
     slug: "accesshub",
     featured: true,
-    tier: "primary",
+    tier: "small",
     title: "AccessHub",
     category: "Authentication · Full-Stack",
     status: "Production-style · Deployed",
@@ -302,49 +299,46 @@ export const projects = [
       "/screenshots/accesshub/accesshub-loading-state.png",
     ],
   },
-
-  /* ========================================
-     "Additional engineering work"
-     These will receive a dedicated section later.
-  ======================================== */
-
-  {
-    slug: "torqtrace",
+    {
+    slug: "iris-and-oak",
     featured: false,
     tier: "small",
-    title: "TorqTrace",
-    category: "Automotive · WordPress Dashboard",
-    status: "v1.0.0 Complete",
+    title: "Iris & Oak",
+    category: "Business Platform · Full-Stack",
+    status: "Production · Live",
     summary:
-      "A responsive automotive diagnostic dashboard concept rebuilt as a custom WordPress theme.",
+      "A production freelance business website with service-led journeys, case studies and transactional project enquiries.",
     description:
-      "A WordPress frontend dashboard concept for vehicle health monitoring, diagnostic metrics, recent fault codes, inspection priorities and maintenance signals. I remodelled an earlier React vehicle diagnostic UI into a polished WordPress theme concept with responsive desktop, tablet and mobile layouts.",
+      "A production Next.js website created for Iris & Oak, my freelance software development business. The platform presents services, pricing and selected work while guiding prospective clients through a structured four-step enquiry journey. It includes service-specific questions, review and amend functionality, validation, privacy consent, server-side enquiry processing and transactional email delivery.",
     tags: [
-      "WordPress",
-      "PHP",
-      "CSS",
-      "Automotive",
-      "Dashboard UI",
+      "Full-Stack",
+      "Business Website",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Resend",
       "Responsive Design",
+      "Accessibility",
+      "Vercel",
     ],
     tech: [
-      "WordPress",
-      "PHP",
+      "Next.js",
+      "React",
+      "TypeScript",
       "CSS",
-      "LocalWP",
-      "Responsive Dashboard Layout",
+      "Resend",
+      "Vercel",
     ],
-    featuredTech: ["WordPress", "PHP", "CSS"],
-    detailsPath: "/case-studies/torqtrace",
-    github: "https://github.com/Iris408/torqtrace",
-    demo: "",
-    image: "/screenshots/torqtrace/torqtrace-dashboard-card.png",
+    featuredTech: ["Next.js", "TypeScript", "Resend"],
+    detailsPath: "/case-studies/iris-and-oak",
+    github: "",
+    demo: "https://www.irisoak.dev",
+    image: "/screenshots/irisandoak/irisoak-card.png",
     images: [
-      "/screenshots/torqtrace/torqtrace-desktop-hero.png",
-      "/screenshots/torqtrace/torqtrace-desktop-dashboard.png",
-      "/screenshots/torqtrace/torqtrace-tablet.png",
-      "/screenshots/torqtrace/torqtrace-mobile-hero.png",
-      "/screenshots/torqtrace/torqtrace-mobile-dashboard.png",
+      "/screenshots/irisandoak/irisoak-homepage.png",
+      "/screenshots/irisandoak/irisoak-services.png",
+      "/screenshots/irisandoak/irisoak-selected-work.png",
+      "/screenshots/irisandoak/irisoak-contact-page.png",
     ],
   },
 ];

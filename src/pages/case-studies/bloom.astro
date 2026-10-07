@@ -1,418 +1,187 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro"
-import Navbar from "../../components/Navbar.jsx"
-import Footer from "../../components/Footer.jsx"
-import CaseStudyHero from "../../components/case-study/CaseStudyHero.jsx"
-import CaseStudySection from "../../components/case-study/CaseStudySection.jsx"
-import FeatureGrid from "../../components/case-study/FeatureGrid.jsx"
-import TechStack from "../../components/case-study/TechStack.jsx"
-import ChallengeCard from "../../components/case-study/ChallengeCard.jsx"
-import LearningList from "../../components/case-study/LearningList.jsx"
-import Timeline from "../../components/case-study/Timeline.jsx"
-import ArchitectureDiagram from "../../components/case-study/ArchitectureDiagram.jsx"
-import ImageGallery from "../../components/case-study/ImageGallery.jsx"
+import MainLayout from "../../layouts/MainLayout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
 
-const bloomTags = [
-  "Public Beta",
-  "React",
-  "FastAPI",
-  "PostgreSQL",
-  "Docker",
-  "Accessibility",
-]
+const features = [
+  {
+    number: "01",
+    title: "Flexible routines",
+    description: "Create routines, complete steps and return to progress across sessions.",
+  },
+  {
+    number: "02",
+    title: "Guided demo",
+    description: "Explore the application without registering or using a personal account.",
+  },
+  {
+    number: "03",
+    title: "Low-pressure design",
+    description: "Supportive feedback helps users return after missed days without streak penalties.",
+  },
+];
 
-const bloomFeatures = [
+const architecture = [
   {
-    title: "Authenticated Accounts",
-    description:
-      "Secure registration, login, JWT authentication and protected routes.",
+    title: "React",
+    description: "Interface for routines, focus sessions and accessibility controls.",
   },
   {
-    title: "Routine Management",
-    description:
-      "Create routines, complete steps and track progress across sessions.",
-  },
-  {
-    title: "Guided Demo",
-    description:
-      "Visitors can explore Bloom instantly without creating an account.",
-  },
-  {
-    title: "Accessibility First",
-    description:
-      "Designed with calm visuals, accessibility settings and neurodivergent-friendly UX.",
-  },
-]
-
-const bloomTechStack = [
-  {
-    title: "Frontend",
-    items: [
-      "React",
-      "Vite",
-      "JavaScript",
-      "Responsive component-based interface",
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
-      "FastAPI",
-      "Python",
-      "JWT authentication",
-      "Protected API routes",
-    ],
-  },
-  {
-    title: "Database",
-    items: [
-      "PostgreSQL",
-      "Persistent account data",
-      "Routine and progress storage",
-      "User data isolation",
-    ],
-  },
-  {
-    title: "Engineering Workflow",
-    items: [
-      "Git and GitHub",
-      "Feature branches",
-      "Jira issue tracking",
-      "Docker",
-      "Release documentation",
-    ],
-  },
-]
-
-const bloomChallenges = [
-  {
-    title: "Separating demo and account data",
-    challenge:
-      "Bloom needed a guided demo that visitors could explore without creating an account, while ensuring demo activity never affected authenticated user data.",
-    decision:
-      "I treated demo mode as a separate application path with sample data and isolated state rather than storing demo actions in PostgreSQL.",
-    outcome:
-      "Visitors can explore and experience Bloom immediately, while registered users retain private and persistent account data.",
-  },
-  {
-    title: "Adding persistence without losing the original experience",
-    challenge:
-      "The project began as a frontend prototype, so introducing authentication and persistence risked making the application feel more complex.",
-    decision:
-      "I kept the existing React frontend and added a FastAPI and PostgreSQL backend behind clear login, protected-route and persistence boundaries.",
-    outcome:
-      "Bloom evolved into a real full-stack application without removing the guided-demo experience.",
-  },
-  {
-    title: "Designing progress without punishment",
-    challenge:
-      "Traditional streak-based productivity systems can make missed days feel like failure.",
-    decision:
-      "I designed the product around routines, gentle completion feedback and returning without penalties rather than preserving a perfect streak.",
-    outcome:
-      "The interface better reflects Bloom's accessibility-first goal and gives the project a clearer product identity.",
-  },
-]
-
-const bloomLearnings = [
-  "How to evolve a frontend prototype into a full-stack application without rebuilding the entire user experience.",
-  "How to connect React to a FastAPI backend and persist authenticated user data in PostgreSQL.",
-  "How to separate public demo behaviour from private account data.",
-  "How to use protected routes and JWT authentication across the frontend and backend.",
-  "How accessibility decisions affect navigation, content density, feedback and product identity.",
-  "How to manage releases through GitHub, feature branches, Jira issues and structured documentation.",
-]
-
-const bloomTimeline = [
-  {
-    version: "v1.0.0",
-    title: "Initial Bloom prototype",
-    description:
-      "Created the first version of the routine and task experience.",
-  },
-  {
-    version: "v1.1.0",
-    title: "Task completion",
-    description:
-      "Added task completion behaviour and clearer progress feedback.",
-  },
-  {
-    version: "v1.2.0",
-    title: "Daily reset",
-    description:
-      "Introduced daily routine reset behaviour and improved return flows.",
-  },
-  {
-    version: "v1.3.2",
-    title: "Interface polish",
-    description:
-      "Refined spacing, layout consistency and responsive behaviour.",
-  },
-  {
-    version: "v1.4.0",
-    title: "Empty states",
-    description:
-      "Added clearer empty states and guidance for users with no saved content.",
-  },
-  {
-    version: "v1.5.0",
-    title: "Portfolio readiness",
-    description:
-      "Improved presentation, project documentation and public-facing polish.",
-  },
-  {
-    version: "v1.6.0",
-    title: "Frontend refinement",
-    description:
-      "Completed a major frontend polish pass and expanded accessibility controls.",
-  },
-  {
-    version: "v2.1.0",
-    title: "Full-stack authentication and persistence",
-    description:
-      "Added FastAPI, PostgreSQL, authenticated accounts, protected routes and persistent user data.",
-  },
-  {
-    version: "v2.1.1",
-    title: "Stabilisation and testing",
-    description:
-      "Verified account persistence, user isolation, protected routes and demo separation.",
-  },
-]
-
-const bloomFutureImprovements = [
-  {
-    title: "Mobile UX refinement",
-    description:
-      "Reduce visual density, simplify key controls and improve bottom-sheet interactions across smaller screens.",
-  },
-  {
-    title: "Clearer core loop",
-    description:
-      "Make the relationship between routines, focus, progress and returning after missed days easier to understand at a glance.",
-  },
-  {
-    title: "Expanded accessibility controls",
-    description:
-      "Add high-contrast support, reduced-motion preferences, stronger keyboard navigation and further screen-reader improvements.",
-  },
-  {
-    title: "Improved monitoring and testing",
-    description:
-      "Expand automated frontend and backend tests, add stronger error tracking and improve deployment observability.",
-  },
-]
-
-const bloomArchitecture = [
-  {
-    title: "React client",
-    description:
-      "Provides the responsive interface, guided demo, routines, focus sessions, progress views and accessibility controls.",
-  },
-  {
-    title: "FastAPI service",
-    description:
-      "Handles authentication, protected routes, validation and communication between the frontend and persistent data.",
+    title: "FastAPI",
+    description: "API for authentication, protected routes and saved user data.",
   },
   {
     title: "PostgreSQL",
-    description:
-      "Stores private account, profile, routine and progress data separately for each authenticated user.",
+    description: "Persistent storage for account profiles, routines and progress.",
   },
-]
+];
 
-const bloomGallery = [
-  {
-    src: "/screenshots/bloom/bloom-homepage.png",
-    alt: "Bloom application homepage",
-    caption: "Bloom’s calm homepage and primary product navigation.",
-  },
-  {
-    src: "/screenshots/bloom/bloom-overview.png",
-    alt: "Bloom product overview",
-    caption: "Overview of the main routine, focus and progress experience.",
-  },
-  {
-    src: "/screenshots/bloom/bloom-page-controls.png",
-    alt: "Bloom accessibility controls",
-    caption: "Page and accessibility controls designed to support different needs.",
-  },
-  {
-    src: "/screenshots/bloom/bloom-demo-modal.png",
-    alt: "Bloom guided demo selection",
-    caption: "Guided demo options allow visitors to explore without registering.",
-  },
-  {
-    src: "/screenshots/bloom/bloom-routines.png",
-    alt: "Bloom routines interface",
-    caption: "Routine creation and completion workflow.",
-  },
-  {
-    src: "/screenshots/bloom/bloom-focus.png",
-    alt: "Bloom focus interface",
-    caption: "Low-pressure focus session experience.",
-  },
-]
-
+const technologies = [
+  "React",
+  "Vite",
+  "JavaScript",
+  "FastAPI",
+  "Python",
+  "JWT",
+  "PostgreSQL",
+  "Docker",
+  "Accessibility",
+];
 ---
 
 <MainLayout
   title="Bloom Case Study | Ashleigh Magloire"
-  description="A full-stack software engineering case study exploring Bloom’s accessibility-first design, React frontend, FastAPI backend, PostgreSQL persistence and Docker-based development."
+  description="Bloom is an accessibility-focused routine and focus application built with React, FastAPI and PostgreSQL."
 >
   <Navbar client:load />
 
   <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
-    <div class="w-full px-6 pb-20 pt-28 md:px-10 md:pt-32">
-      <CaseStudyHero
-        eyebrow="Case Study · Full-Stack · Accessibility"
-        title="Bloom"
-        summary="A calm, accessibility-first full-stack productivity application designed to support routines, focus, and progress without pressure."
-        tags={bloomTags}
-        liveUrl="https://bloom-app-three-xi.vercel.app/"
-        githubUrl="https://github.com/Iris408/bloom-app"
-        image="/screenshots/bloom/bloom-homepage.png"
-        imageAlt="Bloom accessibility-first routine and focus application"
-      />
+    <div class="px-6 pb-20 pt-24 md:px-10 md:pt-28">
+      <section class="grid items-center gap-10 border-b border-[var(--portfolio-line)] pb-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 lg:pb-16">
+        <div>
+          <p class="text-xs font-medium uppercase tracking-[0.24em] text-[var(--portfolio-accent)]">
+            Case Study · Full-Stack · Accessibility
+          </p>
 
-      <CaseStudySection
-        eyebrow="Overview"
-        title="A calmer approach to productivity"
-      >
-        <p>
-          Bloom began as a frontend prototype exploring calmer productivity for
-          neurodivergent users. It has since evolved into a full-stack application
-          with authenticated accounts, persistent routines, protected routes,
-          guided demos, and accessibility-first design.
+          <h1 class="mt-5 font-serif text-5xl leading-tight tracking-tight md:text-7xl">
+            Bloom
+          </h1>
+
+          <p class="mt-5 max-w-xl text-base leading-7 text-[var(--portfolio-muted)] md:text-lg">
+            A calm productivity application designed to support routines,
+            focus and progress without pressure.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a
+              href="https://bloomapp.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-[var(--portfolio-accent)] px-5 py-3 text-sm font-medium text-white transition hover:opacity-85"
+            >
+              View live project <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href="https://github.com/Iris408/bloom-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 border border-[var(--portfolio-line)] px-5 py-3 text-sm font-medium transition hover:border-[var(--portfolio-accent)]"
+            >
+              See source code <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="overflow-hidden border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)]">
+          <img
+            src="/screenshots/bloom/bloom-homepage.png"
+            alt="Bloom routine and focus application"
+            class="aspect-[16/10] h-full w-full object-cover object-top"
+          />
+        </div>
+      </section>
+
+      <section class="border-b border-[var(--portfolio-line)] py-8 md:py-10">
+        <div class="mb-5 flex items-center gap-5">
+          <h2 class="shrink-0 font-serif text-2xl">What it does</h2>
+          <div class="h-px flex-1 bg-[var(--portfolio-line)]"></div>
+        </div>
+
+        <p class="mb-5 max-w-3xl text-sm leading-7 text-[var(--portfolio-muted)]">
+          Bloom began as a frontend prototype exploring a calmer approach to
+          productivity for neurodivergent users. 
+          <br />
+          It has since grown into a
+          full-stack application with accounts and saved routines.
         </p>
 
-        <p>
-          Rather than rewarding long streaks or encouraging pressure, Bloom focuses
-          on helping users return after missed days with supportive routines and
-          gentle progress tracking.
-        </p>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Problem"
-        title="Why traditional productivity tools can feel overwhelming"
-      >
-        <p>
-          Many productivity applications rely on streaks, constant notifications,
-          dense dashboards, and visible signs of missed progress. For neurodivergent
-          users, this can turn planning into another source of pressure.
-        </p>
-
-        <p>
-          Bloom was designed around a different question: how can a productivity
-          tool help someone return to a routine without making them feel that they
-          have failed?
-        </p>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Solution"
-        title="A low-pressure workflow built around return and flexibility"
-      >
-        <p>
-          Bloom combines routines, focus sessions, progress tracking, reflections,
-          guided demos, and accessibility controls within a calm interface.
-        </p>
-
-        <p>
-          Visitors can explore the application without creating an account, while
-          authenticated users can save their routines, profile preferences, and
-          progress through a FastAPI and PostgreSQL backend.
-        </p>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Product Experience"
-        title="Bloom across the complete user journey"
-      >
-        <p>
-          Bloom’s interface connects onboarding, routines, focus sessions,
-          progress and accessibility controls through one calm and consistent
-          product experience.
-        </p>
-
-        <ImageGallery images={bloomGallery} />
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Features"
-        title="Key functionality"
-      >
-        <FeatureGrid features={bloomFeatures} />
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Architecture"
-        title="How Bloom is structured"
-      >
-        <p>
-          Bloom uses a separate frontend, backend, and database architecture. The
-          React client communicates with a FastAPI API, while PostgreSQL stores
-          authenticated user data, routines, preferences, and progress.
-        </p>
-
-        <ArchitectureDiagram items={bloomArchitecture} />
-
-        <TechStack groups={bloomTechStack} />
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Engineering Decisions"
-        title="Challenges I worked through"
-      >
-        <div class="grid gap-6">
-          {bloomChallenges.map((item) => (
-            <ChallengeCard
-              title={item.title}
-              challenge={item.challenge}
-              decision={item.decision}
-              outcome={item.outcome}
-            />
+        <div class="grid gap-3 md:grid-cols-3">
+          {features.map((feature) => (
+            <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-5">
+              <p class="text-xs font-semibold tracking-[0.16em] text-[var(--portfolio-accent)]">
+                {feature.number}
+              </p>
+              <h3 class="mt-3 font-serif text-lg">{feature.title}</h3>
+              <p class="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
+                {feature.description}
+              </p>
+            </article>
           ))}
         </div>
-      </CaseStudySection>
+      </section>
 
-      <CaseStudySection
-        eyebrow="Learning"
-        title="What this project taught me"
+      <section class="border-b border-[var(--portfolio-line)] py-8 md:py-10">
+        <div class="mb-5 flex items-center gap-5">
+          <h2 class="shrink-0 font-serif text-2xl">How it works</h2>
+          <div class="h-px flex-1 bg-[var(--portfolio-line)]"></div>
+        </div>
+
+        <div class="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
+          {architecture.map((layer, index) => (
+            <>
+              <article class="border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-5">
+                <h3 class="font-serif text-lg">{layer.title}</h3>
+                <p class="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
+                  {layer.description}
+                </p>
+              </article>
+              {index < architecture.length - 1 && (
+                <span class="hidden text-lg text-[var(--portfolio-accent)] md:block" aria-hidden="true">
+                  →
+                </span>
+              )}
+            </>
+          ))}
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-2">
+          {technologies.map((technology) => (
+            <span class="rounded-full bg-[var(--portfolio-surface-soft)] px-3 py-1.5 text-xs font-medium text-[var(--portfolio-accent)]">
+              {technology}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section class="border-b border-[var(--portfolio-line)] py-8 md:py-10">
+        <div class="grid gap-4 border border-[var(--portfolio-line)] bg-[var(--portfolio-surface-soft)] p-5 md:grid-cols-[10rem_1fr] md:items-center md:p-6">
+          <h2 class="font-serif text-xl">Engineering decision</h2>
+          <p class="text-sm leading-7 text-[var(--portfolio-muted)]">
+            Visitors should be able to explore Bloom without registering, while
+            account data remains private. I kept the guided demo on separate
+            sample data and state, apart from authenticated data stored in
+            PostgreSQL.
+          </p>
+        </div>
+      </section>
+
+      <a
+        href="/the-build-room/current-builds/bloom"
+        class="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] underline underline-offset-4 transition hover:text-[var(--portfolio-ink)]"
       >
-        <p>
-          Bloom has been my main capstone project. It combines frontend,
-          backend, database, accessibility and engineering workflow skills.
-        </p>
-
-        <LearningList items={bloomLearnings} />
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Project Timeline"
-        title="How Bloom evolved"
-      >
-        <p>
-          Bloom has developed through several focused releases, moving from a
-          frontend prototype into a deployed full-stack application.
-        </p>
-
-        <Timeline items={bloomTimeline} />
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="Next Steps"
-        title="Future improvements"
-      >
-        <p>
-          Bloom remains in active development. The next phase focuses on mobile
-          usability, clearer product guidance, broader accessibility support and
-          stronger production readiness.
-        </p>
-
-        <FeatureGrid features={bloomFutureImprovements} />
-      </CaseStudySection>
+        Explore Bloom build updates <span aria-hidden="true">→</span>
+      </a>
     </div>
   </main>
 

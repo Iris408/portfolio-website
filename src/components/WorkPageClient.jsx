@@ -13,6 +13,40 @@ const primaryFilters = [
   "Accessibility",
 ];
 
+const collectionCopy = {
+  primary: {
+    tab: "Flagship",
+    eyebrow: "Featured work",
+    title: "Flagship projects",
+  },
+  small: {
+    tab: "Workshop",
+    eyebrow: "Also built",
+    title: "From the workshop",
+  },
+};
+
+function CollectionTab({ collection, count, isActive, onSelect }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(collection)}
+      aria-pressed={isActive}
+      className={`inline-flex items-baseline px-4 py-2.5 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--portfolio-accent)] ${
+        isActive
+          ? "bg-[#526A57] text-[#F7F6F1]"
+          : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
+      }`}
+    >
+      {collectionCopy[collection].tab}
+      <span className="ml-1.5 text-xs tabular-nums opacity-70">
+        {count}
+        <span className="sr-only"> projects</span>
+      </span>
+    </button>
+  );
+}
+
 function ProjectImage({ project, onPreview }) {
   if (!project.image) {
     return (
@@ -100,9 +134,7 @@ function ProjectLinks({ project }) {
             className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--portfolio-accent)]"
           >
             {link.label}
-            <span aria-hidden="true">
-              {isExternal ? "↗" : "→"}
-            </span>
+            <span aria-hidden="true">{isExternal ? "↗" : "→"}</span>
           </a>
         );
       })}
@@ -174,9 +206,7 @@ export default function WorkPageClient() {
   const availableFilters = primaryFilters.filter(
     (filter) =>
       filter === "All" ||
-      collectionProjects.some((project) =>
-        project.tags?.includes(filter),
-      ),
+      collectionProjects.some((project) => project.tags?.includes(filter)),
   );
 
   const visibleProjects = useMemo(() => {
@@ -197,6 +227,8 @@ export default function WorkPageClient() {
     (project) => project.tier === "small",
   ).length;
 
+  const copy = collectionCopy[activeCollection] ?? collectionCopy.primary;
+
   function changeCollection(collection) {
     setActiveCollection(collection);
     setActiveFilter("All");
@@ -208,39 +240,29 @@ export default function WorkPageClient() {
         <div className="flex flex-col gap-6 py-6 lg:flex-row lg:items-center lg:justify-between">
           <div
             className="flex flex-wrap gap-2"
+            role="group"
             aria-label="Project collections"
           >
-            <button
-              type="button"
-              onClick={() => changeCollection("primary")}
-              aria-pressed={activeCollection === "primary"}
-              className={`px-4 py-2.5 text-sm font-medium transition ${
-                activeCollection === "primary"
-                  ? "bg-[#526A57] text-[#F7F6F1]"
-                  : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
-              }`}
-            >
-              Primary work ({primaryCount})
-            </button>
+            <CollectionTab
+              collection="primary"
+              count={primaryCount}
+              isActive={activeCollection === "primary"}
+              onSelect={changeCollection}
+            />
 
-            {smallCount > 0 && (    
-              <button
-                type="button"
-                onClick={() => changeCollection("small")}
-                aria-pressed={activeCollection === "small"}
-                className={`px-4 py-2.5 text-sm font-medium transition ${
-                  activeCollection === "small"
-                    ? "bg-[#526A57] text-[#F7F6F1]"
-                    : "border border-[var(--portfolio-line)] text-[var(--portfolio-accent)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
-                }`}
-              >
-                Additional builds ({smallCount})
-              </button>
+            {smallCount > 0 && (
+              <CollectionTab
+                collection="small"
+                count={smallCount}
+                isActive={activeCollection === "small"}
+                onSelect={changeCollection}
+              />
             )}
           </div>
 
           <div
             className="flex flex-wrap gap-2"
+            role="group"
             aria-label="Filter projects"
           >
             {availableFilters.map((filter) => {
@@ -252,7 +274,7 @@ export default function WorkPageClient() {
                   type="button"
                   onClick={() => setActiveFilter(filter)}
                   aria-pressed={isActive}
-                  className={`rounded-full border px-3.5 py-2 text-xs font-medium transition ${
+                  className={`rounded-full border px-3.5 py-2 text-xs font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--portfolio-accent)] ${
                     isActive
                       ? "border-[#D6E3C4] bg-[#F7F6F1] text-[#26372D]"
                       : "border-[var(--portfolio-line)] text-[var(--portfolio-muted)] hover:border-[var(--portfolio-accent)] hover:text-[var(--portfolio-ink)]"
@@ -269,15 +291,11 @@ export default function WorkPageClient() {
       <div className="flex items-end justify-between gap-6 py-10">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--portfolio-accent)]">
-            {activeCollection === "primary"
-              ? "Production-style portfolio"
-              : "Additional project work"}
+            {copy.eyebrow}
           </p>
 
           <h2 className="mt-3 font-serif text-3xl text-[var(--portfolio-ink)]">
-            {activeCollection === "primary"
-              ? "Primary engineering work"
-              : "Additional engineering work"}
+            {copy.title}
           </h2>
         </div>
 
@@ -316,10 +334,7 @@ export default function WorkPageClient() {
         </div>
       )}
 
-      <PreviewModal
-        preview={preview}
-        onClose={() => setPreview(null)}
-      />
+      <PreviewModal preview={preview} onClose={() => setPreview(null)} />
     </>
   );
 }

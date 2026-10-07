@@ -22,7 +22,7 @@ export const theBuildRoomNotes = [
   {
     id: "BR-009",
     title: "Fixing React API Response-Shape Rendering",
-    project: "PartsPilot",
+    project: "PartsPilot v2",
     category: "Frontend / React / API Integration",
     tags: [
       "Frontend",
@@ -49,7 +49,7 @@ export const theBuildRoomNotes = [
   {
     id: "BR-008",
     title: "Debugging Docker Port Mapping and CORS",
-    project: "PartsPilot",
+    project: "PartsPilot v2",
     category: "Full-Stack / Docker / API Integration",
     tags: [
       "Docker",
@@ -76,7 +76,7 @@ export const theBuildRoomNotes = [
   {
     id: "BR-007",
     title: "Fixing PartsPilot Tests Outside Docker",
-    project: "PartsPilot",
+    project: "PartsPilot v2",
     category: "Backend / FastAPI / Pytest",
     tags: [
       "Backend",
@@ -130,7 +130,7 @@ export const theBuildRoomNotes = [
   {
     id: "BR-005",
     title: "Fixing Inventory Dashboard Analytics",
-    project: "PartsPilot",
+    project: "PartsPilot v2",
     category: "Full-Stack / React / FastAPI / PostgreSQL",
     tags: [
       "React",
@@ -157,7 +157,7 @@ export const theBuildRoomNotes = [
     {
     id: "BR-004",
     title: "Fixing Bloom Routine Synchronisation",
-    project: "Bloom",
+    project: "Bloom v2",
     category: "Full-Stack / React / FastAPI / PostgreSQL",
     tags: ["React", "FastAPI", "Debugging", "Full-Stack"],
     date: "2026-07-13",
@@ -177,7 +177,7 @@ export const theBuildRoomNotes = [
   {
     id: "BR-003",
     title: "Fixing Frontend CI TypeScript Errors",
-    project: "AI HR Support Assistant",
+    project: "HR Management Platform",
     category: "Frontend / TypeScript / CI/CD",
     tags: ["Frontend", "TypeScript", "CI/CD", "React"],
     date: "2026-07-05",
@@ -216,15 +216,15 @@ export const theBuildRoomNotes = [
   },
   {
     id: "BR-001",
-    title: "Fixing Backend Tests for AI HR Support Assistant",
-    project: "AI HR Support Assistant",
+    title: "Fixing Backend Tests for HR Management Platform",
+    project: "HR Management Platform",
     category: "Backend / FastAPI / Pytest",
     tags: ["Backend", "FastAPI", "Pytest", "PostgreSQL"],
     date: "2026-06-28",
     status: "Fixed / Learned",
     pinned: false,
     summary:
-      "Cleaned up the backend testing checkpoint until the AI HR Support Assistant test suite passed successfully.",
+      "Cleaned up the backend testing checkpoint until the HR Management Platform test suite passed successfully.",
     problem:
       "The backend needed a stable testing checkpoint before larger features like authentication, role-based access, and CI/CD.",
     cause:

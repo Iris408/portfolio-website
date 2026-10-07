@@ -6,31 +6,188 @@ import Footer from "../../components/Footer.jsx";
 
 <MainLayout
   title="Experiments | The Build Room | Ashleigh Magloire"
-  description="Small experiments with software tools, technologies and techniques by Ashleigh Magloire."
+  description="A full-stack HR support assistant MVP exploring deterministic mock AI classification and human-reviewed response drafts."
 >
   <Navbar client:load />
 
   <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
-    <section class="px-6 py-12 md:px-10 md:py-16">
-      <a href="/the-build-room" class="text-sm font-medium text-[var(--portfolio-accent)]">
-        ← Back
+    <div class="px-6 pt-8 md:px-10 md:pt-10">
+      <a
+        href="/the-build-room"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] transition hover:text-[var(--portfolio-ink)]"
+      >
+        <span aria-hidden="true">←</span>
+        Back to The Build Room
       </a>
+    </div>
 
-      <p class="mb-5 mt-10 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
-        The Build Room / Experiments
-      </p>
+    <section class="border-b border-[var(--portfolio-line)] px-6 pb-12 pt-8 md:px-10 md:pb-16 md:pt-10">
+      <div class="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <p class="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+            The Build Room / Experiments
+          </p>
 
-      <h1 class="font-serif text-4xl md:text-6xl">Experiments</h1>
+          <h1 class="max-w-4xl font-serif text-4xl leading-tight text-[var(--portfolio-ink)] md:text-6xl">
+            Questions I’m working through in code.
+          </h1>
+        </div>
 
-      <div class="mt-10 max-w-2xl border-t border-[var(--portfolio-line)] pt-6">
-        <p class="text-sm font-medium uppercase tracking-[0.2em] text-[var(--portfolio-accent)]">
-          Coming soon
-        </p>
-        <p class="mt-3 text-base leading-7 text-[var(--portfolio-muted)]">
-          This space is for focused tests of tools, technologies and approaches.
-          I’ll add experiments here as I have useful findings to share.
+        <p class="min-h-14 max-w-xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
+          Each one is a small, focused trial, with notes on what worked, what
+          didn’t and what I’d do differently.
         </p>
       </div>
+    </section>
+
+    <section class="px-6 py-10 md:px-10 md:py-14" aria-label="Experiments">
+      <div class="mb-5 flex flex-wrap items-baseline justify-end gap-3 border-b border-[var(--portfolio-line)] pb-4">
+        <p class="text-sm text-[var(--portfolio-muted)]">
+          <span class="font-serif text-2xl text-[var(--portfolio-ink)]"> 1 </span>
+          experiment
+        </p>
+      </div>
+
+      <article class="rounded-xl border border-[var(--portfolio-line)] bg-[var(--portfolio-surface)] p-5 md:p-8">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <p class="w-fit rounded-full bg-[#F2E2D2] px-3 py-1.5 text-xs font-semibold text-[#754D2E]">
+            MVP experiment
+          </p>
+
+          <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-muted)]">
+            React · FastAPI · PostgreSQL
+          </p>
+        </div>
+
+        <h2 class="mt-5 font-serif text-3xl text-[var(--portfolio-ink)] md:text-4xl">
+          HR Management Platform
+        </h2>
+
+        <p class="mt-3 max-w-3xl text-sm leading-7 text-[var(--portfolio-muted)] md:text-base">
+          How can a support workflow organise incoming HR requests while
+          keeping classification and response suggestions reviewable by people?
+        </p>
+
+        <div class="mt-7 grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-stretch">
+          <section class="rounded-lg border border-[var(--portfolio-line)] bg-[var(--portfolio-bg)] p-4">
+            <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-muted)]">
+              Frontend
+            </p>
+
+            <h3 class="mt-3 font-medium">Employee submits a demo request</h3>
+
+            <p class="mt-3 text-sm leading-6 text-[var(--portfolio-muted)]">
+              The React and TypeScript interface collects the request and shows
+              the submitted ticket in the employee demo view.
+            </p>
+          </section>
+
+          <div class="hidden items-center justify-center text-xl text-[var(--portfolio-accent)] md:flex" aria-hidden="true">
+            →
+          </div>
+
+          <section class="rounded-lg border border-[var(--portfolio-line)] bg-[var(--portfolio-bg)] p-4">
+            <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-muted)]">
+              Backend
+            </p>
+
+            <h3 class="mt-3 font-medium">FastAPI classifies the ticket</h3>
+
+            <p class="mt-3 text-sm leading-6 text-[var(--portfolio-muted)]">
+              FastAPI validates and stores the request. Deterministic mock logic
+              returns a category, priority, suggested response and reasoning.
+            </p>
+          </section>
+
+          <div class="hidden items-center justify-center text-xl text-[var(--portfolio-accent)] md:flex" aria-hidden="true">
+            →
+          </div>
+
+          <section class="rounded-lg border border-[var(--portfolio-line)] bg-[var(--portfolio-bg)] p-4">
+            <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-muted)]">
+              Review
+            </p>
+
+            <h3 class="mt-3 font-medium">HR or Admin reviews the suggestion</h3>
+
+            <p class="mt-3 text-sm leading-6 text-[var(--portfolio-muted)]">
+              Demo review queues display the ticket and suggested response.
+              A person remains responsible for deciding what to do.
+            </p>
+          </section>
+        </div>
+
+        <section class="mt-7 border-t border-[var(--portfolio-line)] pt-6">
+          <h3 class="text-sm font-semibold text-[var(--portfolio-ink)]">
+            What the MVP demonstrates
+          </h3>
+
+          <p class="mt-2 max-w-4xl text-sm leading-7 text-[var(--portfolio-muted)]">
+            The project connects a React and TypeScript frontend to a FastAPI
+            backend and PostgreSQL database. Its demo views support ticket
+            submission, mock classification, suggested response drafts,
+            filtering, sorting and ticket status updates.
+          </p>
+        </section>
+
+        <details class="group mt-6 border-t border-[var(--portfolio-line)] pt-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-medium text-[var(--portfolio-ink)]">
+            <span>What worked, what’s limited, and what I’d do next</span>
+            <span class="text-xl transition group-open:rotate-45" aria-hidden="true">
+              +
+            </span>
+          </summary>
+
+          <div class="mt-5 grid gap-5 border-l-2 border-[#B8794F] pl-4 sm:grid-cols-3">
+            <section>
+              <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-accent)]">
+                What worked
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
+                Deterministic keyword rules make the mock classification
+                predictable and runnable locally without API keys or external
+                AI services. Returning the reasoning alongside the category,
+                priority and draft makes the suggestion easier to review.
+              </p>
+            </section>
+
+            <section>
+              <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-accent)]">
+                Current limitations
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
+                Keyword matching is limited and is not a real language model.
+                The Employee, HR Team and Admin views are demos; real
+                authentication and role-based access are not implemented.
+              </p>
+            </section>
+
+            <section>
+              <h3 class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--portfolio-accent)]">
+                What I’d do next
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
+                Expand backend tests for classification edge cases, add
+                authentication and role-based access, and improve the review
+                queues. Any future LLM integration would need validated
+                structured output and a mock fallback.
+              </p>
+            </section>
+          </div>
+        </details>
+
+        <aside class="mt-6 rounded-lg border border-[#D8B69D] bg-[#F8F0E9] p-4">
+          <h3 class="text-sm font-semibold text-[#533B2B]">
+            Demo data only
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-[#654E3F]">
+            This project is not intended for real employee, HR, medical, payroll
+            or other sensitive workplace information. Classification and
+            response outputs are draft suggestions, not automatic decisions.
+          </p>
+        </aside>
+      </article>
     </section>
   </main>
 

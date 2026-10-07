@@ -1,3 +1,49 @@
 ---
-return Astro.redirect("/work", 301);
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import WorkPageClient from "../components/WorkPageClient.jsx";
 ---
+
+<MainLayout
+  title="Software Engineering Projects | Ashleigh Magloire"
+  description="Selected full-stack, backend and DevOps projects by Ashleigh Magloire, including accessible web applications, APIs and production-focused software engineering work."
+>
+  <Navbar client:load />
+
+  <main class="min-h-screen bg-[var(--portfolio-bg)] text-[var(--portfolio-ink)]">
+    <section class="border-b border-[var(--portfolio-line)] px-6 pb-20 pt-12 md:px-10 md:pb-20 md:pt-14">
+      <div class="grid w-full gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <p class="mb-5 text-xs font-medium uppercase tracking-[0.3em] text-[var(--portfolio-accent)]">
+            Work
+          </p>
+
+          <h1 class="max-w-4xl font-serif text-4xl leading-tight text-[var(--portfolio-ink)] md:text-6xl">
+            Practical systems built around real requirements.
+          </h1>
+        </div>
+
+        <div class="border-l border-[var(--portfolio-line)] pl-6 md:pl-8">
+          <p class="text-base leading-8 text-[var(--portfolio-muted)]">
+            Full-stack products, backend APIs and infrastructure projects
+            demonstrating authentication, persistence, accessibility,
+            monitoring, testing and deployment.
+          </p>
+
+          <p class="mt-4 text-sm leading-7 text-[var(--portfolio-muted)]">
+            Primary projects represent larger production-style work. 
+            Additional projects capture focused engineering concepts,
+            language-learning tools and smaller technical experiments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-16 md:px-10 md:py-20">
+      <WorkPageClient client:load />
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

@@ -2,10 +2,10 @@
 import "../styles/global.css";
 
 const {
-  title = "Ashleigh Magloire | Full-Stack & DevOps Engineer",
+  title = "Ashleigh Magloire | Backend & Full-Stack Developer",
   description =
-    "Software engineering portfolio of Ashleigh Magloire, focused on Python, FastAPI, React, TypeScript, APIs, Docker, CI/CD and reliable full-stack applications.",
-  image = "/images/portfolio-workspace-hero.png",
+    "Backend and full-stack engineer with a background in Tesla vehicle operations, building reliable web apps with Python, FastAPI, React and Docker.",
+  image = "/images/hero/illustration-portrait.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -20,7 +20,7 @@ const socialImage = new URL(image, Astro.site);
 
     <meta
       name="theme-color"
-      content="#1f2c24"
+      content="#101211"
       id="theme-color-meta"
     />
 
@@ -37,7 +37,7 @@ const socialImage = new URL(image, Astro.site);
         if (themeColorMeta) {
           themeColorMeta.setAttribute(
             "content",
-            shouldUseDark ? "#1f2c24" : "#f7f6f1"
+            shouldUseDark ? "#101211" : "#f7f6f1"
           );
         }
       })();

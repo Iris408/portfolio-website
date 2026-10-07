@@ -6,7 +6,6 @@ const currentBuilds = [
     title: "PartsPilot v3 migration",
     status: "In progress",
     summary: "Migrating the backend from FastAPI to a .NET Minimal API.",
-    href: "/the-build-room/current-builds/partspilot",
     image: "/screenshots/partspilot/partspilot-homepage.png",
     imageAlt: "PartsPilot inventory dashboard preview",
   },
@@ -15,7 +14,6 @@ const currentBuilds = [
     title: "Bloom v3",
     status: "Live beta",
     summary: "The public live beta of my visual task planner.",
-    href: "/the-build-room/current-builds/bloom",
     image: "/screenshots/bloom/bloom-homepage.png",
     imageAlt: "Bloom task planner preview",
   },
@@ -156,13 +154,6 @@ function BuildCard({ build }) {
         <p className="mt-2 text-sm leading-6 text-[var(--portfolio-muted)]">
           {build.summary}
         </p>
-
-        <a
-          href={build.href}
-          className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[var(--portfolio-accent)] underline underline-offset-4"
-        >
-          View details <span aria-hidden="true">→</span>
-        </a>
       </div>
     </article>
   );

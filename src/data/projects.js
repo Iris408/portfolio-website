@@ -171,7 +171,7 @@ export const projects = [
     summary:
       "A backend foundation for LogSense Cloud, importing logs, detecting error patterns and producing stored operational summaries.",
     description:
-      "A Python and FastAPI backend that analyses log files, detects error patterns, stores imported records in PostgreSQL and exposes API endpoints for summaries, errors, reports and stored log data. The project includes SQLAlchemy persistence, Docker support and GitHub Actions checks for dependencies, Python syntax, tests and image builds.",
+      "LogSense transforms raw application logs into clear operational insights, identifying recurring errors and generating analysis through a REST API, CLI, and read-only dashboard. Built with Python, FastAPI, PostgreSQL, and Docker.",
     tags: [
       "Backend",
       "Log Analysis",
@@ -194,8 +194,10 @@ export const projects = [
     github:
       "https://github.com/Iris408/logsense",
     demo: "",
-    image: "/screenshots/logsense/log_intelligence_output.png",
+    image: "/screenshots/logsense/log_dashboard.png",
     images: [
+      "/screenshots/logsense/log_dashboard.png",
+      "/screenshots/logsense/log_dashboard_recent.png",
       "/screenshots/logsense/log_intelligence_output.png",
       "/screenshots/logsense/log_intelligence_docker.png",
     ],
